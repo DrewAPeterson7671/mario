@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   validates :country, presence: true
   validates_length_of :country, maximum: 30
 
-
+  before_save(:titleize_product)
 
   private
   def titleize_product
