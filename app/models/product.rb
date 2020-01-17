@@ -4,5 +4,6 @@ class Product < ApplicationRecord
   validates_length_of :name, maximum: 30
   validates :price, presence: true
   validates_length_of :name, maximum: 8
-
+  validates :country, presence: true
+  validates_length_of :country, maximum: 30
 end
