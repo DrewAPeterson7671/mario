@@ -10,8 +10,8 @@ class Product < ApplicationRecord
   before_save(:titleize_product)
 
   private
-  def titleize_product
-    self.name = self.name.titleize
-    self.country = self.country.titleize
-  end
+    def titleize_product
+      self.name = self.name.titleize
+      self.country = self.country.titleize
+    end
 end

@@ -15,7 +15,7 @@ end
 
 describe Review do
   it("titleizes the author of a review") do
-    product = Review.create({author: "mr meseeks", content_body: "Note that this schema.rb definition is the authoritative source for your database schema. If you need to create the application database on another", rating: 5})
-    expect(product.name()).to(eq("Mr Meseeks"))
+    review = Review.create({author: "mr meseeks", content_body: "Note that this schema.rb definition is the authoritative source for your database schema. If you need to create the application database on another.", rating: 5})
+    expect(review.author()).to(eq("Mr Meseeks"))
   end
 end

@@ -44,16 +44,12 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
-  before_save(:titleize_product)
+
 
   private
     def product_params
       params.require(:product).permit(:name, :price, :country)
     end
 
-    def titleize_product
-      self.name = self.name.titleize
-      self.country = self.country.titleize
-    end
 
 end
