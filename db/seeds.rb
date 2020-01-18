@@ -11,12 +11,12 @@ Review.destroy_all
 
 50.times do |index|
   products = []
-  products.push(Product.create!(name: Faker::TvShows::BreakingBad.episode, price: Faker::Superhero.name, country: Faker::Superhero.name))
+  products.push(Product.create!(name: Faker::Food.fruits, price: Faker::Number.decimal(l_digits: 2), country: Faker::TvShows::RickAndMorty.location))
   products
   50.times do |review|
     products.each do |product|
-    Review.create! :name => Faker::Superhero.name,
-                    :author => Faker::ChuckNorris.fact,
+    Review.create! :author => Faker::TvShows::RickAndMorty.character,
+                    :content_body => Faker::Lorem.characters(number: 50),
                     :rating => rand(1..5),
                     :product_id => product.id
     end
