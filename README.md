@@ -21,4 +21,8 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Bundle Install
+
+* rake db:create
+
+* rake db:test:prepare
