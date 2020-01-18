@@ -15,7 +15,7 @@ Review.destroy_all
   products
   50.times do |review|
     products.each do |product|
-    Review.create! :author => Faker::TvShows::RickAndMorty.character,
+    Review.create! :author => Faker::TvShows::Simpsons.character,
                     :content_body => Faker::Lorem.characters(number: 50),
                     :rating => rand(1..5),
                     :product_id => product.id
