@@ -1,4 +1,4 @@
-<h1>Products</h1>
+<h1>Mario's Speciality Food Products</h1>
 
 <% if @most_reviews.any? %>
   <h2>Most Reviewed Products</h2>
@@ -44,5 +44,7 @@
   <p>There are no products yet.</p>
 <% end %>
 
-
-<p><%= link_to "Create new product", new_product_path %></p>
+<% if current_user && current_user.admin %>
+  <h3>Admin Only</h3>
+  <p><%= link_to "Create new product", new_product_path %></p>
+<% end %>
