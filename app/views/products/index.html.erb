@@ -1,5 +1,15 @@
 <h1>Products</h1>
 
+<% if @most_reviews.any? %>
+  <ul>
+    <% @most_reviews.each do |most_review| %>
+      <li><%= link_to most_review.content_body, review_path(most_review) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no most recent reviews yet.</p>
+<% end %>
+
 <% if @products.any? %>
   <ul>
     <% @products.each do |product| %>
