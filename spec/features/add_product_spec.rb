@@ -17,17 +17,35 @@ describe "the user registration process" do
   end
 end
 
+
 describe "the user registration process" do
   it "registers a user" do
     visit products_path
     click_link 'Sign up'
-    fill_in 'Email', :with => 'chet@chet.com'
-    fill_in 'Password', :with => 'pass'
-    fill_in 'Password confirmation', :with => 'pass'
+    find('#registration_email').set('pete@pete.com')
+    find('#registration_password').set('pass')
+    find('#reg_password_confirm').set('pass')
     click_on 'Sign Up'
     expect(page).to have_content "You've successfully signed up!"
   end
 end
+
+
+
+
+
+#
+# describe "the user registration process" do
+#   it "registers a user" do
+#     visit products_path
+#     click_link 'Sign up'
+#     fill_in 'Email', :with => 'chet@chet.com'
+#     fill_in 'Password', :with => 'pass'
+#     fill_in 'Password confirmation', :with => 'pass'
+#     click_on 'Sign Up'
+#     expect(page).to have_content "You've successfully signed up!"
+#   end
+# end
 
 
 

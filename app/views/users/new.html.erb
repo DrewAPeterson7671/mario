@@ -1,11 +1,11 @@
 <h1> Sign up</h1>
 <%= form_for @user do |f| %>
   <%= f.label "Email" %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, id: 'registration_email'  %>
   <%= f.label "Password" %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password,  id: 'registration_password' %>
   <%= f.label "Password confirmation" %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation,  id: 'reg_password_confirm' %>
   <%= f.label "Admin?" %>
   <%= f.check_box:admin %>
   <br>
