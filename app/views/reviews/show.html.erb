@@ -4,7 +4,7 @@
 <h3>Review:</h3>
 <p><%= @review.content_body %></p>
 
-<% if current_user.admin %>
+<% if current_user && current_user.admin %>
   <h3>Admin Only</h3>
   <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
   <p><%= link_to "Delete review", product_review_path(@product, @review),
