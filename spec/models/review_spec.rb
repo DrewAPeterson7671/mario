@@ -12,10 +12,3 @@ describe Review do
   it { should validate_numericality_of(:rating). is_less_than_or_equal_to(5)  }
   it { should validate_numericality_of(:rating). is_greater_than_or_equal_to(1)  }
 end
-
-describe Review do
-  it("titleizes the author of a review") do
-    review = Review.create({author: "mr meseeks", content_body: "Note that this schema.rb definition is the authoritative source for your database schema. If you need to create the application database on another.", rating: 5})
-    expect(review.author()).to(eq("Mr Meseeks"))
-  end
-end
