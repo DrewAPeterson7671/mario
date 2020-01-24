@@ -16,8 +16,11 @@ class Product < ApplicationRecord
     .order("reviews_count DESC")
     .limit(5)
     )}
+
   scope :newest_product, -> {  order(created_at: :desc).limit(3) }
-  scope :made_usa, -> { where(country: "USA") }
+
+  scope :made_usa, -> { where(country: "Usa") }
+
   scope :search, -> (name_parameter) { where("name like ?", "%#{name_parameter}%")}
 
   private
