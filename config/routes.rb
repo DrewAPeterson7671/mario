@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
-  
-  resources :users
+
   root to: 'products#index'
+  resources :users
   resources :products do
     resources :reviews
   end
