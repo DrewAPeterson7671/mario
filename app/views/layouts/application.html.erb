@@ -12,10 +12,20 @@
 
   <body>
     <div class="container">
+      <% if current_user %>
+        <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
+      <% else %>
+        <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+      <% end %>
 
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
-    <%= yield %>
-  </div>
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+
+      <%= yield %>
+
+      <p><%= link_to "Return to products", products_path %></p>
+
+
+    </div>
   </body>
 </html>

@@ -1,3 +1,7 @@
 <h1>Edit product</h1>
 
-<%= render "layouts/product_form" %>
+<% if current_user.admin %>
+  <%= render "layouts/project_form" %>
+<% else %>
+  <p>Admin Only</p>
+<% end %>
