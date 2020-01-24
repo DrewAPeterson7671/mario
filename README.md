@@ -6,7 +6,7 @@
 
 ## Description
 
-_Application to list products and reviews._
+_Application to list products and reviews including CRUD functionality with authentication and admin permissions._
 
 ## Setup/Installation Requirements
 
@@ -16,6 +16,7 @@ _Application to list products and reviews._
 * Run bundle install to manage gems; if you make additional changes to the Gemfile, you will need to run this command again.
 * DATABASE INSTRUCTIONS - from the root directory of this project, run these commands:
 *         rake db:create
+*         rake db:migrate
 *         rake db:test:prepare
 
 
