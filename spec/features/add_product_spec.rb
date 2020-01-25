@@ -89,7 +89,24 @@ describe "the user sign in" do
   end
 end
 
-
+describe "the user registration process for admin" do
+  it "checks admin privleges" do
+    visit products_path
+    click_link 'Sign up'
+    find('#registration_email').set('lara@lara.com')
+    find('#registration_password').set('pass')
+    find('#reg_password_confirm').set('pass')
+    # page.check('admin_check')
+    # check '#admin_check'
+    # check 'Admin?'
+    # find("#admin_check[value='1']").set(true)
+    # check 'admin_check'
+    find('#admin_check').set(true)
+    click_on 'Sign Up'
+    # expect(page).to have_content "Admin Only"
+    expect(page).to have_content "Create new product"
+  end
+end
 
 # describe "the add a product process" do
 #   it "adds a new product" do
