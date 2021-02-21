@@ -17,6 +17,8 @@ _This Application in Ruby-Rails is a code review I completed for my boot camp, E
 
 _to list products and reviews including CRUD functionality with authentication and admin permissions._
 
+_See the deployed app on Heroku: https://marios-specialty-foods.herokuapp.com/_
+
 ## Setup/Installation Requirements
 
 * Requires Ruby 2.6.5, Rails 5.2.4 and PostgresQL. 
