@@ -6,7 +6,7 @@
 
 ## Description
 
-_This Application in Ruby-Rails is a code review I completed for my boot camp, Epidcodus.  It is a test required to be finished in 8 hours to these specifications:_
+_This Application in Ruby-Rails is a code review I completed for my boot camp, Epicodus.  It is a test required to be finished in 8 hours to these specifications:_
 
 * Create from scratch Ruby/Rails app for a food importer showcasing their imported products.
 * Create an authentication system for users to log in.
