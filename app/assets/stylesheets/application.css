@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {font-family: "Snell Roundhand"; src: url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.eot"); src: url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.woff") format("woff"), url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.svg#Snell Roundhand") format("svg"); } 
+
+.header-container {
+  position: relative;
+}
+
+.header-image {
+  padding: 5px;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 400px;
+  width: 100%;
+  height: auto;
+  opacity: 0.35;
+}
+
+.header-top-left {
+  position: absolute;
+  padding-bottom: 100px;
+  top: 34px;
+  left: 16px;
+  font-size: 6vw;
+  line-height: 65px;
+  min-width: 400px;
+  font-family: 'Snell Roundhand', cursive;
+}
