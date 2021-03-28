@@ -10,9 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+
+ 
+ 
+ // Custom Boostratp Variables must be imported before bootstrap
+ @import "bootstrap";
 
 @font-face {font-family: "Snell Roundhand"; src: url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.eot"); src: url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.woff") format("woff"), url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.svg#Snell Roundhand") format("svg"); } 
 
