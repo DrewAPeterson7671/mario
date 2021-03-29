@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
 
-  root to: 'products#index'
+  root to: 'pages#home'
   resources :users
   resources :products do
     resources :reviews
   end
+  resources :reviews
 end
