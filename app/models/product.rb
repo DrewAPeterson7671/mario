@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates_length_of :price, maximum: 8
   validates :country, presence: true
-  validates_length_of :country, maximum: 30
+  validates_length_of :country, maximum: 50
 
   before_save(:titleize_product)
 
@@ -14,14 +14,14 @@ class Product < ApplicationRecord
     .joins(:reviews)
     .group("products.id")
     .order("reviews_count DESC")
-    .limit(5)
+    .limit(6)
     )}
 
-  scope :newest_product, -> {  order(created_at: :desc).limit(3) }
+  scope :newest_product, -> {  order(created_at: :desc).limit(6) }
 
-  scope :made_usa, -> { where(country: "Usa") }
+  scope :made_usa, -> { where(country: "United States Of America").limit(6) }
 
-  scope :search, -> (name_parameter) { where("name like ?", "%#{name_parameter}%")}
+  scope :search, -> (name_parameter) { where("name like ?", "%#{name_parameter}%").limit(6) }
 
   private
     def titleize_product
