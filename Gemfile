@@ -39,6 +39,7 @@ gem 'jquery-rails'
 gem 'faker'
 gem 'capybara'
 gem 'bootstrap', '~> 4.3.1'
+gem 'will_paginate', '~> 3.1.0'
 
 
 

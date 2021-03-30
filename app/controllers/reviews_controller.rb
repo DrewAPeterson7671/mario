@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @reviews = Review.all
+    @reviews = Review.all.paginate(page: params[:page], per_page: 10)
   end
   
   def new
