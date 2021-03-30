@@ -1,35 +1,45 @@
-<h1>Welcome to Mario's</h1>
-<p>Exotic Foods for the Discerning Palet</p>
-
-<% if @most_reviews.any? %>
-  <h2>Most Reviewed Products</h2>
-  <ul>
-    <% @most_reviews.each do |most_review| %>
-      <li><%= link_to most_review.name, product_path(most_review) %></li>
+<div class="home-container">
+  <div class="welcome-sub-header">
+    <h1>Welcome to Mario's</h1>
+    <p>Exotic tastes for the discerning palet</p>
+  </div>
+    <% if @most_reviews.any? %>
+      <h2>Most Reviewed Products</h2>
+      <div class="products">
+        <ul>
+          <% @most_reviews.each do |most_review| %>
+            <li><%= link_to most_review.name, product_path(most_review) %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+      <p>There are no most recent reviews (yet).</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no most recent reviews (yet).</p>
-<% end %>
 
-<% if @newest_products.any? %>
-  <h2>Newest Products</h2>
-  <ul>
-    <% @newest_products.each do |newest_product| %>
-      <li><%= link_to newest_product.name, product_path(newest_product) %></li>
+    <% if @newest_products.any? %>
+      <h2>Newest Products</h2>
+      <div class="products">
+        <ul>
+          <% @newest_products.each do |newest_product| %>
+            <li><%= link_to newest_product.name, product_path(newest_product) %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+      <p>There are no newest products (yet).</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no newest products (yet).</p>
-<% end %>
 
-<% if @made_usas.any? %>
-  <h2>Top Products From the US of A</h2>
-  <ul>
-    <% @made_usas.each do |made_usas| %>
-      <li><%= link_to made_usas.name, product_path(made_usas) %></li>
+    <% if @made_usas.any? %>
+      <h2>Top Products From the US of A</h2>
+      <div class="products">
+        <ul>
+          <% @made_usas.each do |made_usas| %>
+            <li><%= link_to made_usas.name, product_path(made_usas) %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+      <p>There are no newest products (yet).</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no newest products (yet).</p>
-<% end %>
+
+</div>

@@ -73,4 +73,30 @@
   right: 10px;
 }
 
+// Footer Styles
+
+// Home Page Styles
+
+.welcome-sub-header {
+  text-align: center;
+}
+
+
+// UL to cards
+
+.products {
+  padding: 2rem;
+}
+
+.products > ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+
+.products > ul > li {
+  border: 1px solid #ccc;
+  border-radius: .3rem;
+}
 
