@@ -85,14 +85,23 @@
 
 // UL to cards
 
+.product-headers {
+  text-align: left;
+}
+
 .products {
   padding: 2rem;
+}
+
+.products > h2 {
+  grid-column: none;
+  color: red;
 }
 
 .products > ul {
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
 }
 
