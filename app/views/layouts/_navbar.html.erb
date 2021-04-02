@@ -5,11 +5,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item nav-link active" <%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %>
+      <li class="nav-text-color nav-item nav-link active" 
+        <%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %>
       </li>
-      <li class="nav-item nav-link active" <%= 'active' if current_page?(products_path) %>"><%= link_to "Products", products_path %>
+      <li class="nav-item nav-link active nav-text-color" 
+        <%= 'active' if current_page?(products_path) %>"><%= link_to "Products", products_path %>
       </li>
-      <li class="nav-item nav-link active" <%= 'active' if current_page?(reviews_path) %>"><%= link_to "Reviews", reviews_path %>
+      <li class="nav-item nav-link active nav-text-color" 
+        <%= 'active' if current_page?(reviews_path) %>"><%= link_to "Reviews", reviews_path %>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
