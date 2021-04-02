@@ -106,29 +106,25 @@ a span {
 
 // UL to cards
 
-.product-headers {
-  text-align: left;
-}
-
 .products {
   padding: 2rem;
-}
-
-.products > h2 {
-  grid-row: 1 / -1;
-  color: red;
-}
-
-.products > ul {
-  list-style-type: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
-}
+  
+  & > h2 {
+    grid-column: 1 / -1;
+  }
+  
+  & > ul {
+    list-style-type: none;
+  }
+  
+  & > ul > li {
+    border: 1px solid #ccc;
+    border-radius: .3rem;
+  }
 
-.products > ul > li {
-  border: 1px solid #ccc;
-  border-radius: .3rem;
 }
 
 .card {
