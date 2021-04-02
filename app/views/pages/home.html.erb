@@ -8,7 +8,7 @@
     <% if @most_reviews.any? %>
       <h2>Most Reviewed Products</h2>
 
-      <%= render "pages/newest-product-card" %>
+      <%= render "pages/most-reviews-card" %>
 
     <% else %>
       <p>There are no most recent reviews (yet).</p>
@@ -25,13 +25,13 @@
 
     <% if @made_usas.any? %>
       <h2>Top Products From the US of A</h2>
-      <div class="products">
+
         <ul>
           <% @made_usas.each do |made_usas| %>
             <li><%= link_to made_usas.name, product_path(made_usas) %></li>
           <% end %>
         </ul>
-      </div>
+
     <% else %>
       <p>There are no newest products (yet).</p>
     <% end %>
