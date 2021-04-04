@@ -1,3 +1,6 @@
+<% if @user.avatar_pic.attached? %>
+  <%= image_tag @user.avatar_pic %>
+<% end %>
 <h1>Review: <%= @review.author %></h1>
 <h2>Product: <%= @product.name %></h2>
 <h3>Rating: <%= @review.rating %> of 5 stars</h3>

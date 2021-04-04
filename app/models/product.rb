@@ -7,6 +7,8 @@ class Product < ApplicationRecord
   validates :country, presence: true
   validates_length_of :country, maximum: 50
 
+  has_one_attached :product_photo
+
   before_save(:titleize_product)
 
   scope :most_reviewed, -> {(
