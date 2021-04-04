@@ -2,6 +2,11 @@
 <h3>$<%= @product.price %></h3>
 <h3>Imported From <%= @product.country %></h3>
 
+<% if @product.product_photo.attached? %>
+  <%= image_tag @product.product_photo %>
+<% end %>
+
+@product.product_photo
 
 <% if @product.reviews.any? %>
 
