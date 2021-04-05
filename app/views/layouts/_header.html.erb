@@ -3,11 +3,11 @@
       <div class="header-top-left">Mario's Specialty Food Products</div>
       <div class="authentication-position">
         <% if current_user %>
-          <a class="authentication-text" href="/signout">Sign Out</a>
           <%= current_user.email %>
+          <p class="authentication-text"> | </p>
+          <a class="authentication-text" href="/signout">Sign Out</a>
         <% else %>
           <a class="authentication-text" href="/signin">Sign In</a>
-          <p class="authentication-text"> | </p>
           <a class="authentication-text" href="/signup">Sign Up</a>
         <% end %>
       </div>  

@@ -3,11 +3,9 @@
 <% if @products.any? %>
   <h2>All Products</h2>
   <div class="products">
-    <ul>
-      <% @products.each do |product| %>
-        <li><%= link_to product.name, product_path(product) %></li>
-      <% end %>
-    </ul>
+
+  <%= render "products/product-card" %>
+
   </div>
 <% else %>
   <p>There are no products yet.</p>
