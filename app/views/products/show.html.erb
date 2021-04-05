@@ -1,12 +1,13 @@
 <h1><%= @product.name %></h1>
-<h3>$<%= @product.price %></h3>
-<h3>Imported From <%= @product.country %></h3>
+<p>$<%= @product.price %></p>
+<p>Imported From <%= @product.country %></p>
 
 <% if @product.product_photo.attached? %>
-  <%= image_tag @product.product_photo %>
+  <%= image_tag @product.product_photo, class:"card-image" %>
+  <% else %>
+  <%= image_tag 'image_not_available.webp', class:"card-image-not-found", alt: 'Image Not Found ' %>
 <% end %>
 
-@product.product_photo
 
 <% if @product.reviews.any? %>
 
