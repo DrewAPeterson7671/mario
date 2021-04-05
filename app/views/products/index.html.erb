@@ -1,19 +1,21 @@
-<h1>Our Products</h1>
+<h1 class="centered-header">Our Products</h1>
 
-<% if @products.any? %>
-  <h2>All Products</h2>
-  <div class="products">
+<div class="products">
 
-  <%= render "products/product-card" %>
+  <% if @products.any? %>
 
-  </div>
-<% else %>
-  <p>There are no products yet.</p>
-<% end %>
+    <%= render "products/product-card" %>
 
-<% if current_user && current_user.admin %>
-  <h3>Admin Only</h3>
-  <p><%= link_to "Create new product", new_product_path %></p>
-<% end %>
+  <% else %>
+    <p>There are no products yet.</p>
+  <% end %>
 
-<%= will_paginate @products %>
+</div>
+
+  <% if current_user && current_user.admin %>
+    <h3>Admin Only</h3>
+    <p><%= link_to "Create new product", new_product_path %></p>
+  <% end %>
+
+  <%= will_paginate @products %>
+  
