@@ -4,7 +4,11 @@
     <h2><%= link_to most_review.name, product_path(most_review)%></h2>
     <p>$<%= most_review.price %></p>
     <p>Imported From <%= most_review.country %></p>
-
+    <% if most_review.product_photo.attached? %>
+      <%= image_tag most_review.product_photo, class:"card-image" %>
+      <% else %>
+      <%= image_tag 'image_not_available.webp', class:"card-image-not-found", alt: 'Image Not Found ' %>
+    <% end %>
   </div>
 <% end %>  
 

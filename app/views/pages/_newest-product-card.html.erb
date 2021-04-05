@@ -4,5 +4,10 @@
     <h2><%= link_to newest_product.name, product_path(newest_product) %></h2>
     <p>$<%= newest_product.price %></p>
     <p>Imported From <%= newest_product.country %></p>
+    <% if newest_product.product_photo.attached? %>
+      <%= image_tag newest_product.product_photo, class:"card-image" %>
+      <% else %>
+      <%= image_tag 'image_not_available.webp', class:"card-image-not-found", alt: 'Image Not Found ' %>
+    <% end %>
   </div>
 <% end %>  
