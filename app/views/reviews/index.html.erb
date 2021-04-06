@@ -4,6 +4,12 @@
   <h2>All reviews</h2>
   <ul>
     <% @reviews.each do |review| %>
+        <% _user = User.where(user_name: review.author) %>
+        <% if _user.avatar_pic.attached? %>
+          <%= image_tag _user.avatar_pic, class:"avatar-tiny" %><br>
+          <% else %>
+          <%= image_tag 'generc_profile_pic.webp', class:"avatar", alt: 'Avatar Not Found ' %><br>
+        <% end %>
       <li><%= link_to review.author, review_path(review) %></li> 
     <% end %>
   </ul>

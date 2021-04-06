@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
+  before_action :signed_in_user
 
   def index
     @reviews = Review.all.paginate(page: params[:page], per_page: 30)
@@ -54,7 +55,7 @@ class ReviewsController < ApplicationController
 
   private
     def review_params
-      params.require(:review).permit(:author, :content_body, :rating)
+      params.require(:review).permit(:author, :content_body, :rating, :user_id)
     end
 
 end

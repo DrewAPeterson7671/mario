@@ -8,11 +8,12 @@
               <% else %>
               <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
             <% end %>
-          <%= link_to current_user.email, edit_user_path(current_user)%>
+          <%= link_to current_user.email, user_path(current_user)%>
           <p class="authentication-text"> | </p>
           <a class="authentication-text" href="/signout">Sign Out</a>
         <% else %>
           <a class="authentication-text" href="/signin">Sign In</a>
+          <p class="authentication-text"> | </p>
           <a class="authentication-text" href="/signup">Sign Up</a>
         <% end %>
       </div>  
