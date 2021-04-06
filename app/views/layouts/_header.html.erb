@@ -3,7 +3,12 @@
       <div class="header-top-left">Mario's Specialty Food Products</div>
       <div class="authentication-position">
         <% if current_user %>
-          <%= current_user.email %>
+            <% if current_user.avatar_pic.attached? %>
+              <%= image_tag current_user.avatar_pic, class:"avatar-tiny" %>
+              <% else %>
+              <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
+            <% end %>
+          <%= link_to current_user.email, edit_user_path(current_user)%>
           <p class="authentication-text"> | </p>
           <a class="authentication-text" href="/signout">Sign Out</a>
         <% else %>

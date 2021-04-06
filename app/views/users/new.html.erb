@@ -1,17 +1,3 @@
-<h1> Sign up</h1>
-<%= form_for @user do |f| %>
-  <%= f.label "Email" %>
-  <%= f.text_field :email, id: 'registration_email'  %>
-  <%= f.label "Password" %>
-  <%= f.password_field :password,  id: 'registration_password' %>
-  <%= f.label "Password confirmation" %>
-  <%= f.password_field :password_confirmation,  id: 'reg_password_confirm' %>
-  <br>
-  <%= f.label "Upload Avatar Image" %>  
-  <%= f.file_field :avatar_pic  %>
-  <br>
-  <%= f.label "Admin?", name: 'admin_check', id: 'admin_check' %>
-  <%= f.check_box:admin %>
-  <br>
-  <%= f.submit "Sign Up" %>
-<% end %>
+<h1>New User Sign up</h1>
+
+  <%= render "users/form_new_user" %>
