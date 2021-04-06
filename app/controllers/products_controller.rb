@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @products = Product.all.paginate(page: params[:page], per_page: 9)
+    @products = Product.all.paginate(page: params[:page], per_page: 12)
     render :index
   end
 

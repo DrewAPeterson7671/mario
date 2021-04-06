@@ -85,6 +85,23 @@ a span {
   right: 10px;
 }
 
+// Avatars
+
+.avatar-tiny {
+  width: 24px;
+  height: 24px;
+  padding: 1px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  padding: 1px;
+  border-radius: 25px;
+  object-fit: cover;
+}
 
 // Footer Styles
 
@@ -177,4 +194,10 @@ a span {
 
 .centered-header {
   text-align: center;
+}
+
+// Forms 
+
+.form-white-space {
+  white-space: pre-wrap;
 }
