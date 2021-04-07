@@ -1,14 +1,22 @@
-<h1>Our Reviews</h1>
+<h1 class="centered-header">Our Reviews</h1>
 
-<% if @reviews.any? %>
-  <h2>All reviews</h2>
-  <ul>
-    <% @reviews.each do |review| %>
-      <li><%= link_to review.author, review_path(review) %></li> 
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no reviews yet.</p>
-<% end %>
-
+<div class="reviews-container">
+  <% if @reviews.any? %>
+    <ul>
+      <div class="reviews-ul review-card ">
+        <% @reviews.each do |review| %>
+          <% _user = User.find_by(id: review.user_id) %>
+            <% if _user.avatar_pic.attached? %>
+              <%= image_tag _user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'  %>
+              <% else %>
+                <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
+            <% end %>
+          <li><%= link_to review.author, review_path(review), class:"reviews-li" %></li> 
+        <% end %>
+      </div>  
+    </ul>
+  <% else %>
+    <p>There are no reviews yet.</p>
+  <% end %>
+</div>
 <%= will_paginate @reviews%>

@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
-    @review = @product.reviews.new(review_params)
+    @review = @product.reviews.new(review_params.merge(:author => current_user.user_name, :user_id => current_user.id))
     if @review.save
       flash[:notice] = "Review successfully added!"
       redirect_to product_path(@product)
@@ -54,7 +54,7 @@ class ReviewsController < ApplicationController
 
   private
     def review_params
-      params.require(:review).permit(:author, :content_body, :rating)
+      params.require(:review).permit(:author, :content_body, :rating, :user_id)
     end
 
 end

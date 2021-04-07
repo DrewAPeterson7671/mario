@@ -14,16 +14,30 @@
 
   <h4>Here are the reviews for this product:</h4>
 
-  <% @product.reviews.each do |review| %>
-    <ul>
+  <div class="reviews-container">
+
+  <ul>
+    <div class="reviews-ul review-card ">
+    <% @product_reviews.each do |review| %>
+      <% _user = User.find_by(id: review.user_id) %>
+      <% if _user.avatar_pic.attached? %>
+        <%= image_tag _user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'  %>
+        <% else %>
+          <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
+      <% end %>
       <li>
-        <%= link_to review.author, product_review_path(@product, review) %>
+        <%= link_to review.author, product_review_path(@product, review), class:"reviews-li"  %>
       </li>
-    </ul>
-  <% end %>
+    <% end %>
+  </ul>
+</div>   
 <% else %>
   <p>No reviews are listed for this product.</p>
 <% end %>
+
+<%= will_paginate @product_reviews %>
+
+  </div>
 
 <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
 

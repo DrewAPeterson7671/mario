@@ -18,6 +18,10 @@
 // Custom Boostratp Variables must be imported before bootstrap
 @import "bootstrap";
 
+// custom Stylesheet Import links
+
+
+
 // General Text Styles
 
 @font-face {
@@ -222,3 +226,27 @@ a span {
   grid-area: right-col;
   border: 1px;
 }
+
+// Reviews Styles
+
+.reviews-container {
+  white-space: nowrap;
+}
+
+.reviews-ul {
+  list-style-type: none;
+}
+
+.reviews-li {
+  display: inline-block;
+}
+
+.review-card {
+  width: 500px;
+  height: 100ps;
+  border: 1px;
+}
+
+// Will Paginate Styling
+
+
