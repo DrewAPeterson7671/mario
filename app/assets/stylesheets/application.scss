@@ -137,6 +137,8 @@ a span {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
   
   & > h2 {
     grid-column: 1 / -1;
