@@ -15,12 +15,12 @@
 
     <div class="container">
 
-      <%= flash[:alert] %>
-      <%= flash[:notice] %>
+      <div class="flash-wrap">
+        <%= content_tag(:p, notice, class: 'flash') if notice %>
+        <%= content_tag(:p, alert,  class: 'flash' ) if alert  %>
+      </div>
 
       <%= yield %>
-
-
 
     </div>
   </body>
