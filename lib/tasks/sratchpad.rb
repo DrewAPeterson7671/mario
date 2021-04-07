@@ -1,3 +1,10 @@
+@review = Review.find(params[:id]).paginate(page: params[:page], per_page: 10)
+
+# should go in products>show 
+
+
+
+
 @authors_unfiltered = []
 @reviews = Review.all
 @reviews.each do |review|

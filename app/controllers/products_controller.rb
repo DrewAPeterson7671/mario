@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @product_reviews = @product.reviews.paginate(page: params[:page], per_page: 10)
     render :show
   end
 

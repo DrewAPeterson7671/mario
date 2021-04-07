@@ -1,10 +1,1 @@
         
-  def update
-    @user = User.find(params[:id])
-    if @review.update(params)
-      flash[:notice] = "Profile successfully updated!"
-      redirect_to user_path(@user.user)
-    else
-      render :edit
-    end
-  end
