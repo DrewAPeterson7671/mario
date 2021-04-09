@@ -3,9 +3,26 @@
 # should go in products>show 
 
 
+r = Review.find_by(author: "Birchibald \"Birch\" T. Barlow")
+r.update_attributes(author: "Birchibald T Barlow")
+
+
+
+@birchs = Review.where(author: "Birchibald \"Birch\" T. Barlow")
+@birchs.each do |birch|
+  birch.update_attributes(author: "Birchibald T Barlow")
+  birch.save
+end
+
+@diamonds = Review.where(author: "Mayor \"Diamond Joe\" Quimby")
+@diamonds.each do |diamond|
+  diamond.update_attributes(author: "Mayor Diamond Joe Quimby")
+  diamond.save
+end
 
 
 @authors_unfiltered = []
+@authors = []
 @reviews = Review.all
 @reviews.each do |review|
   @authors_unfiltered.push(review.author)
