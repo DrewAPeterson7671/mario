@@ -41,7 +41,7 @@ gem 'capybara'
 gem 'bootstrap', '~> 4.3.1'
 gem 'will_paginate', '~> 3.1.0'
 gem 'mini_magick'
-
+gem "aws-sdk-s3", require: false
 
 
 group :development, :test do
