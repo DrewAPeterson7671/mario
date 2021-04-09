@@ -5,7 +5,14 @@ class User < ApplicationRecord
   validates :user_name, :presence => true, :uniqueness => true
   before_save :encrypt_password
 
+  attr_accessor :remove_avatar
+
   has_one_attached :avatar_pic
+
+  after_save :purge_avatar, if: :remove_avatar
+  private def purge_avatar
+    avatar_pic.purge
+  end
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
