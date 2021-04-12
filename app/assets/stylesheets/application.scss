@@ -122,6 +122,15 @@ a span {
   object-fit: cover;
 }
 
+// non-card product images
+
+.product-image {
+  height: 100px;
+  padding: 1px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
 // Footer Styles
 
 // Navbar Styles
@@ -202,6 +211,14 @@ a span {
 .card-image-not-found {
   padding: 1px;
   width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-image-not-found-sm {
+  padding: 1px;
+  height: 100px;
   display: block;
   margin-left: auto;
   margin-right: auto;
