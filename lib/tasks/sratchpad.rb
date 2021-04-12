@@ -1,8 +1,8 @@
-@review = Review.find(params[:id]).paginate(page: params[:page], per_page: 10)
-
-# should go in products>show 
 
 
+
+
+## turning authors into users
 r = Review.find_by(author: "Birchibald \"Birch\" T. Barlow")
 r.update_attributes(author: "Birchibald T Barlow")
 
@@ -45,22 +45,20 @@ end
 end
 
 
+## average review test
 
+_average_reviews = []
+_rev_count = 0
+_new_average = 0.0
+@product = Product.find_by(id: 75)
 
-
-
-
-@review_ids = @reviews.where(author: author)
-@review_ids.each do |review_id|
-  _user_new_id = User.find_by(user_name: author).pluck(:id)
-  review_id.update_attributea(user_id: _user_new_id)
+_average_reviews = Review.where(product_id: @product.id)
+_average_reviews.each do |average_review|
+  _rev_count += average_review.rating
 end
+_new_average = (_rev_count / _average_reviews.length.to_f).round(1)
+@product.update_attributes(average_review: _new_average)
 
-r = Review.find_by(author: "Mayor \"Diamond Joe\" Quimby")
-r.update_attributes(author: "Mayor Diamond Joe Quimby")
-
-r = Review.find_by(author: "I Mojo Jojo@Yahoo.Com")
-r.update_attributes(author: "I Mojo Jojo")
 
 
 

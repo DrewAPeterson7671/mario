@@ -1,20 +1,38 @@
 
 <% _user = User.find_by(id: @review.user_id) %>
-<% if _user.avatar_pic.attached? %>
-  <%= image_tag _user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'  %>
+
+<h1>Product Review</h1>
+
+<% if @product.product_photo.attached? %>
+  <%= image_tag @product.product_photo, class:"product-image" %>
   <% else %>
-    <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
+  <%= image_tag 'image_not_available.webp', class:"card-image-not-found-sm", alt: 'Image Not Found ' %>
 <% end %>
 
-<h1>Review: <%= @review.author %></h1>
-<h2>Product: <%= @product.name %></h2>
-<h3>Rating: <%= @review.rating %> of 5 stars</h3>
-<h3>Review:</h3>
+<% if _user.avatar_pic.attached? %>
+  <%= image_tag _user.avatar_pic, class:"avatar", alt: 'User Avatar'  %>
+  <% else %>
+    <%= image_tag 'generc_profile_pic.webp', class:"avatar", alt: 'Avatar Not Found ' %>
+<% end %>
+<p>Reviewer: <%= @review.author %></p>
+<p>Product: <%= @product.name %></p>
+<p>Rating: <%= @review.rating %> of 5 stars</p>
+<p>Review:</p>
 <p><%= @review.content_body %></p><br><br><br>
 
-<% if current_user && current_user.admin %>
-  <h3>Admin Only</h3>
+<% if current_user.id == @review.user_id %>
   <div class="centered-header">
+  <h3>Edit My Post</h3>
+    <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
+    <p><%= link_to "Delete review", product_review_path(@product, @review),
+                            :data => {:confirm => "Are you sure?",
+                            :method => "delete"} %></p>
+  </div>                          
+<% end %>
+
+<% if current_user.admin? %>
+  <div class="centered-header">
+  <h3>Admin Only</h3>
     <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
     <p><%= link_to "Delete review", product_review_path(@product, @review),
                             :data => {:confirm => "Are you sure?",
