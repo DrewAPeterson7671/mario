@@ -1,3 +1,8 @@
+<%= link_to "Previous Product", @product.previous %> | <%= link_to "Next Product", @product.next %>
+
+
+
+
 <h1><%= @product.name %></h1>
 <p>Average Rating:</p>
 <div class="stars" style="--rating: <%= @product.average_review %>;" aria-label="Rating of this product is " <%= @product.average_review %> " out of 5."></div>

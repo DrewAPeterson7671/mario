@@ -35,6 +35,14 @@ class Product < ApplicationRecord
     where("lower(reviews.author) LIKE :search OR lower(products.name) LIKE :search OR lower(reviews.content_body) LIKE :search", search: "%#{search.downcase}%").uniq
   end
 
+  def next
+    Product.where("id > ?", id).order("id ASC").first || Product.first
+  end
+
+  def previous
+    Product.where("id < ?", id).order("id DESC").first || Product.last
+  end
+
   private
     def titleize_product
       self.name = self.name.titleize

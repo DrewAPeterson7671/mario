@@ -12,6 +12,14 @@ class Review < ApplicationRecord
 
   before_save(:titleize_review)
 
+  def next
+    Review.where("id > ?", id).order("id ASC").first || Review.first
+  end
+
+  def previous
+    Review.where("id < ?", id).order("id DESC").first || Review.last
+  end
+  
   private
     def titleize_review
       self.author = self.author.titleize
