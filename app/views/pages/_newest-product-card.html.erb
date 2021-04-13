@@ -14,7 +14,7 @@
     <p>Imported From <%= newest_product.country %></p>
     <p>Introduced <%= newest_product.created_at.strftime('%F') %></p>
     <% if newest_product.product_photo.attached? %>
-      <%= image_tag newest_product.product_photo, class:"card-image" %>
+      <%= image_tag newest_product.product_photo, class:"card-image"%>
       <% else %>
       <%= image_tag 'image_not_available.webp', class:"card-image-not-found", alt: 'Image Not Found ' %>
     <% end %>
