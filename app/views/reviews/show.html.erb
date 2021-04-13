@@ -1,8 +1,8 @@
+<%= link_to "Previous Review", review_path(id: @review.previous, product_id: @review.product_id) %> | <%= link_to "Next Review", review_path(id: @review.next, product_id: @review.product_id) %>
 
 <% _user = User.find_by(id: @review.user_id) %>
 
 <h1>Product Review</h1>
-
 <% if @product.product_photo.attached? %>
   <%= image_tag @product.product_photo, class:"product-image" %>
   <% else %>

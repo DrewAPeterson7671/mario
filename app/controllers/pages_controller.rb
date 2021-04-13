@@ -12,9 +12,9 @@ class PagesController < ApplicationController
     else
       @parameter = params[:search].downcase
       # @results = Product.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
-      @results_products = Product.all.where("lower(name) LIKE ?", "%#{@parameter}%")
-      @results_reviewers = Review.all.where("lower(author) LIKE ?", "%#{@parameter}%")
-      @results_reviews = Review.all.where("lower(content_body) LIKE ?", "%#{@parameter}%")
+      @results_products = Product.all.where("lower(name) LIKE ?", "%#{@parameter}%").paginate(:page => params[:page], :per_page => 6)
+      @results_reviewers = Review.all.where("lower(author) LIKE ?", "%#{@parameter}%").paginate(:page => params[:page], :per_page => 6)
+      @results_reviews = Review.all.where("lower(content_body) LIKE ?", "%#{@parameter}%").paginate(:page => params[:page], :per_page => 6)
     end
   end
 
