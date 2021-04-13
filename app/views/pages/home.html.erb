@@ -5,35 +5,32 @@
   </div>
 
   <div class="products">
+
+    <% if @highest_revieweds.any? %>
+      <h2>Our Highest Reviewed Products</h2>
+
+      <%= render "pages/highest-reviewed-card" %>
+      
+    <% else %>
+      <p>There are no reviewed products (yet).</p>
+    <% end %>
+
     <% if @most_reviews.any? %>
-      <h2>Most Reviewed Products</h2>
+      <h2>Our Most Reviewed Products</h2>
 
       <%= render "pages/most-reviews-card" %>
 
     <% else %>
-      <p>There are no most recent reviews (yet).</p>
+      <p>There are no reviewed products (yet).</p>
     <% end %>
 
     <% if @newest_products.any? %>
-      <h2>Newest Products</h2>
+      <h2>Our Newest Products</h2>
 
       <%= render "pages/newest-product-card" %>
       
     <% else %>
-      <p>There are no newest products (yet).</p>
-    <% end %>
-
-    <% if @made_usas.any? %>
-      <h2>Top Products From the US of A</h2>
-
-        <ul>
-          <% @made_usas.each do |made_usas| %>
-            <li><%= link_to made_usas.name, product_path(made_usas) %></li>
-          <% end %>
-        </ul>
-
-    <% else %>
-      <p>There are no newest products (yet).</p>
+      <p>There are no new products (yet).</p>
     <% end %>
 
   </div>  
