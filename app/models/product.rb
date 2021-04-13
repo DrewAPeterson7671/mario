@@ -21,7 +21,13 @@ class Product < ApplicationRecord
 
   scope :newest_product, -> {  order(created_at: :desc).limit(6) }
 
-  scope :made_usa, -> { where(country: "United States Of America").limit(6) }
+  scope :highest_reviewed, -> {(
+    select("products.id, products.name, products.price, products.country, products.average_review as average_review")
+    .joins(:reviews)
+    .group("products.id")
+    .order("average_review DESC")
+    .limit(6)
+    )}
 
   scope :search, -> (name_parameter) { where("name like ?", "%#{name_parameter}%").limit(6) }
 
