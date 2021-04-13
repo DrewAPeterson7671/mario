@@ -10,9 +10,11 @@ class PagesController < ApplicationController
     if params[:search].blank?
       redirect_to(root_path, alert: "Search Field Was Blank!") and return
     else
-      # @parameter = params[:search].downcase
+      @parameter = params[:search].downcase
       # @results = Product.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
-      @results = Product.joins(:reviews).search(params[:search]).order("reviews.author DESC")
+      @results_products = Product.all.where("lower(name) LIKE ?", "%#{@parameter}%")
+      @results_reviewers = Review.all.where("lower(author) LIKE ?", "%#{@parameter}%")
+      @results_reviews = Review.all.where("lower(content_body) LIKE ?", "%#{@parameter}%")
     end
   end
 
