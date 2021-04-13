@@ -20,22 +20,26 @@
 <p>Review:</p>
 <p><%= @review.content_body %></p><br><br><br>
 
-<% if current_user.id == @review.user_id %>
-  <div class="centered-header">
-  <h3>Edit My Post</h3>
-    <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
-    <p><%= link_to "Delete review", product_review_path(@product, @review),
-                            :data => {:confirm => "Are you sure?",
-                            :method => "delete"} %></p>
-  </div>                          
-<% end %>
+<% if current_user.present? %>
+  <% if current_user.id == @review.user_id %>
+    <div class="centered-header">
+    <h3>Edit My Post</h3>
+      <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
+      <p><%= link_to "Delete review", product_review_path(@product, @review),
+                              :data => {:confirm => "Are you sure?",
+                              :method => "delete"} %></p>
+    </div>                          
+  <% end %>
 
-<% if current_user.admin? %>
-  <div class="centered-header">
-  <h3>Admin Only</h3>
-    <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
-    <p><%= link_to "Delete review", product_review_path(@product, @review),
-                            :data => {:confirm => "Are you sure?",
-                            :method => "delete"} %></p>
-  </div>                          
-<% end %>
+  <% if current_user.admin? %>
+    <div class="centered-header">
+    <h3>Admin Only</h3>
+      <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
+      <p><%= link_to "Delete review", product_review_path(@product, @review),
+                              :data => {:confirm => "Are you sure?",
+                              :method => "delete"} %></p>
+    </div>                          
+  <% end %>
+  
+<% end %>  
+

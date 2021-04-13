@@ -1,0 +1,27 @@
+<div class="home-container">
+  <div class="welcome-sub-header">
+    <h1>Search Results</h1>
+
+    <h2>Products that Match</h2>
+      <% @results_products.each do |results_product| %>
+        <%= link_to results_product.name, product_path(results_product.id) %><br>
+      <% end %>
+    <h2>Product Reviews that Match</h2>
+      <% @results_reviewers.each do |results_reviewer| %>
+        <% _reviewed_product = Product.find_by(id: results_reviewer.product_id) %>
+        <%= link_to (results_reviewer.author + " review of " + _reviewed_product.name), review_path(id: results_reviewer, product_id: results_reviewer.product_id) %><br>
+      <% end %>
+    <h2>Reviews Text that Matches</h2>
+      <% @results_reviews.each do |results_review| %>
+        <% _reviewed_product = Product.find_by(id: results_review.product_id) %>
+        <%= link_to (results_review.author + " review of " + _reviewed_product.name), review_path(id: results_review, product_id: results_review.product_id) %><br>
+        <%= results_review.content_body %>
+        <br>
+        <br>
+      <% end %>
+
+  </div>  
+
+  <div>Font made from <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a>is licensed by CC BY 3.0</div>
+
+</div>

@@ -29,7 +29,11 @@ class Product < ApplicationRecord
     .limit(6)
     )}
 
-  scope :search, -> (name_parameter) { where("name like ?", "%#{name_parameter}%").limit(6) }
+  # scope :search, -> (name_parameter) { where("name like ?", "%#{name_parameter}%").limit(100) }
+
+  def self.search(search)
+    where("lower(reviews.author) LIKE :search OR lower(products.name) LIKE :search", search: "%#{search.downcase}%").uniq
+  end
 
   private
     def titleize_product
