@@ -16,10 +16,19 @@
       </li>
     </ul>
 
-    <form class="form-inline my-2 my-lg-0 hidden-xs-hover">
+    <%= form_tag(search_page_path, :method => 'get',
+      class: 'form-inline my-2 my-lg-0 hidden-xs-hover') do %>
+      <div class='input-group'>
+        <%= search_field_tag :search, params[:search], placeholder: "Search", class: 'form-control mr-sm-2 hidden-xs' %>
+      </div>
+      <%= button_tag "Search", :class => 'btn btn-outline-success my-2 my-sm-0', :name => nil %>
+
+    <% end %>  
+
+    <%# <form class="form-inline my-2 my-lg-0 hidden-xs-hover">
       <input class="form-control mr-sm-2 hidden-xs" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> %>
 
   </div>
 </nav>
