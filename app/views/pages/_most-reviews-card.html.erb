@@ -2,8 +2,10 @@
 <% @most_reviews.each do |most_review| %>
   <div class="card">
     <h2><%= link_to most_review.name, product_path(most_review)%></h2>
+    <div class="stars" style="--rating: <%= most_review.average_review %>;" aria-label="Rating of this product is " <%= most_review.average_review %> " out of 5."></div>
     <p>$<%= most_review.price %></p>
     <p>Imported From <%= most_review.country %></p>
+    <p>Number of Reviews <%= most_review.reviews_count %>
     <% if most_review.product_photo.attached? %>
       <%= image_tag most_review.product_photo, class:"card-image" %>
       <% else %>
