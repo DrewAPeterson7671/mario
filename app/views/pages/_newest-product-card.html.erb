@@ -1,6 +1,9 @@
 
 <% @newest_products.each do |newest_product| %>
   <div class="card">
+    <div class="arrow-new">
+      <span>New!</span>
+    </div>
     <h2><%= link_to newest_product.name, product_path(newest_product) %></h2>
     <div 
       class="stars" style="--rating: 
@@ -11,11 +14,8 @@
     </div>
 
     <p>$<%= newest_product.price %> per lb</p>
-    <div class="card-text-up-most-rev">
-      <p>Imported From <%= newest_product.country %></p>
-    </div>
     <div class="card-text-up">
-      <p>Introduced <%= newest_product.created_at.strftime('%F') %></p>
+      <p>Imported From <%= newest_product.country %></p>
     </div>
     <% if newest_product.product_photo.attached? %>
       <%= image_tag newest_product.product_photo, class:"card-image"%>
