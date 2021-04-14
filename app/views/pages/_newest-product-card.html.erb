@@ -10,9 +10,13 @@
        " out of 5.">
     </div>
 
-    <p>$<%= newest_product.price %></p>
-    <p>Imported From <%= newest_product.country %></p>
-    <p>Introduced <%= newest_product.created_at.strftime('%F') %></p>
+    <p>$<%= newest_product.price %> per lb</p>
+    <div class="card-text-up-most-rev">
+      <p>Imported From <%= newest_product.country %></p>
+    </div>
+    <div class="card-text-up">
+      <p>Introduced <%= newest_product.created_at.strftime('%F') %></p>
+    </div>
     <% if newest_product.product_photo.attached? %>
       <%= image_tag newest_product.product_photo, class:"card-image"%>
       <% else %>

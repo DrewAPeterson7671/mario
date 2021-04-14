@@ -224,6 +224,18 @@ a span {
   margin-right: auto;
 }
 
+.card-text-up {
+  position: relative;
+  margin-top: -18px;
+  margin-bottom: -15px;
+}
+
+.card-text-up-most-rev {
+  position: relative;
+  margin-top: -20px;
+  margin-bottom: -4px;
+}
+
 // Product Page Styles
 
 .centered-header {
@@ -382,6 +394,7 @@ a span {
   font-size: var(--star-size);
   font-family: Times; // make sure ★ appears correctly
   line-height: 1;
+  margin-top: -12px;
   
   &::before {
     content: '★★★★★';
