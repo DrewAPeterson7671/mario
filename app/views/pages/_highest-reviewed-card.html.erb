@@ -10,8 +10,10 @@
        " out of 5.">
     </div>
 
-    <p>$<%= highest_reviewed.price %></p>
-    <p>Imported From <%= highest_reviewed.country %></p>
+    <p>$<%= highest_reviewed.price %> per lb</p>
+    <div class="card-text-up">
+      <p>Imported From <%= highest_reviewed.country %></p>
+    </div>
     <% if highest_reviewed.product_photo.attached? %>
       <%= image_tag highest_reviewed.product_photo, class:"card-image" %>
       <% else %>
