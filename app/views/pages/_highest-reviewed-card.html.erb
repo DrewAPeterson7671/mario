@@ -1,6 +1,9 @@
 
 <% @highest_revieweds.each do |highest_reviewed| %>
   <div class="card">
+    <div class="arrow-top-reviewed">
+      <span>Top Rated</span>
+    </div>
     <h2><%= link_to highest_reviewed.name, product_path(highest_reviewed) %></h2>
     <div 
       class="stars" style="--rating: 
