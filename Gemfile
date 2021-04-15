@@ -43,6 +43,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'mini_magick'
 gem "aws-sdk-s3", require: false
 gem 'aws-sdk', '~> 3'
+gem 'aws-sdk-core'
 
 
 group :development, :test do
