@@ -16,9 +16,10 @@
               <li><%= link_to review.author, review_path(id: review, product_id: review.product_id) %>
               </li>
               <p>On <%= review.created_at.strftime('%m-%d-%Y') %></p>
-              <div class="flex-break"></div>
-              <div class="stars review-stars" style="--rating: <%= review.rating %>;" aria-label="Rating of this review is " <%= review.rating %> " out of 5."></div>
-            </div>  
+            </div>
+            <div class="review-stars">  
+              <div class="stars" style="--rating: <%= review.rating %>;" aria-label="Rating of this review is " <%= review.rating %> " out of 5."></div>
+            </div>
           </div> 
         <% end %>
       </div>  
