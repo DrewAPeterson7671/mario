@@ -6,7 +6,7 @@
 
 ## Description
 
-_This Application in Ruby-Rails is a code review I completed for my boot camp, Epicodus.  It is a test required to be finished in 8 hours to these specifications:_
+_This Application is a marketplace for users to rate the products of an exotic food importer:_
 
 * Create from scratch Ruby/Rails app for a food importer showcasing their imported products.
 * Create an authentication system for users to log in.
@@ -28,12 +28,9 @@ _See the deployed app on Heroku: https://marios-specialty-foods.herokuapp.com/_
 * DATABASE INSTRUCTIONS - from terminal in the the root directory of this project, run these commands:
 *   rake db:create
 *   rake db:migrate
-*   rake db:test:prepare
 *   rake db:seed
 
 ## Known Bugs
-
-_Given the 8 hour time constraint, there priority was to focus on functionality and testing over styling. As a result the styling is minimal._
 
 _One known bug for testing was in dealing with creation of an admin profile, I wasn't able to find how to reliably test with the checkbox for admin.  I did pass the code review despite missing detail._
 
@@ -43,7 +40,7 @@ _Please contact me directly via email at drew.a.peterson@hotmail.com with any bu
 
 ## Technologies Used
 
-_Ruby 2.5.1, Postgres SQL, and PG, Pry, Bundler, Sinatra, rspec_
+_Ruby 2.5.1, Rails 5.2.4, Postgres SQL, Heroku, AWS S3, Active Storage_
 
 ### License
 
@@ -51,5 +48,5 @@ _Ruby 2.5.1, Postgres SQL, and PG, Pry, Bundler, Sinatra, rspec_
 
 
 
-Copyright (c) 2020 **_Drew Peterson_**
+Copyright (c) 2021 **_Drew Peterson_**
 
