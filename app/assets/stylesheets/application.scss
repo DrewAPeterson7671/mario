@@ -40,6 +40,7 @@
 
 @include headings {
   font-family: 'SnellRoundhand';
+  z-index: 100;
 }
 
 a {
@@ -275,15 +276,44 @@ a span {
   list-style-type: none;
 }
 
-.reviews-li {
-  display: inline-block;
+.review-card {
+  padding: 10px;
+  width: 500px;
+  height: 100px;
+  border: 1px;
+  padding: .5% .5% .5% .5%;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: 1.5px solid #CBCBCB;
+  border-top: 3px solid #65e252;
+  text-align: left;
+  overflow: hidden;
 }
 
-.review-card {
-  width: 500px;
-  height: 100ps;
-  border: 1px;
+.review-card-flex {
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+
+  & > p {
+    margin-left: auto;
+  }
+
+  & > .flex-break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+  & > .review-stars {
+    justify-content: center;
+    align-items: center;
+  }
+
 }
+
+
+
+
 
 // Will Paginate Styling
 
@@ -415,6 +445,7 @@ a span {
   position: absolute;
   top: -70px;
   width: 180px;
+  z-index: 1;
 
   -webkit-transform: rotate(-45deg);
 }
@@ -437,6 +468,7 @@ a span {
   position: absolute;
   top: -70px;
   width: 180px;
+  z-index: 1;
 
   -webkit-transform: rotate(-45deg);
 }
@@ -460,6 +492,7 @@ a span {
   position: absolute;
   top: -70px;
   width: 180px;
+  z-index: 1;
 
   -webkit-transform: rotate(-45deg);
 }
@@ -474,3 +507,5 @@ a span {
   position: absolute;
   width: 70px;
 }
+
+

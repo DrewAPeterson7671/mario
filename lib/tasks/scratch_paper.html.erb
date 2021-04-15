@@ -18,3 +18,10 @@
 </div>
 
 <%= link_to "Next Review", @review.next, @product.id %>
+
+
+  <% if current_user && current_user.admin %>
+      <h3>Admin Only</h3>
+      <%= f.label "Admin?", name: 'admin_check', id: 'admin_check', class: "form-col-1" %>
+      <%= f.check_box:admin %><br>
+  <% end %>

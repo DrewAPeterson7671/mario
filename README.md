@@ -32,8 +32,6 @@ _See the deployed app on Heroku: https://marios-specialty-foods.herokuapp.com/_
 
 ## Known Bugs
 
-_Given the 8 hour time constraint, there priority was to focus on functionality and testing over styling. As a result the styling is minimal._
-
 _One known bug for testing was in dealing with creation of an admin profile, I wasn't able to find how to reliably test with the checkbox for admin.  I did pass the code review despite missing detail._
 
 ## Support and contact details
@@ -42,7 +40,7 @@ _Please contact me directly via email at drew.a.peterson@hotmail.com with any bu
 
 ## Technologies Used
 
-_Ruby 2.5.1, Postgres SQL, Heroku, AWS S3_
+_Ruby 2.5.1, Rails 5.2.4, Postgres SQL, Heroku, AWS S3, Active Storage_
 
 ### License
 
