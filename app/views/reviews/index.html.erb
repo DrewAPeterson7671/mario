@@ -2,43 +2,13 @@
 
 <div class="reviews-container">
   <% if @reviews.any? %>
-
       <div class="reviews-ul">
         <% @reviews.each do |review| %>
-          <div class="review-card">
-            <div class="review-card-flex">
-              <div class="review-box1">
-                <% _user = @users.find_by(id: review.user_id) %>
-                  <% if _user.avatar_pic.attached? %>
-                    <%= image_tag _user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'  %>
-                    <% else %>
-                      <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
-                  <% end %>
-                <%= link_to review.author, review_path(id: review, product_id: review.product_id) %>
-              </div>
-              <div class="review-box2">
-                <% _product = @products.find_by(id: review.product_id) %>
-                <%= link_to _product.name, product_path(_product) %>
-                <%= ' from ' %>
-                <%= _product.country %>
-              </div>
-              <div class="review-box3">
-                <p>On <%= review.created_at.strftime('%m-%d-%Y') %></p>
-              </div>
-            </div>
-            <div class="review-stars">  
-              <div class="stars" style="--rating: <%= review.rating %>;" aria-label="Rating of this review is " <%= review.rating %> " out of 5."></div>
-            </div>
-            <div class="review-index-text">
-              <%= review.content_body  %>
-              <div></div>
-              <% if _product.product_photo.attached? %>
-                <%= image_tag _product.product_photo, class:"product-image-tiny", alt: 'Product Image'  %>
-                <% else %>
-                  <%= image_tag 'image_not_available.webp', class:"card-image-not-found", alt: 'Image Not Found' %>
-              <% end %>
-            </div>
-          </div> 
+          <% user = @users.find_by(id: review.user_id) %>
+          <% _product = @products.find_by(id: review.product_id) %>
+
+          <%= render partial: "review_cards", locals: { user: user, review: review, product: _product } %>
+
         <% end %>
       </div>
 

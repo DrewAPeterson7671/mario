@@ -1,0 +1,5 @@
+    <% if product.product_photo.attached? %>
+      <%= image_tag product.product_photo, class:"product-image-tiny", alt: 'Product Image'  %>
+      <% else %>
+        <%= image_tag 'image_not_available.webp', class:"card-image-not-found", alt: 'Image Not Found' %>
+    <% end %>

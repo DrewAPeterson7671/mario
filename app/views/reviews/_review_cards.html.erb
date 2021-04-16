@@ -1,0 +1,27 @@
+<div class="review-card">
+            <div class="review-card-flex">
+              <div class="review-box1">
+
+                <%= render partial: "shared/review_avatar", locals: { user: user, review: review } %>
+
+              </div>
+              <div class="review-box2">
+                <%= link_to product.name, product_path(product) %>
+                <%= ' from ' %>
+                <%= product.country %>
+              </div>
+              <div class="review-box3">
+                <p>On <%= review.created_at.strftime('%m-%d-%Y') %></p>
+              </div>
+            </div>
+
+              <%= render partial: "layouts/review_stars", locals: { review: review } %>
+  
+            <div class="review-index-text">
+              <%= review.content_body  %>
+              <div></div>
+
+                <%= render partial: "layouts/product_image", locals: { product: product } %>
+
+            </div>
+          </div> 
