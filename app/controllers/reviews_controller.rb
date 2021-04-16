@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all.paginate(page: params[:page], per_page: 30)
+    @users = User.all
+    @products = Product.all
     render :index
   end
   
