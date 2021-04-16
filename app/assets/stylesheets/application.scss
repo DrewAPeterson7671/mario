@@ -66,6 +66,21 @@ a span {
   align-items: center;
 }
 
+// Custom Scrollbar
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 // Header styles
 
 .header-container {
@@ -278,16 +293,25 @@ a span {
 
 .review-card {
   padding: 10px;
-  width: 500px;
+  width: 100%;
   height: 100px;
   border: 1px;
-  padding: 5px 5px 5px 5px;
-  padding-bottom: 5px;
+  padding: 5px 5px 0px 5px;
   border-radius: 5px;
   border: 1.5px solid #CBCBCB;
   border-top: 3px solid #65e252;
   text-align: left;
-  overflow: hidden;
+  overflow: scroll;
+
+  & > .scrollable-element {
+    scrollbar-face-color: #000000;
+    scrollbar-shadow-color: #2D2C4D;
+    scrollbar-highlight-color:#7D7E94;
+    scrollbar-3dlight-color: #7D7E94;
+    scrollbar-darkshadow-color: #2D2C4D;
+    scrollbar-track-color: #7D7E94;
+    scrollbar-arrow-color: #C1C1D1; 
+  }
 }
 
 .review-card-flex {
@@ -299,17 +323,14 @@ a span {
     margin-left: auto;
   }
 
-  // & > .flex-break {
-  //   flex-basis: 100%;
-  //   height: 0;
-  // }
-
 }
 
 .review-stars {
   text-align: center;
   margin-top: -18px;
 }
+
+
 
 
 // Will Paginate Styling

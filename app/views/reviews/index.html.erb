@@ -20,9 +20,12 @@
             <div class="review-stars">  
               <div class="stars" style="--rating: <%= review.rating %>;" aria-label="Rating of this review is " <%= review.rating %> " out of 5."></div>
             </div>
+            <div class="review-index-text">
+              <%= review.content_body %>
+            </div>
           </div> 
         <% end %>
-      </div>  
+      </div>
     </ul>
   <% else %>
     <p>There are no reviews yet.</p>
