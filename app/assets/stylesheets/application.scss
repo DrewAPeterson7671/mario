@@ -147,6 +147,14 @@ body::-webkit-scrollbar-thumb {
   object-fit: cover;
 }
 
+.product-image-tiny {
+  width: 24px;
+  height: 24px;
+  padding: 1px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 // Footer Styles
 
 // Navbar Styles
@@ -321,6 +329,9 @@ body::-webkit-scrollbar-thumb {
   margin-top: -18px;
 }
 
+.review-card-spacer {
+  padding-left: 15px;
+}
 
 
 
