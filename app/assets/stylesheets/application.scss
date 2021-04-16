@@ -318,17 +318,24 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-items: center;
   justify-content: center;
+  align-content: normal;
   flex-wrap: wrap;
 
-  & > p {
+  & > .review-box1 { // avatar
+    order: 1;
+    margin-right: auto;
+  }
+
+  & > .review-box2 { // product info
+    order: 2;
+    // margin: 0px auto;
+  }
+
+  & > .review-box3 { //date
+    order: 3;
     margin-left: auto;
   }
 
-  & > .review-product {
-    position: relative;
-    justify-content: center;
-    margin: 0px auto;
-  }
   
 }
 
