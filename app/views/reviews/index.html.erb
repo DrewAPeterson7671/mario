@@ -2,7 +2,7 @@
 
 <div class="reviews-container">
   <% if @reviews.any? %>
-    <ul>
+
       <div class="reviews-ul">
         <% @reviews.each do |review| %>
           <div class="review-card">
@@ -13,8 +13,8 @@
                   <% else %>
                     <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
                 <% end %>
-              <li><%= link_to review.author, review_path(id: review, product_id: review.product_id) %>
-              </li>
+              <%= link_to review.author, review_path(id: review, product_id: review.product_id) %>
+
               <p>On <%= review.created_at.strftime('%m-%d-%Y') %></p>
             </div>
             <div class="review-stars">  
@@ -26,7 +26,7 @@
           </div> 
         <% end %>
       </div>
-    </ul>
+
   <% else %>
     <p>There are no reviews yet.</p>
   <% end %>
