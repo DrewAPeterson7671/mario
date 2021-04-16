@@ -316,37 +316,20 @@ body::-webkit-scrollbar-thumb {
 
 .review-card-flex {
   display: flex;
-  // justify-items: center;
-  // justify-content: center;
-  // align-items: center;
   justify-content: space-between;
-  // align-content: center;
-  // flex-wrap: wrap;
 
   & > .review-box1 { // avatar
     order: 1;
     width: 78%;
-    // justify-self: flex-start;
-    // flex-basis: auto;
-    // margin-right: auto;
   }
 
   & > .review-box2 { // product info
     order: 2;
-    // text-align: center;
     width: 100%;
-    // flex: 1 0 0;
-    // flex-basis: auto;
-    // justify-self: center;
-    // margin: 0px auto;
   }
 
   & > .review-box3 { //date
     order: 3;
-    // width: 100%;
-    // // justify-self: flex-end;
-    // // flex-basis: auto;
-    // margin-left: auto;
   }
   
 }

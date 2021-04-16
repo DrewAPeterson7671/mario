@@ -26,9 +26,7 @@
       <%= f.check_box:admin %><br>
   <% end %>
 
-    <%= _product.name %>
-    <%= _product.country %>
-    <p> from </p>
-    <div class="review-card-spacer">
-      <%= review.content_body %>
-    <div>
+
+
+
+  <%= render partial: "review_avatar", :locals => { :review => review } %>
