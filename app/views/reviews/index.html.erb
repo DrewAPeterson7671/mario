@@ -7,7 +7,7 @@
           <% user = @users.find_by(id: review.user_id) %>
           <% _product = @products.find_by(id: review.product_id) %>
 
-          <%= render partial: "review_cards", locals: { user: user, review: review, product: _product } %>
+          <%= render partial: "shared/review_cards", locals: { user: user, review: review, product: _product } %>
 
         <% end %>
       </div>

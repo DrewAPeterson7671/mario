@@ -1,4 +1,4 @@
-<%= render "layouts/errors_reviews", :object => @review %>
+<%= render "shared/errors_reviews", :object => @review %>
 
 <%= form_for [@product, @review] do |f| %>
   <%= f.label :content_body %>

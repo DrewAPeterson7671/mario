@@ -15,13 +15,13 @@
               </div>
             </div>
 
-              <%= render partial: "layouts/review_stars", locals: { review: review } %>
+              <%= render partial: "shared/review_stars", locals: { review: review } %>
   
             <div class="review-index-text">
               <%= review.content_body  %>
               <div></div>
 
-                <%= render partial: "layouts/product_image", locals: { product: product } %>
+                <%= render partial: "shared/product_image", locals: { product: product } %>
 
             </div>
           </div> 
