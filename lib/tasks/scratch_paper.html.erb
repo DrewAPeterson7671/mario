@@ -26,7 +26,24 @@
       <%= f.check_box:admin %><br>
   <% end %>
 
+<%= render "shared/product_image", local: { product: product } %>
 
 
+  <%= render partial: "shared/review_cards", locals: { user: user, review: review, product: _product } %>
 
-  <%= render partial: "review_avatar", :locals => { :review => review } %>
+  <%= render partial: "shared/product_image", locals: { user: user, review: review, product: _product } %>
+
+
+          <div class="review-card">
+            
+            <% if _user.avatar_pic.attached? %>
+              <%= image_tag _user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'  %>
+              <% else %>
+                <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
+            <% end %>
+            <li>
+              <%= link_to review.author, product_review_path(@product, review), class:"reviews-li"  %>
+            </li>
+          </div>
+
+

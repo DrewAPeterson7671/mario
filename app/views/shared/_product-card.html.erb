@@ -1,16 +1,17 @@
 
 <% @products.each do |product| %>
   <div class="card">
+    
     <h2><%= link_to product.name, product_path(product) %></h2>
-    <div class="stars" style="--rating: <%= product.average_review %>;" aria-label="Rating of this product is " <%= product.average_review %> " out of 5."></div>
+
+    <%= render partial: "shared/review_stars", locals: { review: product.average_review } %>
+    
     <p>$<%= product.price %> per lb</p>
     <div class="card-text-up">
       <p>Imported From <%= product.country  %></p>
     </div>
-    <% if product.product_photo.attached? %>
-      <%= image_tag product.product_photo, class:"card-image" %>
-      <% else %>
-      <%= image_tag 'image_not_available.webp', class:"card-image-not-found", alt: 'Image Not Found ' %>
-    <% end %>
+
+      <%= render partial: "shared/product_image_big", locals: { product: product } %>
+
   </div>
 <% end %>  
