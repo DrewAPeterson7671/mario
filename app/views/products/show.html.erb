@@ -5,42 +5,28 @@
 
 <h1><%= @product.name %></h1>
 <p>Average Rating:</p>
-<div class="stars" style="--rating: <%= @product.average_review %>;" aria-label="Rating of this product is " <%= @product.average_review %> " out of 5."></div>
+
+<%= render partial: "shared/review_stars", locals: { review: @product.average_review } %>
+
 <p>$<%= @product.price %></p>
 <p>Imported From <%= @product.country %></p>
 
-<% if @product.product_photo.attached? %>
-  <%= image_tag @product.product_photo, class:"card-image" %>
-  <% else %>
-  <%= image_tag 'image_not_available.webp', class:"card-image-not-found", alt: 'Image Not Found ' %>
-<% end %>
+<%= render partial: "shared/product_image_big", locals: { product: @product } %>
 
+<p><%= link_to "Add a review", new_product_review_path(@product) %></p>
 
 <% if @product.reviews.any? %>
-
-
   <h4>Here are the reviews for this product:</h4>
 
   <div class="reviews-container">
+    <div class="reviews-ul">
+      <% @product_reviews.each do |review| %>
+        <% user = User.find_by(id: review.user_id) %>
 
-    <ul>
-      <div class="reviews-ul">
-        <% @product_reviews.each do |review| %>
-          <div class="review-card">
-            <% _user = User.find_by(id: review.user_id) %>
-            <% if _user.avatar_pic.attached? %>
-              <%= image_tag _user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'  %>
-              <% else %>
-                <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
-            <% end %>
-            <li>
-              <%= link_to review.author, product_review_path(@product, review), class:"reviews-li"  %>
-            </li>
-          </div>
-        <% end %>
-      </div>
-    </ul>
+        <%= render partial: "shared/review_cards", locals: { user: user, review: review, product: @product } %>
 
+      <% end %>
+    </div>
   </div>   
 <% else %>
   <p>No reviews are listed for this product.</p>
@@ -52,7 +38,6 @@
 
   </div>
 
-<p><%= link_to "Add a review", new_product_review_path(@product) %></p>
 
 <% if current_user && current_user.admin %>
   <h3>Admin Only</h3>

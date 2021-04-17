@@ -1,0 +1,17 @@
+
+<% @products.each do |product| %>
+  <div class="card">
+    
+    <h2><%= link_to product.name, product_path(product) %></h2>
+
+    <%= render partial: "shared/review_stars", locals: { review: product.average_review } %>
+    
+    <p>$<%= product.price %> per lb</p>
+    <div class="card-text-up">
+      <p>Imported From <%= product.country  %></p>
+    </div>
+
+      <%= render partial: "shared/product_image_big", locals: { product: product } %>
+
+  </div>
+<% end %>  

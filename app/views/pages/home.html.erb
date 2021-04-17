@@ -9,8 +9,8 @@
     <% if @highest_revieweds.any? %>
       <h2>Our Highest Reviewed Products</h2>
 
-      <%= render "pages/highest-reviewed-card" %>
-      
+        <%= render "shared/highest_reviewed_card" %>
+
     <% else %>
       <p>There are no reviewed products (yet).</p>
     <% end %>
@@ -18,7 +18,7 @@
     <% if @most_reviews.any? %>
       <h2>Our Most Reviewed Products</h2>
 
-      <%= render "pages/most-reviews-card" %>
+      <%= render "shared/most-reviews-card" %>
 
     <% else %>
       <p>There are no reviewed products (yet).</p>
@@ -27,7 +27,7 @@
     <% if @newest_products.any? %>
       <h2>Our Newest Products</h2>
 
-      <%= render "pages/newest-product-card" %>
+      <%= render "shared/newest-product-card" %>
       
     <% else %>
       <p>There are no new products (yet).</p>

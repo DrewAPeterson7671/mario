@@ -4,7 +4,7 @@
       <div class="authentication-position">
         <% if current_user %>
 
-          <%= render partial: "layouts/avatar", locals: { user: current_user } %>
+          <%= render partial: "shared/avatar", locals: { user: current_user } %>
 
           <%= link_to current_user.email, user_path(current_user)%>
           <p class="authentication-text"> | </p>
