@@ -60,18 +60,6 @@ _new_average = (_rev_count / _average_reviews.length.to_f).round(1)
 @product.update_attributes(average_review: _new_average)
 
 
-@reviews = Reviews.all
 
-_product_name = ""
-@reviews.each do |review|
-  @product_name = Product.find_product_name(review)
-end
-
-_review_user = Product.find_product_name(review)
-
-@reviews.each do |review|
-  puts _user = Product.find_user(review)
-  puts _product_country= Product.find_product_country(review)
-end
 
 
