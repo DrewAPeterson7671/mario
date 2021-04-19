@@ -47,3 +47,13 @@
           </div>
 
 
+
+<h1><%= @product.name %></h1>
+<p>Average Rating:</p>
+
+<%= render partial: "shared/review_stars", locals: { review: @product.average_review } %>
+
+<p>$<%= @product.price %></p>
+<p>Imported From <%= @product.country %></p>
+
+<%= render partial: "shared/product_image_big", locals: { product: @product } %>

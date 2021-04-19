@@ -3,6 +3,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all.paginate(page: params[:page], per_page: 12)
+    @most_reviews = Product.most_reviewed
+    @newest_products = Product.newest_product
+    @highest_revieweds = Product.highest_reviewed
     render :index
   end
 

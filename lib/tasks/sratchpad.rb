@@ -63,4 +63,3 @@ _new_average = (_rev_count / _average_reviews.length.to_f).round(1)
 
 
 
-
