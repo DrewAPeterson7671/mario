@@ -392,6 +392,12 @@ body::-webkit-scrollbar-thumb {
   
 }
 
+// Product Show
+
+.margin-spacer {
+  margin-top: 20px;
+}
+
 
 // Will Paginate Styling
 
@@ -612,4 +618,19 @@ body::-webkit-scrollbar-thumb {
 
 .round {
   border-radius: 50%;
+}
+
+// Admin Card
+
+.admin-card {
+  padding: 10px;
+  width: 100%;
+  height: 150px;
+  border: 1px;
+  padding: 5px 5px 0px 5px;
+  border-radius: 5px;
+  border: 1.5px solid #CBCBCB;
+  border-top: 3px solid #c3df2a;
+  text-align: left;
+  margin-bottom: 30px;
 }

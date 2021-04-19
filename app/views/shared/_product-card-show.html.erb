@@ -1,13 +1,14 @@
 
   <div class="card-show">
     
-    <h2><%= link_to product.name, product_path(product) %></h2>
+    <h2><%= product.name %></h2>
 
     <%= render partial: "shared/review_stars", locals: { review: product.average_review } %>
     
-    <p>$<%= product.price %> per lb</p>
+    <p>Price:  $<%= product.price %> per lb</p>
     <div class="card-text-up">
       <p>Imported From <%= product.country  %></p>
+      <p>Average Review <%= product.average_review %> of 5 Stars</p>
     </div>
 
     <% if product.product_photo.attached? %>
