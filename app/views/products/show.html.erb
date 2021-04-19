@@ -1,22 +1,27 @@
-<%= link_to "Previous Product", @product.previous %> | <%= link_to "Next Product", @product.next %>
+ 
+<div class="product-show-flex">
 
+  <div class="review-box1">
+    <%= link_to "\u2039", @product.previous, class: "previous-next previous round" %>
+  </div>
 
+  <div class="review-box2">
+    <%= render partial: "shared/product-card-show", locals: { product: @product } %>
+  </div>
 
+  <div class="review-box3">
+    <%= link_to "\u203A", @product.next, class: "previous-next next round review-box3" %>
+  </div>
 
-<h1><%= @product.name %></h1>
-<p>Average Rating:</p>
+</div>
 
-<%= render partial: "shared/review_stars", locals: { review: @product.average_review } %>
+<div class="centered-header">
+  <%= link_to "Add Your Review", new_product_review_path(@product), class: "btn btn-success" %>
+</div>
 
-<p>$<%= @product.price %></p>
-<p>Imported From <%= @product.country %></p>
-
-<%= render partial: "shared/product_image_big", locals: { product: @product } %>
-
-<p><%= link_to "Add a review", new_product_review_path(@product) %></p>
 
 <% if @product.reviews.any? %>
-  <h4>Reviews for this product:</h4>
+  <h2>Reviews for this product:</h2>
 
   <div class="reviews-container">
     <div class="reviews-ul">
@@ -37,7 +42,6 @@
 </div>
 
   </div>
-
 
 <% if current_user && current_user.admin %>
   <h3>Admin Only</h3>
