@@ -433,6 +433,40 @@ body::-webkit-scrollbar-thumb {
   margin-top: -12px;
 }
 
+// Review Show Styles
+
+.review-card-show {
+  padding: 10px;
+  width: 800px;
+  height: 400px;
+  background-color: white;
+  padding: 0% 0% 0% 0%;
+  padding-bottom: 1px;
+  border-radius: 5px;
+  border: 1.5px solid #CBCBCB;
+  border-top: 3px solid #65e252;
+  overflow: hidden;
+}
+
+
+.review-card-flexbox {
+  display: flex;
+  justify-content: center;
+}
+
+.review-box1 {
+  order: 1;
+  
+}
+
+.review-box2 {
+  order: 2;
+}
+
+.margin-stars {
+  margin-top: 10px;
+}
+
 // Product Show Card flexbox & Review Show Flexbox
 
 .product-show-flex {

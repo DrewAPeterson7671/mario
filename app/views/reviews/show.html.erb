@@ -5,27 +5,40 @@
   </div>
 
   <div class="product-box2">
+    <div class="review-card-show">
+      <div class="center">
+        <h1>Product Review</h1>
+      </div>
+      <div class="review-card-flexbox">
+        <div class="review-box1">
+          <% if @product.product_photo.attached? %>
+            <%= image_tag @product.product_photo, class:"product-image" %>
+            <% else %>
+            <%= image_tag 'image_not_available.webp', class:"card-image-not-found-sm", alt: 'Image Not Found ' %>
+          <% end %>
+        </div>
 
-    <div class="center">
-      <h1>Product Review</h1>
+        <div class="review-box2">
+          <% if @user.avatar_pic.attached? %>
+            <%= image_tag @user.avatar_pic, class:"avatar", alt: 'User Avatar'  %>
+            <% else %>
+              <%= image_tag 'generc_profile_pic.webp', class:"avatar", alt: 'Avatar Not Found ' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="margin-stars">
+
+        <%= render partial: "shared/review_stars", locals: { review: @review.rating } %>
+
+      </div>
+
+      <p>Reviewer: <%= @review.author %></p>
+      <p>Product: <%= @product.name %></p>
+      <div class="center">
+        <h3>Review:</h3>
+      </div>
+      <p><%= @review.content_body %></p><br><br><br>
     </div>
-    <% if @product.product_photo.attached? %>
-      <%= image_tag @product.product_photo, class:"product-image" %>
-      <% else %>
-      <%= image_tag 'image_not_available.webp', class:"card-image-not-found-sm", alt: 'Image Not Found ' %>
-    <% end %>
-
-    <% if @user.avatar_pic.attached? %>
-      <%= image_tag @user.avatar_pic, class:"avatar", alt: 'User Avatar'  %>
-      <% else %>
-        <%= image_tag 'generc_profile_pic.webp', class:"avatar", alt: 'Avatar Not Found ' %>
-    <% end %>
-    <p>Reviewer: <%= @review.author %></p>
-    <p>Product: <%= @product.name %></p>
-    <p>Rating: <%= @review.rating %> of 5 stars</p>
-    <p>Review:</p>
-    <p><%= @review.content_body %></p><br><br><br>
-
   </div>
   
 
