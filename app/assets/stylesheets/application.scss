@@ -303,21 +303,12 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: -15px;
 }
 
-
-
 .card-image-show {
   padding: 1px;
   border-radius: 5px;
   width: 800px;
   height: 100%;
   object-fit: cover;
-}
-
-
-// Product Page Styles
-
-.centered-header {
-  text-align: center;
 }
 
 // User Forms
@@ -345,7 +336,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-// User Profile Show
+// User Profile Show 
 
 .profile-flex {
   padding: 2rem;
@@ -357,7 +348,6 @@ body::-webkit-scrollbar-thumb {
 .show-col-1 {
   order: 1;
   border: 1px;
-  // max-width: 230px;
   flex-basis: fit-content;
 }
 
@@ -367,6 +357,29 @@ body::-webkit-scrollbar-thumb {
   order: 2;
   border: 1px;
   flex-basis: fit-content;
+}
+
+// Product Forms
+
+.product-form-flex {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.product-col-1 {
+  order: 1;
+  border: 1px;
+  // flex-basis: fit-content;
+}
+
+.product-col-2 {
+  margin-left: 20px;
+  text-align: left;
+  order: 2;
+  border: 1px;
+//   flex-basis: fit-content;
 }
 
 
@@ -420,7 +433,41 @@ body::-webkit-scrollbar-thumb {
   margin-top: -12px;
 }
 
-// Product Show Card flexbox
+// Review Show Styles
+
+.review-card-show {
+  padding: 10px;
+  width: 800px;
+  height: 400px;
+  background-color: white;
+  padding: 0% 0% 0% 0%;
+  padding-bottom: 1px;
+  border-radius: 5px;
+  border: 1.5px solid #CBCBCB;
+  border-top: 3px solid #65e252;
+  overflow: hidden;
+}
+
+
+.review-card-flexbox {
+  display: flex;
+  justify-content: center;
+}
+
+.review-box1 {
+  order: 1;
+  
+}
+
+.review-box2 {
+  order: 2;
+}
+
+.margin-stars {
+  margin-top: 10px;
+}
+
+// Product Show Card flexbox & Review Show Flexbox
 
 .product-show-flex {
   display: flex;
