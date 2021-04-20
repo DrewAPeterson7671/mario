@@ -279,6 +279,32 @@ body::-webkit-scrollbar-thumb {
   // min-width: none;
 }
 
+.card-show-up {
+  position: relative;
+  margin-top: -12px;
+  // margin-bottom: -15px;
+}
+
+.card-show-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-show-col1 {
+  order: 1;
+}
+
+.card-show-col2 {
+  order: 2;
+}
+
+.product-show-text-up {
+  margin-top: -40px;
+  margin-bottom: -15px;
+}
+
+
+
 .card-image-show {
   padding: 1px;
   border-radius: 5px;
@@ -303,19 +329,46 @@ body::-webkit-scrollbar-thumb {
   flex-wrap: wrap;
 }
 
-.form-col-2 {
-  order: 2;
+.form-col-1 {
+  order: 1;
   border: 1px;
   max-width: 400px;
   flex-basis: fit-content;
 }
 
-.form-col-1 {
-  order: 1;
+.form-col-2 {
+  order: 2;
   border: 1px;
   max-width: 230px;
   flex-basis: fit-content;
+  margin-left: 40px;
 }
+
+
+// User Profile Show
+
+.profile-flex {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.show-col-1 {
+  order: 1;
+  border: 1px;
+  // max-width: 230px;
+  flex-basis: fit-content;
+}
+
+.show-col-2 {
+  margin-left: 20px;
+  text-align: left;
+  order: 2;
+  border: 1px;
+  flex-basis: fit-content;
+}
+
 
 // Reviews Styles
 
@@ -373,19 +426,20 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
 
-  & > .review-box1 { // avatar
+  & > .product-box1 { // avatar
     order: 1;
     // align-content: center;
     
   }
 
-  & > .review-box2 { // product info
+  & > .product-box2 { // product info
     order: 2;
     // width: 100%;
   }
 
-  & > .review-box3 { //date
+  & > .product-box3 { //date
     order: 3;
     // align-content: center;
   }

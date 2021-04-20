@@ -34,6 +34,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     average_review(@product.id)
     @product_reviews = @product.reviews.paginate(page: params[:page], per_page: 10)
+    @number_reviews = number_reviews(@product)
     render :show
   end
 
@@ -64,6 +65,12 @@ class ProductsController < ApplicationController
     end
     _new_average = (_rev_count / _average_reviews.length.to_f).round(1)
     @product.update_attributes(average_review: _new_average)
+  end
+
+  def number_reviews(product_id)
+    _gather_reviews = []
+    _gather_reviews = Review.where(product_id: @product.id)
+    _gather_reviews.length()
   end
 
   private
