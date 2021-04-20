@@ -5,11 +5,20 @@
 
     <%= render partial: "shared/review_stars", locals: { review: product.average_review } %>
     
-    <p>Price:  $<%= product.price %> per lb</p>
-    <div class="card-text-up">
-      <p>Imported From <%= product.country  %></p>
-      <p>Average Review <%= product.average_review %> of 5 Stars</p>
-    </div>
+    <div class="card-show-flex">
+      <div class="card-show-up card-show-col1">
+        <p>Price:  $<%= product.price %> per lb</p><br>
+        <div class="product-show-text-up">
+          <p>Imported From <%= product.country  %></p>
+        </div>  
+      </div>
+      <div class="card-show-up card-show-col2">
+        <p>Average Review: <%= product.average_review %> of 5 Stars</p><br>
+        <div class="product-show-text-up">
+          <p>Number of Reviews: <%= number_reviews %></p>
+        </div>
+      </div>
+    </div>  
 
     <% if product.product_photo.attached? %>
       <%= image_tag product.product_photo, class:"card-image-show" %>
