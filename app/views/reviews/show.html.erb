@@ -32,13 +32,15 @@
   <% end %>
 
   <% if current_user.admin? %>
-    <div class="centered-header">
-    <h3>Admin Only</h3>
-      <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
-      <p><%= link_to "Delete review", product_review_path(@product, @review),
+    <div class="margin-spacer admin-card-2btn">
+      <div class="centered-header">
+        <h3>Admin Only</h3>
+      </div>
+      <p><%= link_to "Edit review", edit_product_review_path(@product, @review), class: "btn btn-success" %></p>
+      <p><%= link_to "Delete review", product_review_path(@product, @review), class: "btn btn-success",
                               :data => {:confirm => "Are you sure?",
                               :method => "delete"} %></p>
-    </div>                          
+    </div>                     
   <% end %>
   
 <% end %>  
