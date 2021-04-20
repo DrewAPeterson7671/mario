@@ -1,9 +1,13 @@
 <%= render "shared/errors_reviews", :object => @review %>
 
+<div class="review-form-center">
+
+  <%= render partial: "shared/product_image_big", locals: { product: @product } %>
+
+</div>
+
 <%= form_for [@product, @review] do |f| %>
-  <%= f.label :content_body %>
-  <%= f.text_area :content_body %><br>
-    <%= f.label :rating %>
+<div class="review-form-center">
   <div class='rating'>
     <%= f.radio_button(:rating, 5) %>
     <%= f.label(:rating_5, '☆') %>
@@ -16,7 +20,15 @@
     <%= f.radio_button(:rating, 1) %>
     <%= f.label(:rating_1, '☆') %>
   </div>
+</div>
+<div class="review-form-center">
+    <div class="center">
+      <%= f.text_area :content_body, :cols =>80, :rows => 5 %><br>
+    </div>
+</div>
 
-
-  <p><%= f.submit %></p>
+<div class="center">
+    <%= f.submit 'Submit', :class => 'btn btn-success' %>
+</div>
   <% end %>
+</div>
