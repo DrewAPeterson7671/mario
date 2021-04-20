@@ -1,10 +1,11 @@
-<h1 class="center">Your Profile</h1>
+<div class="center">
+  <h1>Your Profile</h1>
 
   <%= render partial: "shared/avatar_big", local: { current_user: current_user }%>
 
   <p>User Name: <%= @user.user_name %></p>
   <p>Email: <%= @user.email %></p><br><br><br>
-  
+</div>  
 
 <% if current_user %>
   <div class="centered-header">
