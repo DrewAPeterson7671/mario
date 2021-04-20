@@ -1,10 +1,11 @@
 
   <%= form_for @user do |f| %>
-    <div class="user-form-grid-container">
+    <div class="user-form-flex-container">
       <div class="form-col-1">
         <%= image_tag 'generc_profile_pic.webp', class:"avatar", alt: 'Avatar Not Found ' %><br>
         <%= f.label "Upload Avatar Image" %><br>
         <%= f.file_field :avatar_pic %><br>
+        <%= f.submit "Submit" %><br>
       </div>
       <div class="form-col-2">
         <%= f.label "User Name" %>
@@ -15,7 +16,8 @@
         <%= f.password_field :password,  id: 'registration_password' %><br>
         <%= f.label "Password confirmation" %>
         <%= f.password_field :password_confirmation,  id: 'reg_password_confirm' %><br>
-        <%= f.submit "Submit" %><br>
+        <%= f.label "Admin?", name: 'admin_check', id: 'admin_check' %>
+        <%= f.check_box:admin %><br>
       </div>
     </div>
   <% end %>
