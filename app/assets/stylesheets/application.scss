@@ -303,18 +303,19 @@ body::-webkit-scrollbar-thumb {
   flex-wrap: wrap;
 }
 
-.form-col-2 {
-  order: 2;
+.form-col-1 {
+  order: 1;
   border: 1px;
   max-width: 400px;
   flex-basis: fit-content;
 }
 
-.form-col-1 {
-  order: 1;
+.form-col-2 {
+  order: 2;
   border: 1px;
   max-width: 230px;
   flex-basis: fit-content;
+  margin-left: 40px;
 }
 
 
