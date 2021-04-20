@@ -303,21 +303,12 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: -15px;
 }
 
-
-
 .card-image-show {
   padding: 1px;
   border-radius: 5px;
   width: 800px;
   height: 100%;
   object-fit: cover;
-}
-
-
-// Product Page Styles
-
-.centered-header {
-  text-align: center;
 }
 
 // User Forms
@@ -442,7 +433,7 @@ body::-webkit-scrollbar-thumb {
   margin-top: -12px;
 }
 
-// Product Show Card flexbox
+// Product Show Card flexbox & Review Show Flexbox
 
 .product-show-flex {
   display: flex;
