@@ -467,6 +467,16 @@ body::-webkit-scrollbar-thumb {
   margin-top: 10px;
 }
 
+.margin-text {
+  margin-top: -10px;
+}
+
+.review-form-center {
+  display: block;
+  margin: 0 auto;
+  // margin-right: auto;
+}
+
 // Product Show Card flexbox & Review Show Flexbox
 
 .product-show-flex {
