@@ -19,7 +19,7 @@
         </div>
 
         <div class="review-box2">
-          <% if @user.avatar_pic.attached? %>
+            <% if @user.avatar_pic.attached? %>
             <%= image_tag @user.avatar_pic, class:"avatar", alt: 'User Avatar'  %>
             <% else %>
               <%= image_tag 'generc_profile_pic.webp', class:"avatar", alt: 'Avatar Not Found ' %>
@@ -31,9 +31,13 @@
         <%= render partial: "shared/review_stars", locals: { review: @review.rating } %>
 
       </div>
-
-      <p>Reviewer: <%= @review.author %></p>
-      <p>Product: <%= @product.name %></p>
+        <p>Reviewer: <%= @review.author %></p>
+      <div class="margin-text">
+        <p>Product: <%= @product.name %></p>
+      </div>
+      <div class="margin-text">
+        <p>Reviewed on: <%= @review.created_at.strftime('%m-%d-%Y') %>
+      </div>
       <div class="center">
         <h3>Review:</h3>
       </div>
