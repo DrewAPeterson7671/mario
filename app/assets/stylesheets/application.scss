@@ -345,7 +345,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-// User Profile Show
+// User Profile Show 
 
 .profile-flex {
   padding: 2rem;
@@ -357,7 +357,6 @@ body::-webkit-scrollbar-thumb {
 .show-col-1 {
   order: 1;
   border: 1px;
-  // max-width: 230px;
   flex-basis: fit-content;
 }
 
@@ -367,6 +366,29 @@ body::-webkit-scrollbar-thumb {
   order: 2;
   border: 1px;
   flex-basis: fit-content;
+}
+
+// Product Forms
+
+.product-form-flex {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.product-col-1 {
+  order: 1;
+  border: 1px;
+  // flex-basis: fit-content;
+}
+
+.product-col-2 {
+  margin-left: 20px;
+  text-align: left;
+  order: 2;
+  border: 1px;
+//   flex-basis: fit-content;
 }
 
 
