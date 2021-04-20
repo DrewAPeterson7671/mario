@@ -317,6 +317,32 @@ body::-webkit-scrollbar-thumb {
   flex-basis: fit-content;
 }
 
+
+// User Profile Show
+
+.profile-flex {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.show-col-1 {
+  order: 1;
+  border: 1px;
+  // max-width: 230px;
+  flex-basis: fit-content;
+}
+
+.show-col-2 {
+  margin-left: 20px;
+  text-align: left;
+  order: 2;
+  border: 1px;
+  flex-basis: fit-content;
+}
+
+
 // Reviews Styles
 
 .reviews-container {
