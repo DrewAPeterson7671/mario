@@ -9,14 +9,14 @@
       <%= f.text_field :price %><br>
       <%= f.label :country %>: 
       <%= f.text_field :country %><br>
+      <%= f.label :product_photo %>:
+      <%= f.file_field :product_photo %><br>
+      <%= f.submit  %>
   </div>
     <div class="product-col-1">
 
       <%= render partial: "shared/product_image_big", locals: { product: @product } %>
 
-      <p><%= f.label :product_photo %></p>
-      <p><%= f.file_field :product_photo %></p>
-      <p><%= f.submit  %></p>
     </div>
   <% end %>
 </div>
