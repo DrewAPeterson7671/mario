@@ -471,11 +471,24 @@ body::-webkit-scrollbar-thumb {
   margin-top: -10px;
 }
 
+.review-form-flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .review-form-center {
   display: block;
   margin: 0 auto;
   // margin-right: auto;
 }
+
+// .review-form-center-stars {
+//   // display: block;
+//   // margin: 0 auto;
+//   // margin-right: auto;
+//   align-self: center;
+// }
 
 // Product Show Card flexbox & Review Show Flexbox
 
@@ -571,13 +584,21 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: row-reverse;
   justify-content: left;
+
 }
 
-.rating>input {
+.review-form-center-stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+
+.rating, .review-form-center-stars > input {
   display: none
 }
 
-.rating>label {
+.rating, .review-form-center-stars > label {
   position: relative;
   width: 1em;
   font-size: 6vw;
@@ -585,22 +606,22 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer
 }
 
-.rating>label::before {
+.rating, .review-form-center-stars > label::before {
   content: "\2605";
   position: absolute;
   opacity: 0
 }
 
-.rating>label:hover:before,
-.rating>label:hover~label:before {
+.rating, .review-form-center-stars > label:hover:before,
+.rating, .review-form-center-stars > label:hover~label:before {
   opacity: 1 !important
 }
 
-.rating>input:checked~label:before {
+.rating, .review-form-center-stars > input:checked~label:before {
   opacity: 1
 }
 
-.rating:hover>input:checked~label:before {
+.rating, .review-form-center-stars:hover > input:checked~label:before {
   opacity: 0.4
 }
 
