@@ -2,35 +2,53 @@
   <div class="welcome-sub-header">
     <h1>Search Results</h1>
 
-    <h2>Products that Match</h2>
-      <% if @results_products.empty?%>
-        <p>No products matched the search.</p>
-      <% end %>
-      <% @results_products.each do |results_product| %>
-        <%= link_to results_product.name, product_path(results_product.id) %><br>
-      <% end %>
-      <%= will_paginate @results_products %>
-    <h2>Product Reviews that Match</h2>
-      <% if @results_reviewers.empty?%>
-        <p>No reviewers matched the search.</p>
-      <% end %>
-      <% @results_reviewers.each do |results_reviewer| %>
-        <% _reviewed_product = Product.find_by(id: results_reviewer.product_id) %>
-        <%= link_to (results_reviewer.author + " review of " + _reviewed_product.name), review_path(id: results_reviewer, product_id: results_reviewer.product_id) %><br>
-      <% end %>
-      <%= will_paginate @results_reviewers %>
-    <h2>Reviews Text that Matches</h2>
-      <% if @results_reviews.empty?%>
-        <p>No reviews matched the search.</p>
-      <% end %>
-      <% @results_reviews.each do |results_review| %>
-        <% _reviewed_product = Product.find_by(id: results_review.product_id) %>
-        <%= link_to (results_review.author + " review of " + _reviewed_product.name), review_path(id: results_review, product_id: results_review.product_id) %><br>
-        <%= results_review.content_body %>
-        <br>
-        <br>
-      <% end %>
-      <%= will_paginate @results_reviews %>
+    <div class='search-flex-container'>
+      <h2>Products that Match</h2>
+        <% if @results_products.empty?%>
+          <div class='search-noresult-card'>
+            <p>No products matched the search.</p>
+          </div>
+        <% end %>
+        <% @results_products.each do |results_product| %>
+          <div class='search-review-card'>
+
+            <%= render partial: "shared/product_image", locals: { product: results_product } %>
+
+            <%= link_to results_product.name, product_path(results_product.id) %><br>
+          </div>
+        <% end %>
+        <%= will_paginate @results_products %>
+
+      <h2>Product Reviews that Match</h2>
+        <% if @results_reviewers.empty?%>
+          <div class='search-noresult-card'>
+            <p>No reviewers matched the search.</p>
+          </div>
+        <% end %>
+        <% @results_reviewers.each do |results_reviewer| %>
+          <div class='search-review-card'>
+            <% _reviewed_product = Product.find_by(id: results_reviewer.product_id) %>
+            <%= link_to (results_reviewer.author + " review of " + _reviewed_product.name), review_path(id: results_reviewer, product_id: results_reviewer.product_id) %><br>
+          </div>
+        <% end %>
+        <%= will_paginate @results_reviewers %>
+
+      <h2>Reviews Text that Matches</h2>
+        <% if @results_reviews.empty?%>
+          <div class='search-noresult-card'>
+            <p>No reviews matched the search.</p>
+          </div>
+        <% end %>
+        <% @results_reviews.each do |results_review| %>
+          <div class='search-review-card'>
+            <% _reviewed_product = Product.find_by(id: results_review.product_id) %>
+            <%= link_to (results_review.author + " review of " + _reviewed_product.name), review_path(id: results_review, product_id: results_review.product_id) %><br>
+            <%= results_review.content_body %>
+          </div>
+        <% end %>
+        <%= will_paginate @results_reviews %>
+    </div>
+
   </div>  
 
   <div>Font made from <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a>is licensed by CC BY 3.0</div>
