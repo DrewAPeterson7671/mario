@@ -58,6 +58,6 @@
 
 <%= render partial: "shared/product_image_big", locals: { product: @product } %>
 
-
+      <%= link_to image_tag(product.product_photo, :class => "card-image", :alt => "Product Image"), product_path(product.id)  %>
 
 

@@ -12,9 +12,21 @@
         <% @results_products.each do |results_product| %>
           <div class='search-review-card'>
 
-            <%= render partial: "shared/product_image", locals: { product: results_product } %>
+            <div class='search-product-flex'>
 
-            <%= link_to results_product.name, product_path(results_product.id) %><br>
+              <%= render partial: "shared/product_image", locals: { product: results_product } %>
+
+              <%= link_to results_product.name, product_path(results_product.id) %>
+
+              <p>Imported From <%= results_product.country  %></p>
+
+              <div class=""> 
+
+              <%= render partial: "shared/review_stars", locals: { review: results_product.average_review } %>
+
+            </div>
+
+            </div>
           </div>
         <% end %>
         <%= will_paginate @results_products %>
