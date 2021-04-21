@@ -242,11 +242,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .card-image-not-found-sm {
+  width: 75px;
+  height: 75px;
   padding: 1px;
-  height: 100px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-top: 10px;
 }
 
 .card-text-up {
@@ -480,15 +481,8 @@ body::-webkit-scrollbar-thumb {
 .review-form-center {
   display: block;
   margin: 0 auto;
-  // margin-right: auto;
 }
 
-// .review-form-center-stars {
-//   // display: block;
-//   // margin: 0 auto;
-//   // margin-right: auto;
-//   align-self: center;
-// }
 
 // Product Show Card flexbox & Review Show Flexbox
 
@@ -578,7 +572,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-// Star Rating
+// Star Rating Radio Form
 
 .rating {
   display: flex;
@@ -625,7 +619,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 0.4
 }
 
-// Partial Start Rating Average
+// Star Rating Average Gradient Display
 
 :root {
   --star-size: 30px;
@@ -778,4 +772,39 @@ body::-webkit-scrollbar-thumb {
   border-top: 3px solid #c3df2a;
   text-align: left;
   margin-bottom: 30px;
+}
+
+// Search Page
+
+.search-flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.search-review-card {
+  padding: 10px;
+  width: 60%;
+  height: 120px;
+  border: 1px;
+  border-radius: 5px;
+  border: 1.5px solid #CBCBCB;
+  border-top: 3px solid #65e252;
+  text-align: left;
+  overflow: scroll;
+  margin-bottom: 5px;
+  align-self: center;
+}
+
+.search-noresult-card {
+  width: 60%;
+  height: 40px;
+  border: 1px;
+  padding: 5px 5px 0px 5px;
+  border-radius: 5px;
+  border: 1.5px solid #CBCBCB;
+  border-top: 3px solid #f7b8b7;
+  text-align: center;
+  align-self: center;
 }
