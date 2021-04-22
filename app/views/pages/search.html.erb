@@ -17,14 +17,11 @@
               <%= render partial: "shared/product_image", locals: { product: results_product } %>
 
               <%= link_to results_product.name, product_path(results_product.id) %>
-
               <p>Imported From <%= results_product.country  %></p>
 
-              <div class=""> 
-
-              <%= render partial: "shared/review_stars", locals: { review: results_product.average_review } %>
-
-            </div>
+              <div class="search-adjust-stars">
+                <%= render partial: "shared/review_stars", locals: { review: results_product.average_review } %>
+              </div>
 
             </div>
           </div>
@@ -37,11 +34,38 @@
             <p>No reviewers matched the search.</p>
           </div>
         <% end %>
+
+
         <% @results_reviewers.each do |results_reviewer| %>
           <div class='search-review-card'>
-            <% _reviewed_product = Product.find_by(id: results_reviewer.product_id) %>
-            <%= link_to (results_reviewer.author + " review of " + _reviewed_product.name), review_path(id: results_reviewer, product_id: results_reviewer.product_id) %><br>
-          </div>
+            <div class='search-review-flex'>
+
+              <% _reviewed_product = Product.find_by(id: results_reviewer.product_id) %>
+              <% _user = User.find_by(id: results_reviewer.user_id) %>
+
+              <div class="search-review-box1">
+
+                <%= render partial: "shared/avatar", locals: { user: _user } %>
+
+                <%= link_to (results_reviewer.author + " review of " + _reviewed_product.name), review_path(id: results_reviewer, product_id: results_reviewer.product_id) %><br>
+              </div>
+
+              <div class="search-review-box2">
+                <%= render partial: "shared/review_stars", locals: { review: results_reviewer.rating } %>
+              </div>
+
+              <div class="search-review-box3">
+                <p>On <%= results_reviewer.created_at.strftime('%m-%d-%Y') %></p>
+              </div>
+
+              <div class="search-review-box5">
+
+                <%= render partial: "shared/product_image", locals: { product: _reviewed_product } %>
+
+              </div>
+
+            </div>
+          </div>  
         <% end %>
         <%= will_paginate @results_reviewers %>
 
