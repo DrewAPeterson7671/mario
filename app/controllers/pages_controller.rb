@@ -17,4 +17,25 @@ class PagesController < ApplicationController
     end
   end
 
+  def services
+    render 'services'
+  end
+
+  def about
+    render 'about'
+  end
+
+  def jobs
+    render 'jobs'
+  end
+
+  def terms
+    render 'terms'
+  end
+
+  def privacy_policy
+    render 'privacy_policy'
+  end
+
+
 end
