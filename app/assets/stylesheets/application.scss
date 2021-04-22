@@ -66,6 +66,10 @@ a span {
   align-items: center;
 }
 
+.content {
+  min-height: calc(100vh - 570px);
+}
+
 // Custom Scrollbar
 
 body::-webkit-scrollbar {
@@ -240,6 +244,7 @@ body::-webkit-scrollbar-thumb {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 35px;
 }
 
 .card-image-not-found-sm {
@@ -865,4 +870,62 @@ body::-webkit-scrollbar-thumb {
 
 .search-review-text {
   margin-top: -5px;
+}
+
+// Footer & Footer Link Page Styles
+
+.footer {
+  margin-top: 10px;
+  height: 100px;
+  min-width: 60vh;
+  max-width: 100%;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+  & > h4 {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  & > p {
+    align-self: flex-end;
+  }  
+}
+
+.footer-flex-end {
+  page-break-after: always;
+} 
+
+.footer-legal {
+  margin-top: -20px;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.footer-spacer {
+  margin-top: 15px;
+}
+
+// Static Footer Pages
+
+.static-page-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // align-items: baseline;
+
+  & > .static-flex1 {
+    order: 1;
+    margin-top: 10px;
+    // justify-content: center;
+
+  }
+
+  & > .static-flex2 {
+    order: 2;
+    margin-top: 40px;
+  }
 }

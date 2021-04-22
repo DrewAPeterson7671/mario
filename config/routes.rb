@@ -8,6 +8,13 @@ Rails.application.routes.draw do
 
   get '/search' => 'pages#search', :as => 'search_page'
 
+
+  get 'services' => 'pages#services', constraints: { format: 'html' }
+  get 'about' => 'pages#about', constraints: { format: 'html' }
+  get 'jobs' => 'pages#jobs', constraints: { format: 'html' }
+  get 'terms' => 'pages#terms', constraints: { format: 'html' }
+  get 'privacy_policy' => 'pages#privacy_policy', constraints: { format: 'html' }
+
   root to: 'pages#home'
   resources :users
   resources :products do

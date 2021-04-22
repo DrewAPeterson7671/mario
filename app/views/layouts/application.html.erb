@@ -16,13 +16,19 @@
 
     <div class="container">
 
-      <div class="flash-wrap">
-        <%= content_tag(:p, notice, class: 'flash') if notice %>
-        <%= content_tag(:p, alert,  class: 'flash' ) if alert  %>
+      <div class="content">
+        <div class="flash-wrap">
+          <%= content_tag(:p, notice, class: 'flash') if notice %>
+          <%= content_tag(:p, alert,  class: 'flash' ) if alert  %>
+        </div>
+
+        <%= yield %>
       </div>
-
-      <%= yield %>
-
     </div>
+
+    <footer>
+      <%= render "shared/footer" %>
+    </footer>
+
   </body>
 </html>
