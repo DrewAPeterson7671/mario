@@ -83,8 +83,10 @@
 
             <% _reviewed_product = Product.find_by(id: results_review.product_id) %>
             <%= link_to (results_review.author + " review of " + _reviewed_product.name), review_path(id: results_review, product_id: results_review.product_id) %>
-            <p>On <%= results_review.created_at.strftime('%m-%d-%Y') %></p>
-            <%= results_review.content_body %>
+            <p>Reviewed on <%= results_review.created_at.strftime('%m-%d-%Y') %></p>
+            <div class="search-review-text">
+              <%= results_review.content_body %>
+            </div>
           </div>
         <% end %>
         <%= will_paginate @results_reviews %>
