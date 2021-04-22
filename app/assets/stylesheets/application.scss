@@ -783,11 +783,24 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
 }
 
+.search-product-card {
+  padding: 10px;
+  width: 60%;
+  height: 125px;
+  border: 1px;
+  border-radius: 5px;
+  border: 1.5px solid #CBCBCB;
+  border-top: 3px solid #419234;
+  text-align: left;
+  overflow: scroll;
+  margin-bottom: 5px;
+  align-self: center;
+}
 
 .search-review-card {
   padding: 10px;
   width: 60%;
-  height: 125px;
+  height: 130px;
   border: 1px;
   border-radius: 5px;
   border: 1.5px solid #CBCBCB;
@@ -848,4 +861,8 @@ body::-webkit-scrollbar-thumb {
   margin-top: -10px;
   // margin-left: 0 auto;
   align-self: flex-end;
+}
+
+.search-review-text {
+  margin-top: -5px;
 }
