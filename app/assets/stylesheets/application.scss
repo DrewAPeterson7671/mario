@@ -226,10 +226,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .card-image {
+  display: block;
   padding: 1px;
   border-radius: 5px;
   width: 373px;
-  height: 100%;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -786,7 +787,7 @@ body::-webkit-scrollbar-thumb {
 .search-review-card {
   padding: 10px;
   width: 60%;
-  height: 120px;
+  height: 125px;
   border: 1px;
   border-radius: 5px;
   border: 1.5px solid #CBCBCB;
@@ -807,4 +808,44 @@ body::-webkit-scrollbar-thumb {
   border-top: 3px solid #f7b8b7;
   text-align: center;
   align-self: center;
+}
+
+.search-product-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-adjust-stars {
+  margin-top: 2px;
+}
+
+.search-review-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-flow: column wrap;
+  flex-wrap: wrap;
+}
+
+.search-review-box1 {
+  order: 1;
+}
+
+.search-review-box2 {
+  order: 2;
+  margin-top: 10px;
+}
+
+.search-review-box3 {
+  order: 3;
+  margin-top: -2px;
+  page-break-after: always;
+}
+
+.search-review-box5 {
+  flex: 0 0 50%;
+  order: 5;
+  margin-top: -10px;
+  // margin-left: 0 auto;
+  align-self: flex-end;
 }
