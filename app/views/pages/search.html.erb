@@ -69,16 +69,21 @@
         <% end %>
         <%= will_paginate @results_reviewers %>
 
-      <h2>Reviews Text that Matches</h2>
+      <h2>Review Text that Matches</h2>
         <% if @results_reviews.empty?%>
           <div class='search-noresult-card'>
-            <p>No reviews matched the search.</p>
+            <p>No review text matched the search.</p>
           </div>
         <% end %>
         <% @results_reviews.each do |results_review| %>
+          <% _user = User.find_by(id: results_review.user_id) %>
           <div class='search-review-card'>
+
+            <%= render partial: "shared/avatar", locals: { user: _user } %>
+
             <% _reviewed_product = Product.find_by(id: results_review.product_id) %>
-            <%= link_to (results_review.author + " review of " + _reviewed_product.name), review_path(id: results_review, product_id: results_review.product_id) %><br>
+            <%= link_to (results_review.author + " review of " + _reviewed_product.name), review_path(id: results_review, product_id: results_review.product_id) %>
+            <p>On <%= results_review.created_at.strftime('%m-%d-%Y') %></p>
             <%= results_review.content_body %>
           </div>
         <% end %>
