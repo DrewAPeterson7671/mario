@@ -66,6 +66,10 @@ a span {
   align-items: center;
 }
 
+.content {
+  min-height: calc(100vh - 570px);
+}
+
 // Custom Scrollbar
 
 body::-webkit-scrollbar {
@@ -868,10 +872,12 @@ body::-webkit-scrollbar-thumb {
   margin-top: -5px;
 }
 
+// Footer & Footer Link Page Styles
+
 .footer {
   margin-top: 10px;
-  height: 20vh;
-  min-width: 100vh;
+  height: 100px;
+  min-width: 60vh;
   max-width: 100%;
   background-color: #f8f9fa;
   display: flex;
@@ -894,11 +900,11 @@ body::-webkit-scrollbar-thumb {
 } 
 
 .footer-legal {
-  margin-top: -10px;
+  margin-top: -20px;
   text-align: center;
   font-size: .8rem;
 }
 
 .footer-spacer {
-  margin-top: 90px;
+  margin-top: 15px;
 }
