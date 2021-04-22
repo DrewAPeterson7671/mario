@@ -240,6 +240,7 @@ body::-webkit-scrollbar-thumb {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 35px;
 }
 
 .card-image-not-found-sm {
@@ -865,4 +866,39 @@ body::-webkit-scrollbar-thumb {
 
 .search-review-text {
   margin-top: -5px;
+}
+
+.footer {
+  margin-top: 10px;
+  height: 20vh;
+  min-width: 100vh;
+  max-width: 100%;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+  & > h4 {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  & > p {
+    align-self: flex-end;
+  }  
+}
+
+.footer-flex-end {
+  page-break-after: always;
+} 
+
+.footer-legal {
+  margin-top: -10px;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.footer-spacer {
+  margin-top: 90px;
 }
