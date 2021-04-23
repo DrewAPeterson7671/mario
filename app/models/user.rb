@@ -23,7 +23,6 @@ class User < ApplicationRecord
     _new_average = (_rev_count / _average_reviews.length.to_f).round(1)
   end
 
-  ## I think its tripping up on empty reviews
   def self.user_latest_review(user_id)
     @latest_review = Review.where(user_id: user_id).where('created_at < ? ', Time.now).order('created_at DESC').first
     if @latest_review.nil?
