@@ -1013,3 +1013,25 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   top: 3px;
 }
+
+// Sort By Button for lists
+
+.sort-flex-wrapper {
+  margin-top: -17px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  & h1 {
+    grid-column: 2;
+    justify-self: center;
+  }
+
+  & > .sort-button {
+    grid-column: 3;
+    justify-self: end;
+    margin-top: 12px;
+    width: 80px;
+    height: 30px;
+    margin-right: 30px;
+  }
+}

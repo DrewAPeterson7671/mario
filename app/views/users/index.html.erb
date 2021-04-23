@@ -1,6 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="center">Our Community</h1>
+<div class="sort-flex-wrapper">
+  <h1 class="center">Our Community</h1>
+
+  <div class="btn-group sort-button">
+    <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort By
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">User Name</a>
+      <a class="dropdown-item" href="#">Highest Average Rating</a>
+      <a class="dropdown-item" href="#">Lowest Average Rating</a>
+      <a class="dropdown-item" href="#">Most Reviews</a>
+      <a class="dropdown-item" href="#">Least Reviews</a>
+      <a class="dropdown-item" href="#">Most Recent Review</a>
+      <a class="dropdown-item" href="#">Least Recent Review</a>
+    </div>
+  </div>
+</div>
 
 <div class="community-flex-container">
   <% if @users.any? %>
