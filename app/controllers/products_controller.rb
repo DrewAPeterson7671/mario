@@ -68,9 +68,7 @@ class ProductsController < ApplicationController
   end
 
   def number_reviews(product_id)
-    _gather_reviews = []
-    _gather_reviews = Review.where(product_id: @product.id)
-    _gather_reviews.length()
+    _gather_reviews = Review.where(product_id: @product.id).count
   end
 
   private
