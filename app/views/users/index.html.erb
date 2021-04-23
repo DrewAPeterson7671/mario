@@ -4,47 +4,52 @@
 
 <div class="reviews-container">
   <% if @users.any? %>
-      <div class="reviews-ul">
-        <% @users.each do |user| %>
+      <% @users.each do |user| %>
 
 
-          <div class="community-profile-card">
-            <div class="community-profile-flex">
-              <div class="community-profile-box1">
+        <div class="community-profile-card">
+          <div class="community-profile-flex">
+            <div class="community-profile-box1">
 
-                <% if user.avatar_pic.attached? %>
-                  <%= image_tag user.avatar_pic, class:"avatar" %><br>
+              <% if user.avatar_pic.attached? %>
+                <%= image_tag user.avatar_pic, class:"avatar" %><br>
+                <% else %>
+                  <%= image_tag 'generc_profile_pic.webp', class:"avatar", alt: 'Avatar Not Found ' %><br>
+              <% end %>
+            </div>
+
+            <div class="community-profile-box2">
+              <div class="community-column-box1">
+                <% if user.user_name? %>
+                  <h3><%= user.user_name %></h3>
                   <% else %>
-                    <%= image_tag 'generc_profile_pic.webp', class:"avatar", alt: 'Avatar Not Found ' %><br>
+                  <h3>Guest User</h3>
                 <% end %>
               </div>
+              <div class="community-column-box2">
 
-              <div class="community-profile-box2">
-                <div class="community-column-box1">
-                  <% if user.user_name? %>
-                    <p><%= user.user_name %></p>
-                    <% else %>
-                    <p>Guest User</p>
-                  <% end %>
+                <div class="community-align-stars"> 
+                  <p>Average Rating: </p>              
                 </div>
-                <div class="community-column-box2">
-                  <p>Number of Reviews: <%= User.user_reviews(user.id) %></p>
 
-                </div>
-                <div class="community-column-box3">
-                  <div class="review-stars"> 
-                    <p>Average Rating: <%= User.user_ave_rating(user.id) %></p>              
+                <div class="community-align-stars">
+                  <div class="star-align">
+                    <%= render partial: "shared/review_stars", locals: { review: User.user_reviews(user.id) } %>
                   </div>
-                </div>
-                <div class="community-column-box4">
-                    <p>Most Recent Review: <%= User.user_latest_review(user.id) %></p>
-                </div>
+                </div>                  
+
+              </div>
+              <div class="community-column-box3">
+                <p>Number of Reviews: <%= User.user_reviews(user.id) %></p>
+              </div>
+              <div class="community-column-box4">
+                  <p>Most Recent Review: <%= User.user_latest_review(user.id) %></p>
               </div>
             </div>
-          </div> 
+          </div>
+        </div> 
 
-        <% end %>
-      </div>
+      <% end %>
 
   <% else %>
     <p>There are no users (yet).</p>

@@ -69,3 +69,9 @@
   <% user = @users.find_by(id: review.user_id) %>
   
   <% _product = @products.find_by(id: review.product_id) %>
+
+                  <div class="community-align-stars">
+                    <div class="star-align">
+                      <%= render partial: "shared/review_stars", locals: { review: User.user_reviews(user.id) } %>
+                    </div>
+                  </div>

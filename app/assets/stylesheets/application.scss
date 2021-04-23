@@ -932,14 +932,16 @@ body::-webkit-scrollbar-thumb {
 
 // Our Community
 
+
+
 .community-profile-card {
   padding: 10px;
-  width: 40%;
+  width: 38%;
   height: 170px;
   border: 1px;
   border-radius: 5px;
   border: 1.5px solid #CBCBCB;
-  border-top: 3px solid #65e252;
+  border-top: 3px solid #e1d5ba;
   text-align: left;
   margin-bottom: 5px;
   align-self: center;
@@ -962,7 +964,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .community-profile-box2 {
-  margin-left: 20px;
+  margin-left: 40px;
   order: 2;
   display: flex;
   justify-content: space-between;
@@ -981,6 +983,9 @@ body::-webkit-scrollbar-thumb {
 .community-column-box2 {
   order: 2;
   // margin-top: 10px;
+  & > .community-align-stars {
+    display: inline-block;
+  }
 }
 
 .community-column-box3 {
@@ -993,7 +998,7 @@ body::-webkit-scrollbar-thumb {
   // margin-top: 10px;
 }
 
-.community-nowrap {
-  white-space: nowrap;
-
+.star-align {
+  position: relative;
+  top: 3px;
 }
