@@ -42,7 +42,11 @@
             </div>
 
             <div class="community-column-box4">
-                <p>Most Recent Review: <%= User.user_latest_review(user.id) %></p>
+              <% if User.user_latest_review(user.id) == {} %>
+                <p>Most Recent Review: None</p>
+                <% else %>
+                  <p>Most Recent Review: <%= User.user_latest_review(user.id) %></p>
+              <% end %>
             </div>
             
           </div>

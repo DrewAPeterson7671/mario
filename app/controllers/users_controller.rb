@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.paginate(page: params[:page], per_page: 10)
+    @users = User.all.paginate(page: params[:page], per_page: 20)
     # @user_ave_review = 
     # @user_latest = 
     render :index
