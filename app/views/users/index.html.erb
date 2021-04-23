@@ -32,7 +32,7 @@
               </div>
               <div class="community-align-stars">
                 <div class="star-align">
-                  <%= render partial: "shared/review_stars", locals: { review: User.user_reviews(user.id) } %>
+                  <%= render partial: "shared/review_stars", locals: { review: User.user_ave_rating(user.id) } %>
                 </div>
               </div>                  
             </div>

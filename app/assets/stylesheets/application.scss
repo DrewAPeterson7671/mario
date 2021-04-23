@@ -955,6 +955,7 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 5px;
   align-self: center;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .community-profile-flex {
