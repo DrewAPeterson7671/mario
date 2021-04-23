@@ -932,7 +932,16 @@ body::-webkit-scrollbar-thumb {
 
 // Our Community
 
-
+.community-flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  // width: auto;
+  max-height: 100vh;
+  flex-flow: column wrap;
+  // flex-wrap: wrap;
+}
 
 .community-profile-card {
   padding: 10px;
