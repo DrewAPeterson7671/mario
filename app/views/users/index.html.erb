@@ -8,34 +8,38 @@
         <% @users.each do |user| %>
 
 
-          <div class="review-card">
-            <div class="review-card-flex">
-              <div class="review-box1">
+          <div class="community-profile-card">
+            <div class="community-profile-flex">
+              <div class="community-profile-box1">
 
                 <% if user.avatar_pic.attached? %>
                   <%= image_tag user.avatar_pic, class:"avatar" %><br>
                   <% else %>
                     <%= image_tag 'generc_profile_pic.webp', class:"avatar", alt: 'Avatar Not Found ' %><br>
                 <% end %>
-                <% if user.user_name? %>
-                  <%= user.user_name %>
-                  <% else %>
-                  <p>Guest User</p>
-                <% end %>
+              </div>
 
-              </div>
-              <div class="review-box2">
-                <p>Number of Reviews: <%= User.user_reviews(user.id) %></p>
+              <div class="community-profile-box2">
+                <div class="community-column-box1">
+                  <% if user.user_name? %>
+                    <p><%= user.user_name %></p>
+                    <% else %>
+                    <p>Guest User</p>
+                  <% end %>
+                </div>
+                <div class="community-column-box2">
+                  <p>Number of Reviews: <%= User.user_reviews(user.id) %></p>
 
+                </div>
+                <div class="community-column-box3">
+                  <div class="review-stars"> 
+                    <p>Average Rating: <%= User.user_ave_rating(user.id) %></p>              
+                  </div>
+                </div>
+                <div class="community-column-box4">
+                    <p>Most Recent Review: <%= User.user_latest_review(user.id) %></p>
+                </div>
               </div>
-              <div class="review-box3">
-                <p>Average Rating: <%= User.user_ave_rating(user.id) %></p>              
-              </div>
-            </div>
-              <div class="review-stars"> 
-              </div>
-            <div class="review-index-text">
-                <p>Most Recent Review: <%= User.user_latest_review(user.id) %></p>
             </div>
           </div> 
 

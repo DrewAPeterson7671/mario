@@ -929,3 +929,71 @@ body::-webkit-scrollbar-thumb {
     margin-top: 40px;
   }
 }
+
+// Our Community
+
+.community-profile-card {
+  padding: 10px;
+  width: 40%;
+  height: 170px;
+  border: 1px;
+  border-radius: 5px;
+  border: 1.5px solid #CBCBCB;
+  border-top: 3px solid #65e252;
+  text-align: left;
+  margin-bottom: 5px;
+  align-self: center;
+}
+
+.community-profile-flex {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+}
+
+.community-profile-box1 {
+  // flex: 0 0 50%;
+  margin-right: 0 auto;
+  order: 1;
+  // margin-top: -10px;
+  // margin-left: 0 auto;
+  // align-self: flex-end;
+  page-break-after: always;
+}
+
+.community-profile-box2 {
+  margin-left: 20px;
+  order: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: auto;
+  // flex-flow: column wrap;
+  // flex-wrap: wrap;
+}
+
+
+.community-column-box1 {
+  order: 1;
+  // margin-top: -50px;
+}
+
+.community-column-box2 {
+  order: 2;
+  // margin-top: 10px;
+}
+
+.community-column-box3 {
+  order: 3;
+  // margin-top: 10px;
+}
+
+.community-column-box4 {
+  order: 4;
+  // margin-top: 10px;
+}
+
+.community-nowrap {
+  white-space: nowrap;
+
+}
