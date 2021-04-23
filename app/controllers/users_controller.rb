@@ -41,21 +41,10 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.paginate(page: params[:page], per_page: 10)
-    # @user_ave_review = 
-    # @user_latest = 
+    @users = User.all.paginate(page: params[:page], per_page: 20)
     render :index
   end
   
-
-
-  
-  # def user_reviews(id)
-  #   _gather_reviews = [] ## 36
-  #   _gather_reviews = Review.where(product_id: @product.id)
-  #   _gather_reviews.length()
-  # end
-
 
   private
   
