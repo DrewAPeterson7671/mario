@@ -61,3 +61,11 @@
       <%= link_to image_tag(product.product_photo, :class => "card-image", :alt => "Product Image"), product_path(product.id)  %>
 
 
+
+  <p>On <%= review.created_at.strftime('%m-%d-%Y') %></p>
+
+  <%= render partial: "shared/review_stars", locals: { review: review.rating } %>
+
+  <% user = @users.find_by(id: review.user_id) %>
+  
+  <% _product = @products.find_by(id: review.product_id) %>

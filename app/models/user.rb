@@ -6,6 +6,32 @@ class User < ApplicationRecord
   before_save :encrypt_password
 
   has_one_attached :avatar_pic
+  has_many :reviews
+
+  def self.user_reviews(user_id)
+    @user_reviews = Review.where(user_id: user_id).count
+  end
+
+  def self.user_ave_rating(user_id)
+    _average_reviews = []
+    _rev_count = 0
+    _new_average = 0.0
+    _average_reviews = Review.where(user_id: user_id)
+    _average_reviews.each do |average_review|
+      _rev_count += average_review.rating
+    end
+    _new_average = (_rev_count / _average_reviews.length.to_f).round(1)
+  end
+
+  ## I think its tripping up on empty reviews
+  def self.user_latest_review(user_id)
+    @latest_review = Review.where(user_id: user_id).where('created_at < ? ', Time.now).order('created_at DESC').first
+    if @latest_review.nil?
+      last_review = {}
+      else
+        last_review = @latest_review.created_at.strftime('%m-%d-%Y')
+    end
+  end
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
