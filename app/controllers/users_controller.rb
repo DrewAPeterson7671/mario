@@ -63,6 +63,7 @@ class UsersController < ApplicationController
     when params[:least_reviews]
       "Least Reviews"
     when params[:most_recent]
+      @users = User.users_most_recent.paginate(page: params[:page], per_page: 20)
       "Most Recent"
     when params[:least_recent]
       "Least Recent"

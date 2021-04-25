@@ -8,6 +8,14 @@ class User < ApplicationRecord
   has_one_attached :avatar_pic
   has_many :reviews
 
+
+  scope :users_most_recent, -> {(
+    joins(:reviews)
+    .where('reviews.updated_at = (SELECT MAX(reviews.updated_at) FROM reviews WHERE reviews.user_id = users.id)')
+    .group('users.id')
+    .order('reviews.updated_at')
+    )}
+
   def self.user_reviews(user_id)
     @user_reviews = Review.where(user_id: user_id).count
   end
