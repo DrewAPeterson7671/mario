@@ -8,13 +8,16 @@
       Sort By
     </button>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">User Name</a>
-      <a class="dropdown-item" href="#">Highest Average Rating</a>
-      <a class="dropdown-item" href="#">Lowest Average Rating</a>
-      <a class="dropdown-item" href="#">Most Reviews</a>
-      <a class="dropdown-item" href="#">Least Reviews</a>
-      <a class="dropdown-item" href="#">Most Recent Review</a>
-      <a class="dropdown-item" href="#">Least Recent Review</a>
+
+      <%= link_to "User Name A-Z", users_path(:az => 'az'), class: "dropdown-item" %>
+      <%= link_to "User Name Z-A", users_path(:za => 'za'), class: "dropdown-item" %>
+      <%= link_to "Highest Average Rating", users_path(:high_rating => 'high_rating'), class: "dropdown-item" %>
+      <%= link_to "Lowest Average Rating", users_path(:low_rating => 'low_rating'), class: "dropdown-item" %>
+      <%= link_to "Most Reviews", users_path(:most_reviews => 'most_reviews'), class: "dropdown-item" %>
+      <%= link_to "Least Reviews", users_path(:least_reviews => 'least_reviews'), class: "dropdown-item" %>
+      <%= link_to "Most Recent Review", users_path(:most_recent => 'most_recent'), class: "dropdown-item" %>
+      <%= link_to "Least Recent Review", users_path(:least_recent => 'least_recent'), class: "dropdown-item" %>
+
     </div>
   </div>
 </div>

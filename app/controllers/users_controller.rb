@@ -41,9 +41,38 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.paginate(page: params[:page], per_page: 20)
+
+    ## link_to 'Name', casinos_path(:sort_param => "name")
+
+    ## @users = User.all.paginate(page: params[:page], per_page: 20)
+    
+    case
+    when params[:az]
+      # @sorted = @users.sort_by { |user| [user.user_name ? 1 : 0, user.user_name] }
+      @users = User.order('user_name').paginate(page: params[:page], per_page: 20)
+    when params[:za]
+      # @sorted = @users.sort_by { |user| [user.user_name ? 1 : 0, user.user_name] }
+      @users = User.order('user_name DESC').paginate(page: params[:page], per_page: 20)
+    when params[:high_rating]
+      ## create Hash from average rating with user Id, sort it, then reference each ID to push to a new hash? and display that
+      "High Rating"
+    when params[:low_rating]
+      "Low Rating"
+    when params[:most_reviews]
+      "Most Reviews"
+    when params[:least_reviews]
+      "Least Reviews"
+    when params[:most_recent]
+      @users = User.users_most_recent.paginate(page: params[:page], per_page: 20)
+      "Most Recent"
+    when params[:least_recent]
+      "Least Recent"
+    else
+      @users = User.all.paginate(page: params[:page], per_page: 20)
+    end
     render :index
   end
+  
   
 
   private
