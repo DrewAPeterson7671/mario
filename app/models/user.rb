@@ -32,35 +32,6 @@ class User < ApplicationRecord
     end
   end
 
-  # def self.sort_users(sort_type)
-  #   ## I think this must be part of Each controller so I can access each of them
-
-  #   ## date sort
-  #   ## @projects = Project.all.sort { |p1, p2| p1.created_at <=> p2.created_at }
-  #   ## same as
-  #   ## @projects = Project.all.sort_by &:created_at
-
-  #   case sort_type
-  #   when "A-Z"
-  #     @sorted = @users.sort_by { |user| [user.user_name ? 1 : 0, user.user_name] }
-  #   when "Z-A"
-  #     @sorted = @users.sort_by { |user| [user.user_name ? 0 : 1, user.user_name] }
-  #   when "High Rating"
-  #     ## create Hash from average rating with user Id, sort it, then reference each ID to push to a new hash? and display that
-  #     "High Rating"
-  #   when "Low Rating"
-  #     "Low Rating"
-  #   when "Most Reviews"
-  #     "Most Reviews"
-  #   when "Least Reviews"
-  #     "Least Reviews"
-  #   when "Most Recent"
-  #     "Most Recent"
-  #   when "Least Recent"
-  #     "Least Recent"
-  #   end
-  # end
-
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
     self.password_hash = BCrypt::Engine.hash_secret(password,password_salt)
