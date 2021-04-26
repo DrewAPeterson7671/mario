@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :product
+  belongs_to :user
   validates :author, presence: true
   validates_length_of :author, maximum: 40
   validates :content_body, presence: true
