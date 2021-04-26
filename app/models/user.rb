@@ -10,12 +10,19 @@ class User < ApplicationRecord
 
 
   scope :users_most_recent, -> {(
-    joins(:reviews)
-    .where('reviews.updated_at = (SELECT MAX(reviews.updated_at) FROM reviews WHERE reviews.user_id = users.id)')
+    select('users.id, users.user_name, max(reviews.updated_at) as reviews_updated_at')
+    .joins(:reviews)
     .group('users.id')
-    .order('reviews.updated_at')
+    .order('reviews_updated_at DESC')
     )}
 
+  scope :user_most_reviewed, -> {(
+    select("users.id, users.user_name, count(reviews.user_id) as reviews_count")
+    .joins(:reviews)
+    .group("users.id")
+    .order("reviews_count DESC")
+    )}
+    
   def self.user_reviews(user_id)
     @user_reviews = Review.where(user_id: user_id).count
   end
