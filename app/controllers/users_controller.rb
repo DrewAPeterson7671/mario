@@ -40,31 +40,44 @@ class UsersController < ApplicationController
     end
   end
 
+  ## was this just reference and not verbatim?
+  
+  def average_rating
+    (BigDecimal(reviews.sum(:rating).to_s) / BigDecimal(reviews.count.to_s)).round(1)
+  end
+
+  def review_count
+    reviews.count
+  end
+
+  def last_updated_review
+    reviews.order('updated_at')
+  end
+
   def index
     case
     when params[:az]
-      @users = User.order('user_name').paginate(page: params[:page], per_page: 20)
+      @users_sort = User.order('user_name ASC')
     when params[:za]
-      @users = User.order('user_name DESC').paginate(page: params[:page], per_page: 20)
+      @users_sort = User.order('user_name DESC')
     when params[:high_rating]
-      "High Rating"
+      @users_sort = User.all.sort_by(&:average_rating).reverse
     when params[:low_rating]
-      "Low Rating"
+      @users_sort = User.all.sort_by(&:average_rating)
     when params[:most_reviews]
-      @users = User.user_most_reviewed.paginate(page: params[:page], per_page: 20)
+      @users_sort = User.all.sort_by(&:review_count)
     when params[:least_reviews]
-      @users = User.user_most_reviewed.reverse_order.paginate(page: params[:page], per_page: 20)
+      @users_sort = User.all.sort_by(&:review_count)
     when params[:most_recent]
-      @users = User.users_most_recent.paginate(page: params[:page], per_page: 20)
+      @users_sort = User.all.sort_by(&:last_updated_review)
     when params[:least_recent]
-      @users = User.users_most_recent.reverse_order.paginate(page: params[:page], per_page: 20)
+      @users_sort = User.all.sort_by(&:last_updated_review).reverse.reverse_order
     else
-      @users = User.all.paginate(page: params[:page], per_page: 20)
+      @users_sort = User.all
     end
+    @users = @users_sort.paginate(page: params[:page], per_page: 20)
     render :index
   end
-  
-  
 
   private
   
