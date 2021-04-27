@@ -1,4 +1,24 @@
-<h1 class="center">Our Reviews</h1>
+<div class="sort-flex-wrapper">
+  <h1 class="center">Our Reviews</h1>
+
+  <div class="btn-group sort-button">
+    <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort By
+    </button>
+    <div class="dropdown-menu">
+
+      <%= link_to "Reviewer A-Z", reviews_path(:az => 'az'), class: "dropdown-item" %>
+      <%= link_to "Reviewer Z-A", reviews_path(:za => 'za'), class: "dropdown-item" %>
+      <%= link_to "Product A-Z", reviews_path(:product_az => 'product_az'), class: "dropdown-item" %>
+      <%= link_to "Product Z-A", reviews_path(:product_za => 'product_za'), class: "dropdown-item" %>
+      <%= link_to "Highest Rating", reviews_path(:high_rating => 'highest_rated'), class: "dropdown-item" %>
+      <%= link_to "Lowest Rating", reviews_path(:low_rating => 'lowest_rated'), class: "dropdown-item" %>
+      <%= link_to "Most Recent Review", reviews_path(:most_recent => 'most_recent'), class: "dropdown-item" %>
+      <%= link_to "Least Recent Review", reviews_path(:least_recent => 'least_recent'), class: "dropdown-item" %>
+
+    </div>
+  </div>
+</div>
 
 <div class="reviews-container">
   <% if @reviews.any? %>
