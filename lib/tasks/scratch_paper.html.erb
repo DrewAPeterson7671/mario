@@ -97,3 +97,10 @@
   </div>
 </div>
 
+
+      <%= link_to "Reviewer A-Z", product_path(:prod_az => 'prod_az'), class: "dropdown-item" %>
+      <%= link_to "Reviewer Z-A", product_path(:prod_za => 'prod_za'), class: "dropdown-item" %>
+      <%= link_to "Highest Rating", product_path(:prod_high_rating => 'prod_highest_rated'), class: "dropdown-item" %>
+      <%= link_to "Lowest Rating", product_path(:prod_low_rating => 'prod_lowest_rated'), class: "dropdown-item" %>
+      <%= link_to "Most Recent Review", product_path(:prod_most_recent => 'prod_most_recent'), class: "dropdown-item" %>
+      <%= link_to "Least Recent Review", product_path(:prod_least_recent => 'prod_least_recent'), class: "dropdown-item" %>

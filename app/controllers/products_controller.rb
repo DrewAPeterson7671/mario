@@ -61,7 +61,23 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     average_review(@product.id)
-    @product_reviews = @product.reviews.paginate(page: params[:page], per_page: 10)
+    case
+    when params[:prod_az]
+      @product_reviews_sort = @product.reviews.order('author ASC')
+    when params[:prod_za]
+      @product_reviews_sort = @product.reviews.order('author DESC')
+    when params[:prod_high_rating]  
+      @product_reviews_sort = @product.reviews.order('rating::integer DESC')
+    when params[:prod_low_rating]  
+      @product_reviews_sort = @product.reviews.order('rating::integer ASC')
+    when params[:prod_most_recent]
+      @product_reviews_sort = @product.reviews.order('created_at DESC')
+    when params[:prod_least_recent]
+      @product_reviews_sort = @product.reviews.order('created_at ASC')
+    else
+      @product_reviews_sort = @product.reviews
+    end
+    @product_reviews = @product_reviews_sort.paginate(page: params[:page], per_page: 10)
     @number_reviews = number_reviews(@product)
     render :show
   end
