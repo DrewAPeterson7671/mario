@@ -35,9 +35,30 @@
 
 <% if @product.reviews.any? %>
 
-<div class="margin-spacer">
-  <h2>Reviews for this product:</h2>
+<div class="sort-flex-wrapper">
+
+  <div class="margin-spacer">
+    <h2>Reviews for this product:</h2>
+  </div>
+
+
+  <div class="btn-group sort-button">
+    <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort By
+    </button>
+    <div class="dropdown-menu">
+
+      <%= link_to("Reviewer A-Z", :controller => "products", :action => "show", :prod_az => 'prod_az', :class=> "dropdown-item") %><br>
+      <%= link_to("Reviewer Z-A", :controller => "products", :action => "show", :prod_za => 'prod_za', :class=> "dropdown-item") %><br>
+      <%= link_to("Highest Rating", :controller => "products", :action => "show", :prod_high_rating => 'prod_high_rating', :class=> "dropdown-item") %><br>
+      <%= link_to("Lowest Rating", :controller => "products", :action => "show", :prod_low_rating => 'prod_low_rating', :class=> "dropdown-item") %><br>
+      <%= link_to("Most Recent Review", :controller => "products", :action => "show", :prod_most_recent => 'prod_most_recent', :class=> "dropdown-item") %><br>
+      <%= link_to("Least Recent Review", :controller => "products", :action => "show", :prod_least_recent => 'prod_least_recent', :class=> "dropdown-item") %><br>
+      
+    </div>
+  </div>
 </div>
+
 
   <div class="reviews-container">
     <div class="reviews-ul">
