@@ -1,5 +1,5 @@
 
-<% @most_reviews.each do |most_review| %>
+<% @most_reviews.first(6).each do |most_review| %>
   <div class="card">
     <div class="arrow-most-reviewed">
       <span><%= most_review.reviews_count %> Reviews</span>

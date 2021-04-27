@@ -13,7 +13,11 @@
         </div>  
       </div>
       <div class="card-show-up card-show-col2">
-        <p>Average Review: <%= product.average_review %> of 5 Stars</p><br>
+        <% if product.average_review.nan? %>
+          <p>Average Review: No Reviews (Yet!)</p><br>
+          <% else %>
+          <p>Average Review: <%= product.average_review %> of 5 Stars</p><br>
+        <% end %>
         <div class="product-show-text-up">
           <p>Number of Reviews: <%= number_reviews %></p>
         </div>

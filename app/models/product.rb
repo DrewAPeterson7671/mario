@@ -9,6 +9,13 @@ class Product < ApplicationRecord
 
   has_one_attached :product_photo
 
+  after_initialize do
+    if self.new_record?
+      self.average_review = 0.0001
+    end
+  end
+  
+
   before_save(:titleize_product)
 
   scope :most_reviewed, -> {(
@@ -16,7 +23,6 @@ class Product < ApplicationRecord
     .joins(:reviews)
     .group("products.id")
     .order("reviews_count DESC")
-    .limit(6)
     )}
 
   scope :newest_product, -> {  order(created_at: :desc).limit(6) }
@@ -26,14 +32,28 @@ class Product < ApplicationRecord
     .joins(:reviews)
     .group("products.id")
     .order("average_review DESC")
-    .limit(6)
     )}
+
+  scope :products_most_recent, -> {(
+    select('products.id, products.name, products.price, products.average_review, products.country, max(reviews.updated_at) as reviews_updated_at')
+    .joins(:reviews)
+    .group('products.id')
+    .order('reviews_updated_at DESC')
+    )}
+
 
   def self.search(search)
     where("lower(reviews.author) LIKE :search OR lower(products.name) LIKE :search OR lower(reviews.content_body) LIKE :search", search: "%#{search.downcase}%").uniq
   end
 
   def next
+    # _next_index = @products_sort.map(&:id).index(id) + 1
+    # _total_length = @products_sort.length
+    # if _next_index  == _total_length
+    #   @products_sort[0]
+    # else 
+    #   @products_sort[_next_index]
+    # end
     Product.where("id > ?", id).order("id ASC").first || Product.first
   end
 
