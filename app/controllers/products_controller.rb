@@ -2,10 +2,38 @@ class ProductsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @products = Product.all.paginate(page: params[:page], per_page: 12)
     @most_reviews = Product.most_reviewed
     @newest_products = Product.newest_product
     @highest_revieweds = Product.highest_reviewed
+    case
+    when params[:highest_price]
+      @products_sort = Product.order('price DESC') #refactor
+    when params[:lowest_price]
+      @products_sort = Product.order('price ASC')
+    when params[:az]
+      @products_sort = Product.order('name ASC')
+    when params[:za]
+      @products_sort = Product.order('name DESC')
+    when params[:highest_rated]
+      @products_sort = Product.order('average_review DESC') #refactor
+    when params[:lowest_rated]
+      @products_sort = Product.order('average_review ASC')
+    when params[:most_reviews]
+      @products_sort = Product.user_most_reviewed
+    when params[:least_reviews]
+      @products_sort = Product.user_most_reviewed.reverse_order
+    when params[:most_recent]
+      @products_sort = Product.users_most_recent
+    when params[:least_recent]
+      @products_sort = Product.users_most_recent.reverse_order
+    when params[:most_recent_added]
+      @products_sort = Product.users_most_recent
+    when params[:least_recent_added]
+      @products_sort = Product.users_most_recent.reverse_order
+    else
+      @products_sort = Product.all
+    end
+    @products = @products_sort.paginate(page: params[:page], per_page: 12)
     render :index
   end
 

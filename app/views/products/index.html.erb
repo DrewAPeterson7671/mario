@@ -1,4 +1,30 @@
-<h1 class="center">Our Products</h1>
+<p id="notice"><%= notice %></p>
+
+<div class="sort-flex-wrapper">
+  <h1 class="center">Our Products</h1>
+
+  <div class="btn-group sort-button">
+    <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort By
+    </button>
+    <div class="dropdown-menu">
+
+      <%= link_to "Product Price", products_path(:highest_price => 'highest_price'), class: "dropdown-item" %>
+      <%= link_to "Product Price Reverse", products_path(:lowest_price => 'lowest_price'), class: "dropdown-item" %>
+      <%= link_to "Product Name A-Z", products_path(:az => 'az'), class: "dropdown-item" %>
+      <%= link_to "Product Name Z-A", products_path(:za => 'za'), class: "dropdown-item" %>
+      <%= link_to "Highest Rated", products_path(:highest_rated => 'highest_rated'), class: "dropdown-item" %>
+      <%= link_to "Lowest Rated", products_path(:lowest_rated => 'lowest_rated'), class: "dropdown-item" %>
+      <%= link_to "Most Reviews", products_path(:most_reviews => 'most_reviews'), class: "dropdown-item" %>
+      <%= link_to "Least Reviews", products_path(:least_reviews => 'least_reviews'), class: "dropdown-item" %>
+      <%= link_to "Most Recent Review", products_path(:most_recent => 'most_recent'), class: "dropdown-item" %>
+      <%= link_to "Least Recent Review", products_path(:least_recent => 'least_recent'), class: "dropdown-item" %>
+      <%= link_to "Most Recently Added", products_path(:most_recent_added => 'most_recent_added'), class: "dropdown-item" %>
+      <%= link_to "Least Recently Added", products_path(:least_recent_added => 'least_recent_added'), class: "dropdown-item" %>
+
+    </div>
+  </div>
+</div>
 
 <% if current_user && current_user.admin %>
   <div class="margin-spacer admin-card-1btn">
