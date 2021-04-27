@@ -9,21 +9,19 @@ class User < ApplicationRecord
   has_one_attached :avatar_pic
 
 
-  # scope :users_most_recent, -> {(
-  #   select('users.id, users.user_name, max(reviews.updated_at) as reviews_updated_at')
-  #   .joins(:reviews)
-  #   .group('users.id')
-  #   .order('reviews_updated_at DESC')
-  #   )}
+  scope :users_most_recent, -> {(
+    select('users.id, users.user_name, max(reviews.updated_at) as reviews_updated_at')
+    .joins(:reviews)
+    .group('users.id')
+    .order('reviews_updated_at DESC')
+    )}
 
-  # scope :user_most_reviewed, -> {(
-  #   select("users.id, users.user_name, count(reviews.user_id) as reviews_count")
-  #   .joins(:reviews)
-  #   .group("users.id")
-  #   .order("reviews_count DESC")
-  #   )}
-    
-
+  scope :user_most_reviewed, -> {(
+    select("users.id, users.user_name, count(reviews.user_id) as reviews_count")
+    .joins(:reviews)
+    .group("users.id")
+    .order("reviews_count DESC")
+    )}
   
   def self.user_reviews(user_id)
     @user_reviews = Review.where(user_id: user_id).count

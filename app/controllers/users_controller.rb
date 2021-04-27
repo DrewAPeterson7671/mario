@@ -60,18 +60,14 @@ class UsersController < ApplicationController
       @users_sort = User.order('user_name ASC')
     when params[:za]
       @users_sort = User.order('user_name DESC')
-    when params[:high_rating]
-      @users_sort = User.all.sort_by(&:average_rating).reverse
-    when params[:low_rating]
-      @users_sort = User.all.sort_by(&:average_rating)
     when params[:most_reviews]
-      @users_sort = User.all.sort_by(&:review_count)
+      @users_sort = User.user_most_reviewed
     when params[:least_reviews]
-      @users_sort = User.all.sort_by(&:review_count)
+      @users_sort = User.user_most_reviewed.reverse_order
     when params[:most_recent]
-      @users_sort = User.all.sort_by(&:last_updated_review)
+      @users_sort = User.users_most_recent
     when params[:least_recent]
-      @users_sort = User.all.sort_by(&:last_updated_review).reverse.reverse_order
+      @users_sort = User.users_most_recent.reverse_order
     else
       @users_sort = User.all
     end
