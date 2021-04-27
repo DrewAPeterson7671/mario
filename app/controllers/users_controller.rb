@@ -43,9 +43,9 @@ class UsersController < ApplicationController
   def index
     case
     when params[:az]
-      @users_sort = User.order('user_name ASC')
+      @users_sort = User.order('user_name ASC NULLS LAST')
     when params[:za]
-      @users_sort = User.order('user_name DESC')
+      @users_sort = User.order('user_name DESC NULLS LAST')
     when params[:most_reviews]
       @users_sort = User.user_most_reviewed
     when params[:least_reviews]
