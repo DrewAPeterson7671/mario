@@ -40,40 +40,40 @@ class UsersController < ApplicationController
     end
   end
 
+  ## was this just reference and not verbatim?
+  
+  def average_rating
+    (BigDecimal(reviews.sum(:rating).to_s) / BigDecimal(reviews.count.to_s)).round(1)
+  end
+
+  def review_count
+    reviews.count
+  end
+
+  def last_updated_review
+    reviews.order('updated_at')
+  end
+
   def index
-
-    ## link_to 'Name', casinos_path(:sort_param => "name")
-
-    ## @users = User.all.paginate(page: params[:page], per_page: 20)
-    
     case
     when params[:az]
-      # @sorted = @users.sort_by { |user| [user.user_name ? 1 : 0, user.user_name] }
-      @users = User.order('user_name').paginate(page: params[:page], per_page: 20)
+      @users_sort = User.order('user_name ASC')
     when params[:za]
-      # @sorted = @users.sort_by { |user| [user.user_name ? 1 : 0, user.user_name] }
-      @users = User.order('user_name DESC').paginate(page: params[:page], per_page: 20)
-    when params[:high_rating]
-      ## create Hash from average rating with user Id, sort it, then reference each ID to push to a new hash? and display that
-      "High Rating"
-    when params[:low_rating]
-      "Low Rating"
+      @users_sort = User.order('user_name DESC')
     when params[:most_reviews]
-      "Most Reviews"
+      @users_sort = User.user_most_reviewed
     when params[:least_reviews]
-      "Least Reviews"
+      @users_sort = User.user_most_reviewed.reverse_order
     when params[:most_recent]
-      @users = User.users_most_recent.paginate(page: params[:page], per_page: 20)
-      "Most Recent"
+      @users_sort = User.users_most_recent
     when params[:least_recent]
-      "Least Recent"
+      @users_sort = User.users_most_recent.reverse_order
     else
-      @users = User.all.paginate(page: params[:page], per_page: 20)
+      @users_sort = User.all
     end
+    @users = @users_sort.paginate(page: params[:page], per_page: 20)
     render :index
   end
-  
-  
 
   private
   

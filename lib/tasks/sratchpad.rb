@@ -60,6 +60,48 @@ _new_average = (_rev_count / _average_reviews.length.to_f).round(1)
 @product.update_attributes(average_review: _new_average)
 
 
+class UserList
+  def self.order_users_by(order_value)
+    case order_value
+    when :az
+      User.order('user_name ASC')
+    when :za
+      User.order('user_name DESC')
+    when :high_rating
+      User.all.sort_by(&:average_rating).reverse
+    when :low_rating
+      User.all.sort_by(&:average_rating)
+    when :most_reviews
+      User.all.sort_by(&:review_count).reverse
+    when :least_reviews
+      User.all.sort_by(&:review_count)
+    when :most_recent
+      User.all.sort_by(&:last_updated_review)
+    when :least_recent
+      User.all.sort_by(&:last_updated_review).reverse
+    else
+      User.all
+    end
+  end
+end  
+
+class User
+  def average_rating
+    (BigDecimal(reviews.sum(:rating).to_s) / BigDecimal(reviews.count.to_s)).round(1)
+  end
+
+  def review_count
+    reviews.count
+  end
+
+  def last_updated_review
+    reviews.order('updated_at')
+  end
+end
 
 
+def index
+  @users = UserList.order_users_by(params).paginate(page: params[:page], per_page: 20)
+  # render :index
+end
 
