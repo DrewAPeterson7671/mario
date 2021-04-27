@@ -2,7 +2,27 @@ class ReviewsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @reviews = Review.all.paginate(page: params[:page], per_page: 30)
+    case
+    when params[:az]
+      @reviews_sort = Review.order('author ASC')
+    when params[:za]
+      @reviews_sort = Review.order('author DESC')
+    when params[:product_az]
+      @reviews_sort = Review.review_product_name
+    when params[:product_za]
+      @reviews_sort = Review.review_product_name.reverse_order
+    when params[:high_rating]  
+      @reviews_sort = Review.order('rating::integer DESC')
+    when params[:low_rating]  
+      @reviews_sort = Review.order('rating::integer ASC')
+    when params[:most_recent]
+      @reviews_sort = Review.order('created_at DESC')
+    when params[:least_recent]
+      @reviews_sort = Review.order('created_at ASC')
+    else
+      @reviews_sort = Review.all
+    end
+    @reviews = @reviews_sort.paginate(page: params[:page], per_page: 30)
     @users = User.all
     @products = Product.all
     render :index

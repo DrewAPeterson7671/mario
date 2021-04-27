@@ -13,6 +13,13 @@ class Review < ApplicationRecord
 
   before_save(:titleize_review)
 
+  scope :review_product_name, -> {(
+    select("reviews.*, products.name as products_name")
+    .joins(:product)
+    .group("reviews.id, products.name")
+    .order("products_name ASC")
+    )}
+
   def next
     Review.where("id > ?", id).order("id ASC").first || Review.first
   end
