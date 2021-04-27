@@ -40,20 +40,6 @@ class UsersController < ApplicationController
     end
   end
 
-  ## was this just reference and not verbatim?
-  
-  def average_rating
-    (BigDecimal(reviews.sum(:rating).to_s) / BigDecimal(reviews.count.to_s)).round(1)
-  end
-
-  def review_count
-    reviews.count
-  end
-
-  def last_updated_review
-    reviews.order('updated_at')
-  end
-
   def index
     case
     when params[:az]

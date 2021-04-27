@@ -7,29 +7,29 @@ class ProductsController < ApplicationController
     @highest_revieweds = Product.highest_reviewed
     case
     when params[:highest_price]
-      @products_sort = Product.order('price DESC') #refactor
+      @products_sort = Product.order('price::float DESC')
     when params[:lowest_price]
-      @products_sort = Product.order('price ASC')
+      @products_sort = Product.order('price::float ASC')
     when params[:az]
       @products_sort = Product.order('name ASC')
     when params[:za]
       @products_sort = Product.order('name DESC')
     when params[:highest_rated]
-      @products_sort = Product.order('average_review DESC') #refactor
+      @products_sort = Product.order('average_review::float DESC')
     when params[:lowest_rated]
-      @products_sort = Product.order('average_review ASC')
+      @products_sort = Product.order('average_review::float ASC')
     when params[:most_reviews]
-      @products_sort = Product.user_most_reviewed
+      @products_sort = Product.most_reviewed
     when params[:least_reviews]
-      @products_sort = Product.user_most_reviewed.reverse_order
+      @products_sort = Product.most_reviewed.reverse_order
     when params[:most_recent]
-      @products_sort = Product.users_most_recent
+      @products_sort = Product.products_most_recent
     when params[:least_recent]
-      @products_sort = Product.users_most_recent.reverse_order
+      @products_sort = Product.products_most_recent.reverse_order
     when params[:most_recent_added]
-      @products_sort = Product.users_most_recent
+      @products_sort = Product.order('created_at DESC')
     when params[:least_recent_added]
-      @products_sort = Product.users_most_recent.reverse_order
+      @products_sort = Product.order('created_at DESC')
     else
       @products_sort = Product.all
     end
