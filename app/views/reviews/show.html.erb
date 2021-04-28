@@ -12,7 +12,7 @@
       <div class="review-card-flexbox">
         <div class="review-box1">
           <% if @product.product_photo.attached? %>
-            <%= image_tag @product.product_photo, class:"product-image" %>
+            <%= link_to image_tag(@product.product_photo, class:"product-image"), product_path(@product.id) %>
             <% else %>
             <%= image_tag 'image_not_available.webp', class:"card-image-not-found-sm", alt: 'Image Not Found ' %>
           <% end %>
@@ -33,7 +33,7 @@
       </div>
         <p>Reviewer: <%= @review.author %></p>
       <div class="margin-text">
-        <p>Product: <%= @product.name %></p>
+        <p>Product: <%= link_to @product.name, product_path(@product) %></p>
       </div>
       <div class="margin-text">
         <p>Reviewed on: <%= @review.created_at.strftime('%m-%d-%Y') %>
