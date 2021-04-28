@@ -28,6 +28,28 @@ class UsersController < ApplicationController
     render :edit
   end  
 
+  def my_reviews
+    @user = current_user
+    case
+    when params[:my_az]
+      @my_reviews_sort = Review.review_product_name.where(user_id: current_user)
+    when params[:my_za]
+      @my_reviews_sort = Review.review_product_name.where(user_id: current_user).reverse_order
+    when params[:my_high_rating]  
+      @my_reviews_sort = Review.where(user_id: current_user.id).order('rating::integer DESC')
+    when params[:my_low_rating]  
+      @my_reviews_sort = Review.where(user_id: current_user.id).order('rating::integer ASC')
+    when params[:my_most_recent]
+      @my_reviews_sort = Review.where(user_id: current_user.id).order('created_at DESC')
+    when params[:my_least_recent]
+      @my_reviews_sort = Review.where(user_id: current_user.id).order('created_at ASC')
+    else
+      @my_reviews_sort = Review.where(user_id: current_user.id)
+    end
+    @my_reviews = @my_reviews_sort.paginate(page: params[:page], per_page: 30)
+    # render :my_reviews
+  end
+
   def update
     @user = current_user
 
