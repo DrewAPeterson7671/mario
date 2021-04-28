@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
   def my_reviews
     @user = current_user
+    @products = Product.all
     case
     when params[:my_az]
       @my_reviews_sort = Review.review_product_name.where(user_id: current_user)

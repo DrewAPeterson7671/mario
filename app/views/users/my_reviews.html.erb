@@ -7,8 +7,8 @@
     </button>
     <div class="dropdown-menu">
 
-      <%= link_to("Reviewer A-Z", :controller => "users", :action => "my_reviews", :my_az => 'my_az', :class=> "dropdown-item") %><br>
-      <%= link_to("Reviewer Z-A", :controller => "users", :action => "my_reviews", :my_za => 'my_za', :class=> "dropdown-item") %><br>
+      <%= link_to("Products A-Z", :controller => "users", :action => "my_reviews", :my_az => 'my_az', :class=> "dropdown-item") %><br>
+      <%= link_to("Products Z-A", :controller => "users", :action => "my_reviews", :my_za => 'my_za', :class=> "dropdown-item") %><br>
       <%= link_to("Highest Rating", :controller => "users", :action => "my_reviews", :my_high_rating => 'prod_high_rating', :class=> "dropdown-item") %><br>
       <%= link_to("Lowest Rating", :controller => "users", :action => "my_reviews", :my_low_rating => 'prod_low_rating', :class=> "dropdown-item") %><br>
       <%= link_to("Most Recent Review", :controller => "users", :action => "my_reviews", :my_most_recent => 'my_most_recent', :class=> "dropdown-item") %><br>
@@ -22,10 +22,9 @@
   <% if @my_reviews.any? %>
       <div class="reviews-ul">
         <% @my_reviews.each do |my_review| %>
-          <% user = @users.find_by(id: my_review.user_id) %>
           <% _product = @products.find_by(id: my_review.product_id) %>
 
-          <%= render partial: "shared/review_cards", locals: { user: user, review: my_review, product: _product } %>
+          <%= render partial: "shared/review_cards", locals: { user: @user, review: my_review, product: _product } %>
 
         <% end %>
       </div>
