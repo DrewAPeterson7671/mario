@@ -19,7 +19,7 @@ class Review < ApplicationRecord
     .group("reviews.id, products.name")
     .order("products_name ASC")
     )}
-
+ 
   def next
     Review.where("id > ?", id).order("id ASC").first || Review.first
   end

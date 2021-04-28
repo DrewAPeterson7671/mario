@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy'
 
   get '/search' => 'pages#search', :as => 'search_page'
-
+  get '/my_reviews' => 'users#my_reviews', :as => 'my_reviews'
+  # match '/my_reviews', to: 'users#my_reviews', via: 'get'
 
   get 'services' => 'pages#services', constraints: { format: 'html' }
   get 'about' => 'pages#about', constraints: { format: 'html' }
