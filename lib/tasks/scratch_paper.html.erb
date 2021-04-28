@@ -104,3 +104,6 @@
       <%= link_to "Lowest Rating", product_path(:prod_low_rating => 'prod_lowest_rated'), class: "dropdown-item" %>
       <%= link_to "Most Recent Review", product_path(:prod_most_recent => 'prod_most_recent'), class: "dropdown-item" %>
       <%= link_to "Least Recent Review", product_path(:prod_least_recent => 'prod_least_recent'), class: "dropdown-item" %>
+
+
+      return ('<div class="arrow-top-reviewed"><span>Top Rated</span></div>').html_safe

@@ -41,6 +41,18 @@ class Product < ApplicationRecord
     .order('reviews_updated_at DESC')
     )}
 
+  def self.check_product_scopes(id)
+    @product = Product.find_by(id: id)
+    case 
+    when Product.highest_reviewed.first(6).any? { |h| h[:id] == @product.id }
+      return ('<div class="arrow-top-reviewed"><span>Top Rated</span></div>').html_safe
+    when Product.most_reviewed.first(6).any? { |h| h[:id] == @product.id }
+      @most = Product.most_reviewed.find(@product.id)
+      return ('<div class="arrow-most-reviewed"><span>' + (@most.reviews_count.to_s) + ' Reviews</span></div>').html_safe
+    when Product.newest_product.any? { |h| h[:id] == @product.id }
+      return ('<div class="arrow-new"><span>New!</span></div>').html_safe
+    end
+  end
 
   def self.search(search)
     where("lower(reviews.author) LIKE :search OR lower(products.name) LIKE :search OR lower(reviews.content_body) LIKE :search", search: "%#{search.downcase}%").uniq

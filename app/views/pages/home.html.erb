@@ -8,8 +8,11 @@
 
     <% if @highest_revieweds.any? %>
       <h2>Our Highest Reviewed Products</h2>
+      <% @highest_revieweds.first(6).each do |highest_reviewed| %>
 
-        <%= render "shared/highest_reviewed_card" %>
+        <%= render partial: "shared/product-card", locals: { product: highest_reviewed } %>
+        
+      <% end %>
 
     <% else %>
       <p>There are no reviewed products (yet).</p>
@@ -17,8 +20,11 @@
 
     <% if @most_reviews.any? %>
       <h2>Our Most Reviewed Products</h2>
+      <% @most_reviews.first(6).each do |most_review| %>
 
-      <%= render "shared/most-reviews-card" %>
+      <%= render partial: "shared/product-card", locals: { product: most_review } %>
+
+    <% end %>
 
     <% else %>
       <p>There are no reviewed products (yet).</p>
@@ -26,9 +32,12 @@
 
     <% if @newest_products.any? %>
       <h2>Our Newest Products</h2>
+      <% @newest_products.each do |newest_product| %>
 
-      <%= render "shared/newest-product-card" %>
+      <%= render partial: "shared/product-card", locals: { product: newest_product } %>
       
+      <% end %>
+
     <% else %>
       <p>There are no new products (yet).</p>
     <% end %>

@@ -36,8 +36,11 @@
 <div class="products">
 
   <% if @products.any? %>
+    <% @products.each do |product| %>
 
-    <%= render "shared/product-card" %>
+      <%= render partial: "shared/product-card", locals: { product: product } %>
+
+    <% end %>
 
   <% else %>
     <p>There are no products yet.</p>
