@@ -1,9 +1,7 @@
 
-<% @products.each do |product| %>
-  <div class="card">
-    <% Product.check_product_scopes(product.id) %>
 
-    <%= render partial: "shared/review_stars", locals: { review: product.average_review } %>
+  <div class="card">
+    <%= Product.check_product_scopes(product.id) %>
 
     <h2><%= link_to product.name, product_path(product) %></h2>
 
@@ -17,4 +15,4 @@
       <%= render partial: "shared/product_image_big", locals: { product: product } %>
 
   </div>
-<% end %>  
+

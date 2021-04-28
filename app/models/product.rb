@@ -45,13 +45,12 @@ class Product < ApplicationRecord
     @product = Product.find_by(id: id)
     case 
     when Product.highest_reviewed.first(6).any? { |h| h[:id] == @product.id }
-      return "highest_reviewed"
+      return ('<div class="arrow-top-reviewed"><span>Top Rated</span></div>').html_safe
     when Product.most_reviewed.first(6).any? { |h| h[:id] == @product.id }
-      return "most_reviews"
+      @most = Product.most_reviewed.find(@product.id)
+      return ('<div class="arrow-most-reviewed"><span>' + (@most.reviews_count.to_s) + ' Reviews</span></div>').html_safe
     when Product.newest_product.any? { |h| h[:id] == @product.id }
-      return "newest_product"
-    else
-      return "none"
+      return ('<div class="arrow-new"><span>New!</span></div>').html_safe
     end
   end
 
