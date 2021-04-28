@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :current_user, only: [:show, :edit, :update, :destroy]
+  before_action :current_user, only: [:show, :edit, :update, :destroy, :my_reviews]
   
   def new
     @user = User.new
@@ -48,7 +48,6 @@ class UsersController < ApplicationController
       @my_reviews_sort = Review.where(user_id: current_user.id)
     end
     @my_reviews = @my_reviews_sort.paginate(page: params[:page], per_page: 30)
-    # render :my_reviews
   end
 
   def update

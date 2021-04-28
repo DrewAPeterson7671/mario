@@ -17,9 +17,11 @@
       <li class="nav-item nav-link active nav-text-color" 
         <%= 'active' if current_page?(users_path) %>"><%= link_to "Our Community", users_path %>
       </li>
-      <li class="nav-item nav-link active nav-text-color" 
-        <%= 'active' if current_page?(my_reviews_path) %>"><%= link_to "My Reviews",  my_reviews_path %>
-      </li>
+      <% if current_user %>
+        <li class="nav-item nav-link active nav-text-color" 
+          <%= 'active' if current_page?(my_reviews_path) %>"><%= link_to "My Reviews",  my_reviews_path %>
+        </li>
+      <% end %>
     </ul>
 
     <%= form_tag(search_page_path, :method => 'get',
