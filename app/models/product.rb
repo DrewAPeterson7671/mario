@@ -59,13 +59,28 @@ class Product < ApplicationRecord
   end
 
   def next
-    # _next_index = @products_sort.map(&:id).index(id) + 1
-    # _total_length = @products_sort.length
+## I need a way to pass the class variables to a generic NEXT/PREV
+## The page button should be @products.next or the needed collection
+    # need to define id
+    # @products = Product.most_reviewed WORKED
+    
+    # @product = p.find_by(id: 61) WORKED
+    # @most = Product.most_reviewed.find(@product.id) WORKED
+    # @most = p.find(@product.id) WORKED
+
+    
+    
+    # _index_find = @products.index { |p| p[:id] == @product.id }
+    # _next_index = _index_find + 1
+    # @products[_next_index]
+    # _total_length = @products.length - 1
     # if _next_index  == _total_length
-    #   @products_sort[0]
+    #   @products[0]
     # else 
-    #   @products_sort[_next_index]
+    #   @products[_next_index]
     # end
+
+
     Product.where("id > ?", id).order("id ASC").first || Product.first
   end
 
