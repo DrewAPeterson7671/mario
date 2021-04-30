@@ -1,9 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
-  @products = {}
-  @product_reviews = {}
-
   def index
     @most_reviews = Product.most_reviewed
     @newest_products = Product.newest_product

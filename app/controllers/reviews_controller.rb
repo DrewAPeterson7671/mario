@@ -1,8 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
-  @reviews = {}
-
   def index
     case
     when params[:az]
