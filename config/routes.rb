@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   get 'privacy_policy' => 'pages#privacy_policy', constraints: { format: 'html' }
 
   root to: 'pages#home'
+  # resources :products_controller do
+  #   collection do
+  #     get :set_product_sort
+  #   end
+  # end
   resources :users
   resources :products do
     resources :reviews

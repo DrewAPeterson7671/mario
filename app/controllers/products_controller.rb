@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
+  after_action :set_product_sort, only: [:index]
+
   def index
     @most_reviews = Product.most_reviewed
     @newest_products = Product.newest_product
@@ -120,5 +122,9 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :price, :country, :product_photo, :average_review)
     end
 
+    def set_product_sort
+      @current_product_sort = @products_sort
+    end
+      
 
 end
