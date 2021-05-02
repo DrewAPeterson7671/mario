@@ -105,3 +105,30 @@ def index
   # render :index
 end
 
+
+
+def self.next1()
+  ## first get the current id
+  ## then get the current collection?
+  p = @products
+      # need to define id
+      # @products = Product.most_reviewed WORKED
+      
+      # @product = p.find_by(id: 61) WORKED
+      # @most = Product.most_reviewed.find(@product.id) WORKED
+      # @most = p.find(@product.id) WORKED
+  
+      
+      
+      # _index_find = @products.index { |p| p[:id] == @product.id }
+      # _next_index = _index_find + 1
+      # @products[_next_index]
+      # _total_length = @products.length - 1
+      # if _next_index  == _total_length
+      #   @products[0]
+      # else 
+      #   @products[_next_index]
+      # end
+
+
+end 
