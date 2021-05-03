@@ -44,6 +44,7 @@ gem 'mini_magick'
 gem "aws-sdk-s3", require: false
 gem 'aws-sdk', '~> 3'
 gem 'aws-sdk-core'
+gem 'image_processing'
 
 
 group :development, :test do

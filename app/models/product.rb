@@ -58,14 +58,7 @@ class Product < ApplicationRecord
     where("lower(reviews.author) LIKE :search OR lower(products.name) LIKE :search OR lower(reviews.content_body) LIKE :search", search: "%#{search.downcase}%").uniq
   end
 
-  def next
-    # _next_index = @products_sort.map(&:id).index(id) + 1
-    # _total_length = @products_sort.length
-    # if _next_index  == _total_length
-    #   @products_sort[0]
-    # else 
-    #   @products_sort[_next_index]
-    # end
+  def next  
     Product.where("id > ?", id).order("id ASC").first || Product.first
   end
 
