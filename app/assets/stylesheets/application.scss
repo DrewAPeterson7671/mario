@@ -39,7 +39,7 @@
 }
 
 h1 {
-  font-size: 5.9vh;
+  font-size: 4.8vh;
 }
 
 h2 {
@@ -78,6 +78,12 @@ a span {
 .left-margin {
   margin-left: 50px;
 }
+
+// @media only screen and (max-width: 600px) {
+//   .left-margin {
+//     margin-left: 10px;
+//   }
+// }
 
 .flash {
   display: inline-block;
@@ -1088,4 +1094,8 @@ body::-webkit-scrollbar-thumb {
 
 .sort-our-community-spacer {
   margin-top: -17px;
+}
+
+html,body{
+  overflow-x: hidden;
 }
