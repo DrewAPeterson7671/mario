@@ -43,13 +43,13 @@ h1 {
 }
 
 h2 {
-  font-size: 3.4vh;
+  font-size: 4.0vh;
 }
 h3 {
-  font-size: 3.2vh;
+  font-size: 3.6vh;
 }
 h4 {
-  font-size: 3.0vh;
+  font-size: 3.2vh;
 }
 h5 {
   font-size: 2.5vh;
@@ -1029,13 +1029,13 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   // align-items: center;
   // width: auto;
-  max-height: 210vh;
+  max-height: 220vh;
   flex-flow: column wrap;
   // flex-wrap: wrap;
 }
 
 .community-profile-card {
-  flex: 0 1 11%;
+  flex: 50%;
   padding: 10px;
   width: 45%;
   height: 170px;
@@ -1048,6 +1048,17 @@ body::-webkit-scrollbar-thumb {
   align-self: center;
   white-space: nowrap;
   overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .community-profile-card {
+    flex: 100%;
+    width: 80%;
+  }
+
+  .community-flex-container {
+    max-height: max-content;
+  }
 }
 
 .community-profile-flex {
@@ -1112,7 +1123,7 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
-  & h1 {
+  & h2 {
     grid-column: 2;
     justify-self: center;
   }
