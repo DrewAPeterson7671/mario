@@ -6,9 +6,9 @@
 
     </div>
     <div class="review-box2">
-      <%= link_to product.name, product_path(product) %>
+      <p><%= link_to product.name, product_path(product) %>
       <%= ' from ' %>
-      <%= product.country %>
+      <%= product.country %></p>
     </div>
     <div class="review-box3">
       <p>On <%= review.created_at.strftime('%m-%d-%Y') %></p>
@@ -20,7 +20,7 @@
 
     </div>
   <div class="review-index-text">
-    <%= review.content_body  %>
+    <p><%= review.content_body  %></P>
     <div></div>
 
       <%= render partial: "shared/product_image", locals: { product: product } %>
