@@ -7,7 +7,7 @@
   <div class="products">
 
     <% if @highest_revieweds.any? %>
-      <h3>Our Highest Reviewed Products</h3>
+      <h3 class="left-margin">Our Highest Reviewed Products</h3>
       <% @highest_revieweds.first(6).each do |highest_reviewed| %>
 
         <%= render partial: "shared/product-card", locals: { product: highest_reviewed } %>
@@ -19,7 +19,7 @@
     <% end %>
 
     <% if @most_reviews.any? %>
-      <h3>Our Most Reviewed Products</h3>
+      <h3 class="left-margin">Our Most Reviewed Products</h3>
       <% @most_reviews.first(6).each do |most_review| %>
 
       <%= render partial: "shared/product-card", locals: { product: most_review } %>
@@ -31,7 +31,7 @@
     <% end %>
 
     <% if @newest_products.any? %>
-      <h3>Our Newest Products</h3>
+      <h3 class="left-margin">Our Newest Products</h3>
       <% @newest_products.each do |newest_product| %>
 
       <%= render partial: "shared/product-card", locals: { product: newest_product } %>

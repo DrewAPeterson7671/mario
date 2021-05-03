@@ -39,7 +39,7 @@
 }
 
 h1 {
-  font-size: 5.9vh;
+  font-size: 4.8vh;
 }
 
 h2 {
@@ -75,6 +75,16 @@ a span {
   text-align: center;
 }
 
+.left-margin {
+  margin-left: 50px;
+}
+
+// @media only screen and (max-width: 600px) {
+//   .left-margin {
+//     margin-left: 10px;
+//   }
+// }
+
 .flash {
   display: inline-block;
   background: #f9f8ea;
@@ -90,6 +100,7 @@ a span {
   min-height: calc(100vh - 570px);
 }
 
+
 // Custom Scrollbar
 
 body::-webkit-scrollbar {
@@ -104,76 +115,6 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-
-// // Media Queries
-
-// /* Smartphones (portrait and landscape) ----------- */
-// @media only screen 
-// and (min-device-width : 320px) 
-// and (max-device-width : 480px) {
-// /* Styles */
-// // [class="header-image"] {
-// //   max-width: 480px;
-// //   max-height: 200px;
-// // }
-//   body {
-//     // min-width: 320px;
-//     // max-width: 480px;
-//     // max-height: 260px;
-//     // overflow: hidden;
-//     height: 40vh;
-//   }
-// }
-
-// /* Smartphones (landscape) ----------- */
-// @media only screen 
-// and (min-width : 321px) {
-// /* Styles */
-// body {
-//   // min-width: 320px;
-//   // max-width: 480px;
-//   // max-height: 260px;
-//   // overflow: hidden;
-//   height: 40vh;
-// }
-// }
-
-// /* Smartphones (portrait) ----------- */
-// @media only screen 
-// and (max-width : 320px) {
-// /* Styles */
-// body {
-//   // min-width: 320px;
-//   // max-width: 480px;
-//   // max-height: 260px;
-//   // overflow: hidden;
-//   height: 40vh;
-// }
-// }
-
-// /* iPads (portrait and landscape) ----------- */
-// @media only screen 
-// and (min-device-width : 768px) 
-// and (max-device-width : 1024px) {
-// /* Styles */
-// }
-
-// /* iPads (landscape) ----------- */
-// @media only screen 
-// and (min-device-width : 768px) 
-// and (max-device-width : 1024px) 
-// and (orientation : landscape) {
-// /* Styles */
-// }
-
-// /* iPads (portrait) ----------- */
-// @media only screen 
-// and (min-device-width : 768px) 
-// and (max-device-width : 1024px) 
-// and (orientation : portrait) {
-// /* Styles */
-// }
-
 
 // Header styles
 
@@ -266,9 +207,6 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
-// .welcome-sub-header > h1 {
-//   font-size: 50px;
-// }
 
 .welcome-sub-header > h4 {
   // font-size: 30px;
@@ -284,6 +222,7 @@ body::-webkit-scrollbar-thumb {
   grid-gap: 10px;
   align-items: center;
   justify-content: center;
+  justify-items: stretch;
   // min-width: 375px;
   // min-height: 415px;
   
@@ -306,7 +245,7 @@ body::-webkit-scrollbar-thumb {
 .card {
   // position: relative;
   padding: 10px;
-  width: 375px;
+  min-width: 375px;
   height: 415px;
   background-color: white;
   padding: 0% 0% 0% 0%;
@@ -316,7 +255,7 @@ body::-webkit-scrollbar-thumb {
   border-top: 3px solid #419234;
   text-align: center;
   overflow: hidden;
-  justify-self: center;
+  justify-self: stretch;
   // min-width: none;
 }
 
@@ -324,18 +263,20 @@ body::-webkit-scrollbar-thumb {
   display: block;
   padding: 1px;
   border-radius: 5px;
-  width: 373px;
+  min-width: 100%;
   height: 300px;
   object-fit: cover;
+  justify-self: stretch;
 }
 
 .card-image-not-found {
   padding: 1px;
-  width: 200px;
+  // min-width: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 35px;
+  justify-self: stretch;
 }
 
 .card-image-not-found-sm {
@@ -493,7 +434,7 @@ body::-webkit-scrollbar-thumb {
 
 .review-card {
   padding: 10px;
-  width: 100%;
+  width: 80%;
   height: 200px;
   border: 1px;
   padding: 5px 5px 0px 5px;
@@ -503,6 +444,15 @@ body::-webkit-scrollbar-thumb {
   text-align: left;
   overflow: scroll;
   margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .review-card {
+    width: 100%;
+    height: 250px;
+  }
 }
 
 .review-card-flex {
@@ -847,7 +797,7 @@ body::-webkit-scrollbar-thumb {
 
 .admin-card-1btn {
   padding: 10px;
-  width: 100%;
+  width: 70%;
   height: 100px;
   border: 1px;
   padding: 5px 5px 0px 5px;
@@ -856,11 +806,13 @@ body::-webkit-scrollbar-thumb {
   border-top: 3px solid #c3df2a;
   text-align: left;
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .admin-card-2btn {
   padding: 10px;
-  width: 100%;
+  width: 70%;
   height: 150px;
   border: 1px;
   padding: 5px 5px 0px 5px;
@@ -869,6 +821,8 @@ body::-webkit-scrollbar-thumb {
   border-top: 3px solid #c3df2a;
   text-align: left;
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Search Page
@@ -1140,4 +1094,8 @@ body::-webkit-scrollbar-thumb {
 
 .sort-our-community-spacer {
   margin-top: -17px;
+}
+
+html,body{
+  overflow-x: hidden;
 }
