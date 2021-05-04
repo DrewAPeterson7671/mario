@@ -9,15 +9,22 @@
         <%= f.file_field :avatar_pic %><br>
       </div>
       <div class="form-col-1">
-        <%= f.label "User Name" %>
+      <div class="mobile-signin">
+        <br>
+      </div>
+        <%= f.label "User Name:" %>
         <%= f.text_field :user_name, id: 'user_name' %><br>  
-        <%= f.label "Email" %>
+        <%= f.label "Email:" %>
         <%= f.text_field :email, id: 'registration_email' %><br>
-        <%= f.label "Password" %>
+        <%= f.label "Password:" %>
         <%= f.password_field :password,  id: 'registration_password' %><br>
-        <%= f.label "Password confirmation" %>
+        <%= f.label "Password confirmation:" %>
         <%= f.password_field :password_confirmation,  id: 'reg_password_confirm' %><br>
-        <%= f.submit "Submit" %><br>
+        <div class="mobile-signin">
+          <br>
+          <br>
+        </div>
+        <%= f.submit "Submit", class: 'login-wide' %><br>
       </div>
     </div>
   <% end %>

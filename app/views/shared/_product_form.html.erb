@@ -3,21 +3,29 @@
 <div class="product-form-flex">
   <div class="product-col-2">  
     <%= form_for @product do |f| %>
-      <%= f.label :name %>:  
+      <%= f.label :name %>:
       <%= f.text_field :name %><br>
       <%= f.label :price %>: $
       <%= f.text_field :price %><br>
       <%= f.label :country %>: 
       <%= f.text_field :country %><br>
+      <div class="mobile-signin">
+        <br>
+      </div>
       <%= f.label :product_photo %>:
       <%= f.file_field :product_photo %><br>
-
-      <%= f.submit  %>
+      <div class="mobile-signin">
+        <br>
+      </div>
+      <%= f.submit class: "login-wide"  %>
   </div>
     <div class="product-col-1">
 
       <%= render partial: "shared/product_image_big", locals: { product: @product } %>
-
+      
+      <div class="mobile-signin">
+        <br>
+      </div>
     </div>
   <% end %>
 </div>

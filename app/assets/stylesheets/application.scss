@@ -404,6 +404,46 @@ a span {
   margin-left: 40px;
 }
 
+@media only screen and (max-width: 460px) {
+  .user-form-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // justify-content: space-between;
+  }
+  .form-col-1 {
+    order: 2;
+    max-width: 200px;
+    flex-basis: 0;
+  }
+  .form-col-2 {
+    margin-left: 0px;
+    order: 1;
+    text-align: center;
+    flex-basis: 0;
+  }
+  .login-wide {
+    width: 100%;
+  }
+}
+
+// User login
+
+.mobile-signin {
+  display: hide;
+}
+
+@media only screen and (max-width: 460px) {
+  .mobile-login {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+  }
+  .mobile-signin {
+    display: show;
+  }
+}
 
 // User Profile Show 
 
@@ -840,6 +880,12 @@ a span {
   margin-right: auto;
 }
 
+@media only screen and (max-width: 460px) {
+  .admin-card-1btn {
+    text-align: center;
+  }
+}
+
 .admin-card-2btn {
   padding: 10px;
   width: 70%;
@@ -853,6 +899,12 @@ a span {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (max-width: 460px) {
+  .admin-card-2btn {
+    text-align: center;
+  }
 }
 
 // Search Page
@@ -1129,10 +1181,31 @@ a span {
   & > .sort-button {
     grid-column: 3;
     justify-self: end;
-    margin-top: 12px;
+    margin-top: 5px;
     width: 80px;
     height: 30px;
     margin-right: 110px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .sort-flex-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    & h2 {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+      // width: 200px;
+    }
+
+    & > .sort-button {
+      grid-column: 1;
+      grid-row: 2;
+      justify-self: center;
+      margin-right: 0px;
+    }
   }
 }
 
