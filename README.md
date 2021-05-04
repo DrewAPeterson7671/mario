@@ -11,16 +11,17 @@ _This Application is a marketplace for users to rate the products of an exotic f
 * Create from scratch Ruby/Rails app for a food importer showcasing their imported products.
 * Create a system were users can review and rate products.
 * Create an authentication system for users to log in.
-* Include functionality for admin users and hidden admin functionality.
-* Admin users should be able to creation, edit and delete products.  They can also mediate reviews by editing and deleting them.
+* Authorization functionality for admin users and hidden admin functionality.
+* Users can post reviews and ratings of products.
+* Admin users have full CRUD functionality.
+* Users have CRUD functionality for their own review posts.
 * Reviewers can upload avatars to Active Storage on AWS S3.
 * Admin users can upload images of the new products they create to Active Storage on AWS S3.
-* Create functionality for users to submit reviews for each product listed.
+* Product and Review pages can be sorted to display by highest ratings, alphabetical and many other display options.
 * Home page includes scopes showcasing hightest reviewed, most reviewed, and newest products.
+* Highest Rated, Most Reviewed and New products have corner sashes.
 * Search bar with links to search results.
-* Provide a Capybara test suite.
-
-_to list products and reviews including CRUD functionality with authentication and admin permissions._
+* The website is responsively designed.
 
 _See the deployed app on Heroku: https://marios-specialty-foods.herokuapp.com/_
 
@@ -40,7 +41,11 @@ _See the deployed app on Heroku: https://marios-specialty-foods.herokuapp.com/_
 
 ## Known Bugs
 
-_This site is not yet optimized for mobile.  There is an issue with grid on the product list pages and home page where the items overflow the grid._
+_This site is hosted on the free Heroku service, so the dynos that run it go to sleep until the site is accessed.  So the first load is slower than when the dyno awakens.  This isn't a bug as much as a budget constraint._
+
+_All images of products and reviews are host on S3 except for about 3% of them.  This is done per the true use case that both the vendor and users would upload all images to S3.  All initial product and reviewer avatar images could have been loaded to Heroku to boost speed, but would be window dressing, in my opinion. It would be untrue to the use case.  S3 images load slower, but this app is fully functional to the true use case. This is not a bug as much as a choice of realism over cheating for a faster load of the presentation._
+
+_When a user uses a sort of a product or review, and then clicks on an individual product or review, the next and previous buttons will take the user to the next product review or product ID without considering what was next in that list sort.  For example, if they list products by alphabetical order, click on Almonds and view the Almonds page, the next and previous buttons will take them to a product, but not the next in alphabetical order._
 
 ## Support and contact details
 
@@ -48,7 +53,7 @@ _Please contact me directly via email at drew.a.peterson@hotmail.com with any bu
 
 ## Technologies Used
 
-_Ruby 2.5.1, Rails 5.2.4, Postgres SQL, Heroku, AWS S3, Rails Active Storage_
+_Ruby 2.5.1, Rails 5.2.4, Postgres SQL, Heroku, AWS S3, Rails Active Storage, SCSS_
 
 ### License
 
