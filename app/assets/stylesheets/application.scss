@@ -15,7 +15,7 @@
 
 //  app/assets/fonts/SnellRoundhandScriptV1.woff
  
-// Custom Boostratp Variables must be imported before bootstrap
+// Custom Boostrap Variables must be imported before bootstrap
 @import "bootstrap";
 
 // custom Stylesheet Import links
@@ -38,26 +38,6 @@
   }
 }
 
-h1 {
-  font-size: 4.8vh;
-}
-
-h2 {
-  font-size: 4.0vh;
-}
-h3 {
-  font-size: 3.6vh;
-}
-h4 {
-  font-size: 3.2vh;
-}
-h5 {
-  font-size: 2.5vh;
-}
-p {
-  font-size: 1.8vh;
-}
-
 @include headings {
   font-family: 'SnellRoundhand';
   z-index: 100;
@@ -76,7 +56,25 @@ a span {
 }
 
 .left-margin {
-  margin-left: 50px;
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 460px) {
+  .left-margin {
+    margin-left: 0px;
+    text-align: center;
+    background-color: #f8f9fa;
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 812px) and (orientation: landscape) {
+  .left-margin {
+    margin-left: 10px;
+    background-color: #f8f9fa;
+  }
 }
 
 // @media only screen and (max-width: 600px) {
@@ -101,21 +99,6 @@ a span {
 }
 
 
-// Custom Scrollbar
-
-body::-webkit-scrollbar {
-  width: 1em;
-}
- 
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
- 
-body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-}
-
 // Header styles
 
 .header-container {
@@ -138,13 +121,43 @@ body::-webkit-scrollbar-thumb {
 .header-top-left {
   position: absolute;
   padding-bottom: 100px;
-  top: 34px;
+  top: 45px;
   left: 16px;
-  font-size: 6vw;
-  line-height: 65px;
+  font-size: 55px;
+  line-height: 60px;
   min-width: 400px;
   font-family: 'SnellRoundhand', cursive;
 }
+
+@media only screen and (max-width: 460px) {
+  .header-top-left {
+    font-size: 52px;
+    word-wrap: wrap;
+    top: 55px;
+    // width: 200px;
+  }
+  .header-image {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+    height: 250px;
+  }
+}
+
+@media (max-width: 812px) and (orientation: landscape) {
+  .header-top-left {
+    font-size: 50px;
+    top: 60px;
+    // word-wrap: wrap;
+    // top: 55px;
+  }
+  .header-image {
+    height: 200px;
+    // min-width: 100%;
+    // width: 100%;
+  }
+}
+
 .authentication-text {
   display: inline-block;
 }
@@ -182,6 +195,13 @@ body::-webkit-scrollbar-thumb {
   object-fit: cover;
 }
 
+@media only screen and (max-width: 460px) {
+  .product-image {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 .product-image-tiny {
   width: 75px;
   height: 75px;
@@ -195,11 +215,11 @@ body::-webkit-scrollbar-thumb {
 
 // Navbar Styles
 
-@media only screen and (max-width: 480px) {
-  .hidden-xs-hover {
-    visibility: hidden;
-  }
-}
+// @media only screen and (max-width: 480px) {
+//   .hidden-xs-hover {
+//     visibility: hidden;
+//   }
+// }
 
 // Home Page Styles
 
@@ -257,6 +277,16 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
   justify-self: stretch;
   // min-width: none;
+}
+
+@media only screen and (max-width: 460px) {
+  .card {
+    max-width: 340px;
+    // min-width: 100%;
+    // width: 100%;
+    // justify-self:center;
+    justify-self: center;
+  }
 }
 
 .card-image {
@@ -937,8 +967,22 @@ body::-webkit-scrollbar-thumb {
 
   & > p {
     align-self: flex-end;
+    word-wrap: wrap;
+    background-color: #f8f9fa;
+    padding-bottom: 10px;
   }  
 }
+
+@media only screen and (max-width: 460px) {
+  .footer {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    word-wrap: wrap;
+    text-align: center;
+  }
+}
+
 
 .footer-flex-end {
   page-break-after: always;
@@ -1097,5 +1141,5 @@ body::-webkit-scrollbar-thumb {
 }
 
 html,body{
-  overflow-x: hidden;
+  overflow-x: visible;
 }
