@@ -939,7 +939,7 @@ a span {
 .search-review-card {
   padding: 10px;
   width: 60%;
-  height: 130px;
+  height: 140px;
   border: 1px;
   border-radius: 5px;
   border: 1.5px solid #CBCBCB;
@@ -969,18 +969,8 @@ a span {
   flex: 1;
   justify-content: space-between;
 
-  // .search-product-text > .search-product-flex1 {
-  //   width: 78%
-  // }
-
-  // .search-product-text > .search-product-flex2 {
-  //   width: 100%;
-  // }
-
   .search-product-text > .search-adjust-stars {
-    // text-align: center;
     margin-top: 2px;
-    // justify-self: flex-end;
   }
 
 }
@@ -1043,7 +1033,7 @@ a span {
   }
   .search-review-card {
     width: 100%;
-    height: 150px;
+    height: 160px;
   }
   .search-product-text {
     margin-top: -5px;
