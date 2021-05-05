@@ -1202,13 +1202,9 @@ a span {
 
 .community-flex-container {
   display: flex;
-  // justify-content: center;
   flex-direction: column;
-  // align-items: center;
-  // width: auto;
-  max-height: 220vh;
+  max-height: 2100px;
   flex-flow: column wrap;
-  // flex-wrap: wrap;
 }
 
 .community-profile-card {
@@ -1221,15 +1217,15 @@ a span {
   border: 1.5px solid #CBCBCB;
   border-top: 3px solid #e1d5ba;
   text-align: left;
-  margin-bottom: 5px;
+  margin: 5px;
   align-self: center;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 @media (max-width: 900px) {
   .community-profile-card {
-    flex: 100%;
+    // flex: 100%;
     width: 80%;
   }
 
@@ -1237,6 +1233,14 @@ a span {
     max-height: max-content;
   }
 }
+
+@media (max-width: 600px) {
+  .community-profile-card {
+    // flex: 100%;
+    width: 90%;
+  }
+}
+
 
 .community-profile-flex {
   display: flex;
@@ -1248,9 +1252,6 @@ a span {
   // flex: 0 0 50%;
   margin-right: 0 auto;
   order: 1;
-  // margin-top: -10px;
-  // margin-left: 0 auto;
-  // align-self: flex-end;
   page-break-after: always;
 }
 
@@ -1265,6 +1266,15 @@ a span {
   // flex-wrap: wrap;
 }
 
+@media (max-width: 520px) {
+  .community-profile-card {
+    // flex: 100%;
+    width: 100%;
+  }
+  .community-profile-box2 {
+    margin-left: 10px;
+  }
+}
 
 .community-column-box1 {
   order: 1;

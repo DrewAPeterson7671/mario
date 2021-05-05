@@ -21,7 +21,7 @@ _This Application is a marketplace for users to rate the products of an exotic f
 * Home page includes scopes showcasing hightest reviewed, most reviewed, and newest products.
 * Highest Rated, Most Reviewed and New products have corner sashes.
 * Search bar with links to search results.
-* The website is responsively designed.
+* The website is responsively designed to function on mobile viewports.
 
 _See the deployed app on Heroku: https://marios-specialty-foods.herokuapp.com/_
 
@@ -43,7 +43,7 @@ _See the deployed app on Heroku: https://marios-specialty-foods.herokuapp.com/_
 
 _This site is hosted on the free Heroku service, so the dynos that run it go to sleep until the site is accessed.  So the first load is slower than when the dyno awakens.  This isn't a bug as much as a budget constraint._
 
-_All images of products and reviews are host on S3 except for about 3% of them.  This is done per the true use case that both the vendor and users would upload all images to S3.  All initial product and reviewer avatar images could have been loaded to Heroku to boost speed, but would be window dressing, in my opinion. It would be untrue to the use case.  S3 images load slower, but this app is fully functional to the true use case. This is not a bug as much as a choice of realism over cheating for a faster load of the presentation._
+_All images of products and reviews are hosted on S3 except for about 3% of them.  This is done per the true use case that both the vendor and users would upload all images to S3.  All initial product and reviewer avatar images could have been loaded to Heroku to boost speed, but would be window dressing, in my opinion. It would be untrue to the use case.  S3 images load slower, but this app is fully functional to the true use case. This is not a bug as much as a choice of realism over cheating for a faster load of the presentation._
 
 _When a user uses a sort of a product or review, and then clicks on an individual product or review, the next and previous buttons will take the user to the next product review or product ID without considering what was next in that list sort.  For example, if they list products by alphabetical order, click on Almonds and view the Almonds page, the next and previous buttons will take them to a product, but not the next in alphabetical order._
 
