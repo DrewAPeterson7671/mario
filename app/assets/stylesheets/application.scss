@@ -1203,7 +1203,7 @@ a span {
 .community-flex-container {
   display: flex;
   flex-direction: column;
-  max-height: 2100px;
+  max-height: 2000px;
   flex-flow: column wrap;
 }
 
@@ -1211,7 +1211,7 @@ a span {
   flex: 50%;
   padding: 10px;
   width: 45%;
-  height: 170px;
+  max-height: 190px;
   border: 1px;
   border-radius: 5px;
   border: 1.5px solid #CBCBCB;
@@ -1223,12 +1223,11 @@ a span {
   overflow: scroll;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .community-profile-card {
     // flex: 100%;
-    width: 80%;
+    width: 70%;
   }
-
   .community-flex-container {
     max-height: max-content;
   }
@@ -1240,7 +1239,6 @@ a span {
     width: 90%;
   }
 }
-
 
 .community-profile-flex {
   display: flex;
@@ -1268,11 +1266,11 @@ a span {
 
 @media (max-width: 520px) {
   .community-profile-card {
-    // flex: 100%;
+    margin: 0px;
     width: 100%;
   }
   .community-profile-box2 {
-    margin-left: 10px;
+    margin-left: 5px;
   }
 }
 
