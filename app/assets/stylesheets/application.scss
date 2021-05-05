@@ -404,6 +404,46 @@ a span {
   margin-left: 40px;
 }
 
+@media only screen and (max-width: 740px) {
+  .user-form-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // justify-content: space-between;
+  }
+  .form-col-1 {
+    order: 2;
+    max-width: 200px;
+    flex-basis: 0;
+  }
+  .form-col-2 {
+    margin-left: 0px;
+    order: 1;
+    text-align: center;
+    flex-basis: 0;
+  }
+  .login-wide {
+    width: 100%;
+  }
+}
+
+// User login
+
+.mobile-signin {
+  display: hide;
+}
+
+@media only screen and (max-width: 460px) {
+  .mobile-login {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+  }
+  .mobile-signin {
+    display: show;
+  }
+}
 
 // User Profile Show 
 
@@ -482,6 +522,7 @@ a span {
   .review-card {
     width: 100%;
     height: 250px;
+    // word-wrap: wrap;
   }
 }
 
@@ -838,6 +879,15 @@ a span {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 460px) {
+  .admin-card-1btn {
+    text-align: center;
+  }
 }
 
 .admin-card-2btn {
@@ -853,6 +903,12 @@ a span {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (max-width: 460px) {
+  .admin-card-2btn {
+    text-align: center;
+  }
 }
 
 // Search Page
@@ -875,12 +931,15 @@ a span {
   overflow: scroll;
   margin-bottom: 5px;
   align-self: center;
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
 }
 
 .search-review-card {
   padding: 10px;
   width: 60%;
-  height: 130px;
+  height: 140px;
   border: 1px;
   border-radius: 5px;
   border: 1.5px solid #CBCBCB;
@@ -903,14 +962,20 @@ a span {
   align-self: center;
 }
 
-.search-product-flex {
+.search-product-text {
+  margin-top: 8px;
+  margin-left: 15px;
   display: flex;
+  flex: 1;
   justify-content: space-between;
+
+  .search-product-text > .search-adjust-stars {
+    margin-top: 2px;
+  }
+
 }
 
-.search-adjust-stars {
-  margin-top: 2px;
-}
+
 
 .search-review-flex {
   display: flex;
@@ -945,6 +1010,57 @@ a span {
 
 .search-review-text {
   margin-top: -5px;
+}
+
+@media only screen and (max-width: 940px) {
+  .search-product-card {
+    width: 90%;
+  }
+  .search-noresult-card {
+    width: 90%;
+  }
+  .search-review-card {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .search-product-card {
+    width: 100%;
+  }
+  .search-noresult-card {
+    width: 100%;
+  }
+  .search-review-card {
+    width: 100%;
+    height: 160px;
+  }
+  .search-product-text {
+    margin-top: -5px;
+    flex-direction: column;
+
+    & > div {
+      text-align: left;
+    }
+  }
+
+  .search-product-flex1 {
+    margin-top: 10px;
+  }
+  .search-adjust-stars {
+    margin-top: -10px;
+  }
+  .search-review-box3 {
+    order: 3;
+    margin-top: -2px;
+    page-break-after: avoid;
+  }
+  .search-review-box5 {
+    margin-top: -80px;
+    // align-self: normal;
+    // align-self: center;
+  }
+
 }
 
 // Footer & Footer Link Page Styles
@@ -1129,10 +1245,31 @@ a span {
   & > .sort-button {
     grid-column: 3;
     justify-self: end;
-    margin-top: 12px;
+    margin-top: 5px;
     width: 80px;
     height: 30px;
     margin-right: 110px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .sort-flex-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    & h2 {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+      // width: 200px;
+    }
+
+    & > .sort-button {
+      grid-column: 1;
+      grid-row: 2;
+      justify-self: center;
+      margin-right: 0px;
+    }
   }
 }
 
