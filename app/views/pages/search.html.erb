@@ -3,7 +3,7 @@
     <h2>Search Results</h2>
 
     <div class='search-flex-container'>
-      <h2>Products that Match</h2>
+      <h3>Products that Match</h3>
         <% if @results_products.empty?%>
           <div class='search-noresult-card'>
             <p>No products matched the search.</p>
@@ -12,11 +12,9 @@
         <% @results_products.each do |results_product| %>
           <div class='search-product-card'>
 
-            <div class='search-product-flex'>
-
               <%= render partial: "shared/product_image", locals: { product: results_product } %>
 
-              <div class="search-product-mobile-flex">
+              <div class="search-product-text">
                 <div class="search-product-flex1">
                   <%= link_to results_product.name, product_path(results_product.id) %>
                 </div>
@@ -29,12 +27,12 @@
                 </div>
               </div>
 
-            </div>
+
           </div>
         <% end %>
         <%= will_paginate @results_products %>
 
-      <h2>Product Reviewers that Match</h2>
+      <h3>Product Reviewers that Match</h3>
         <% if @results_reviewers.empty?%>
           <div class='search-noresult-card'>
             <p>No reviewers matched the search.</p>
@@ -75,7 +73,7 @@
         <% end %>
         <%= will_paginate @results_reviewers %>
 
-      <h2>Review Text that Matches</h2>
+      <h3>Review Text that Matches</h3>
         <% if @results_reviews.empty?%>
           <div class='search-noresult-card'>
             <p>No review text matched the search.</p>

@@ -522,6 +522,7 @@ a span {
   .review-card {
     width: 100%;
     height: 250px;
+    // word-wrap: wrap;
   }
 }
 
@@ -878,6 +879,9 @@ a span {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media only screen and (max-width: 460px) {
@@ -927,6 +931,9 @@ a span {
   overflow: scroll;
   margin-bottom: 5px;
   align-self: center;
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
 }
 
 .search-review-card {
@@ -955,15 +962,30 @@ a span {
   align-self: center;
 }
 
-.search-product-flex {
+.search-product-text {
+  margin-top: 8px;
+  margin-left: 15px;
   display: flex;
-  flex-direction: row;
+  flex: 1;
   justify-content: space-between;
+
+  // .search-product-text > .search-product-flex1 {
+  //   width: 78%
+  // }
+
+  // .search-product-text > .search-product-flex2 {
+  //   width: 100%;
+  // }
+
+  .search-product-text > .search-adjust-stars {
+    // text-align: center;
+    margin-top: 2px;
+    // justify-self: flex-end;
+  }
+
 }
 
-.search-adjust-stars {
-  margin-top: 2px;
-}
+
 
 .search-review-flex {
   display: flex;
@@ -1000,39 +1022,53 @@ a span {
   margin-top: -5px;
 }
 
+@media only screen and (max-width: 940px) {
+  .search-product-card {
+    width: 90%;
+  }
+  .search-noresult-card {
+    width: 90%;
+  }
+  .search-review-card {
+    width: 90%;
+  }
+}
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 620px) {
   .search-product-card {
     width: 100%;
-
   }
   .search-noresult-card {
     width: 100%;
   }
   .search-review-card {
     width: 100%;
+    height: 150px;
   }
-  .search-product-flex {
-    justify-content: flex-start;
-  }
-  .search-product-mobile-flex {
-    order: 2;
-    display: flex;
+  .search-product-text {
+    margin-top: -5px;
     flex-direction: column;
-    margin-left: 20px;
+
+    & > div {
+      text-align: left;
+    }
   }
+
   .search-product-flex1 {
-    order: 1;
-    flex-direction: column;
-  }
-  .search-product-flex2 {
-    order: 2;
-    flex-direction: column;
+    margin-top: 10px;
   }
   .search-adjust-stars {
-    order: 3;
-    flex-direction: column;
     margin-top: -10px;
+  }
+  .search-review-box3 {
+    order: 3;
+    margin-top: -2px;
+    page-break-after: avoid;
+  }
+  .search-review-box5 {
+    margin-top: -80px;
+    // align-self: normal;
+    // align-self: center;
   }
 
 }
