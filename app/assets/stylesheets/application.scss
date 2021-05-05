@@ -404,7 +404,7 @@ a span {
   margin-left: 40px;
 }
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 740px) {
   .user-form-flex-container {
     display: flex;
     flex-direction: column;
@@ -957,6 +957,7 @@ a span {
 
 .search-product-flex {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -997,6 +998,43 @@ a span {
 
 .search-review-text {
   margin-top: -5px;
+}
+
+
+@media only screen and (max-width: 460px) {
+  .search-product-card {
+    width: 100%;
+
+  }
+  .search-noresult-card {
+    width: 100%;
+  }
+  .search-review-card {
+    width: 100%;
+  }
+  .search-product-flex {
+    justify-content: flex-start;
+  }
+  .search-product-mobile-flex {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  .search-product-flex1 {
+    order: 1;
+    flex-direction: column;
+  }
+  .search-product-flex2 {
+    order: 2;
+    flex-direction: column;
+  }
+  .search-adjust-stars {
+    order: 3;
+    flex-direction: column;
+    margin-top: -10px;
+  }
+
 }
 
 // Footer & Footer Link Page Styles
