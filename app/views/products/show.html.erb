@@ -1,16 +1,14 @@
  
 <div class="product-show-flex">
 
-  <div class="product-box1">
-    <%= link_to "\u2039", @product.previous, class: "previous-next previous round" %>
-  </div>
-
   <div class="product-box2">
 
     <%= render partial: "shared/product-card-show", locals: { product: @product, number_reviews: @number_reviews } %>
 
   </div>
-
+  <div class="product-box1">
+    <%= link_to "\u2039", @product.previous, class: "previous-next previous round" %>
+  </div>
   <div class="product-box3">
     <%= link_to "\u203A", @product.next, class: "previous-next next round" %>
   </div>
@@ -36,12 +34,7 @@
 <% if @product.reviews.any? %>
 
 <div class="sort-flex-wrapper">
-
-  <div class="margin-spacer">
-    <h2>Reviews for this product:</h2>
-  </div>
-
-
+  <h2>Reviews for this product:</h2>
   <div class="btn-group sort-button">
     <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Sort By
