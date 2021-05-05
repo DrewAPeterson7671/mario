@@ -356,12 +356,17 @@ a span {
   object-fit: cover;
 }
 
-// @media only screen and (max-width: 900px) {
-//   .card-show {
-//     width: 70%;
-//     height: 500px;
-//   }
-// }
+@media only screen and (max-width: 460px) {
+  .card-show {
+    // width: 70%;
+    height: 500px;
+  }
+}
+
+.card-stars-up {
+  margin-top: -10px;
+  margin-bottom: 7px;
+}
 
 .card-show-up {
   position: relative;
@@ -617,34 +622,43 @@ a span {
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-
-  & > .product-box1 { // avatar
+  & > .product-box1 {
     order: 1;
-    // flex-basis: content;
-    // align-content: center;
-    
-  }
-
-  & > .product-box2 { // product info
-    order: 2;
-    flex-basis: content;
-    justify-self: center;
-  }
-
-  & > .product-box3 { //date
-    order: 3;
-    // flex-basis: content;
-    // align-content: center;
   }
   
+  & > .product-box2 {
+    order: 2;
+  }
+  
+  & > .product-box3 {
+    order: 3;
+  }
 }
 
-// @media only screen and (max-width: 900px) {
-//   .product-show-flex {
-//     justify-content: space-between;
-//     align-items: center;
-//   }
-// }
+
+@media only screen and (max-width: 600px) {
+  .product-show-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    & > .product-box2 {
+      order: 1;
+      flex-basis: 100%;
+    }
+    & > .product-box1 {
+      order: 2;
+    }
+    & > .product-box3 {
+      order: 3;
+    }
+    
+    // & > .product-box2 {
+    //   order: 3;
+    // }
+  }
+
+}
 
 // Product Show
 

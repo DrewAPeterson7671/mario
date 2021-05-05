@@ -2,9 +2,11 @@
   <div class="card-show">
     
     <h2><%= product.name %></h2>
+    <div class="card-stars-up">
 
-    <%= render partial: "shared/review_stars", locals: { review: product.average_review } %>
-    
+      <%= render partial: "shared/review_stars", locals: { review: product.average_review } %>
+
+    </div>
     <div class="card-show-flex">
       <div class="card-show-up card-show-col1">
         <p>Price:  $<%= product.price %> per lb</p><br>
