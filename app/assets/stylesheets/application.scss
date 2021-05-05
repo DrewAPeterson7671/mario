@@ -529,41 +529,75 @@ a span {
   margin-bottom: 5px;
   margin-left: auto;
   margin-right: auto;
+  // overflow-wrap: normal;
 }
 
-@media (max-width: 900px) {
-  .review-card {
-    width: 100%;
-    height: 250px;
-    // word-wrap: wrap;
-  }
-}
 
 .review-card-flex {
   display: flex;
   justify-content: space-between;
-
+  
   & > .review-box1 { // avatar
     order: 1;
     width: 78%;
   }
-
+  
   & > .review-box2 { // product info
     order: 2;
     width: 100%;
   }
-
+  
   & > .review-box3 { //date
     order: 3;
   }
   
 }
 
-
 .review-stars {
   text-align: left;
   margin-top: -12px;
 }
+
+@media (max-width: 900px) {
+  .review-card {
+    width: 100%;
+    height: 220px;
+    word-wrap: wrap;
+  }  .review-index-text {
+    white-space: normal;
+  }
+}
+  
+@media (max-width: 460px) {
+  .review-card-flex {
+  flex-direction: column;
+  justify-content: normal;
+  flex-wrap: wrap;
+  }
+  .review-card {
+    width: 100%;
+    height: 300px;
+  }
+
+  .review-box2 { // product info
+    position: relative;
+    margin-top: -10px;
+  }
+  
+  .review-box3 { //date
+    position: relative;
+    margin-top: -10px;
+
+  }
+  .review-index-text {
+    white-space: normal;
+  }
+  .review-pic {
+    position: relative;
+  }
+
+}
+
 
 // Review Show Styles
 
