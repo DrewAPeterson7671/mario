@@ -192,6 +192,12 @@ a span {
   }
 }
 
+@media only screen and (max-width: 374px) {
+  .authentication-text {
+    font-size: smaller ;
+  }
+}
+
 // Avatars
 
 .avatar-tiny {
