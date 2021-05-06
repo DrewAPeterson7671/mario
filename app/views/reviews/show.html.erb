@@ -1,9 +1,5 @@
 <div class="product-show-flex">
 
-  <div class="product-box1">
-    <%= link_to "\u2039", review_path(id: @review.previous, product_id: @review.product_id), class: "previous-next previous round" %>
-  </div>
-
   <div class="product-box2">
     <div class="review-card-show">
       <div class="center">
@@ -45,6 +41,9 @@
     </div>
   </div>
   
+  <div class="product-box1">
+    <%= link_to "\u2039", review_path(id: @review.previous, product_id: @review.product_id), class: "previous-next previous round" %>
+  </div>
 
   <div class="product-box3">
     <%= link_to "\u203A", review_path(id: @review.next, product_id: @review.product_id), class: "previous-next next round" %>
