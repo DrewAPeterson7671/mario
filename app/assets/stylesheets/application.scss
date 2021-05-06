@@ -442,6 +442,8 @@ a span {
     flex-basis: 0;
   }
   .login-wide {
+    margin-top: 40px;
+    margin-bottom: 40px;;
     width: 100%;
   }
 }
@@ -489,7 +491,7 @@ a span {
 // Product Forms
 
 .product-form-flex {
-  padding: 2rem;
+  // padding: 2rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap; 
@@ -501,20 +503,26 @@ a span {
   // flex-basis: fit-content;
 }
 
-@media only screen and (max-width: 460px) {
-  .product-col-1 {
-    overflow: hidden;
-  }
-}
 
 .product-col-2 {
   margin-left: 20px;
   text-align: left;
   order: 2;
   border: 1px;
-//   flex-basis: fit-content;
+  //   flex-basis: fit-content;
 }
 
+@media only screen and (max-width: 460px) {
+  .product-col-1 {
+    overflow: hidden;
+  }
+  .center-button {
+    // align-self: center;
+    // text-align: center;
+    margin-left: -20px;
+
+  }
+}
 
 // Reviews Styles
 
@@ -663,6 +671,14 @@ a span {
 .review-form-center {
   display: block;
   margin: 0 auto;
+  // max-width: 100%;
+}
+
+@media only screen and (max-width: 460px) {
+  .review-form-center {
+    max-width: 100%;
+    overflow: hidden;
+  }
 }
 
 
@@ -964,12 +980,6 @@ a span {
   margin-right: auto;
 }
 
-@media only screen and (max-width: 460px) {
-  .admin-card-1btn {
-    text-align: center;
-  }
-}
-
 .admin-card-2btn {
   padding: 10px;
   width: 70%;
@@ -986,10 +996,17 @@ a span {
 }
 
 @media only screen and (max-width: 460px) {
+  .admin-card-1btn {
+    text-align: center;
+  }
   .admin-card-2btn {
     text-align: center;
   }
+  .admin-button {
+    width: 100%;
+  }
 }
+
 
 // Search Page
 
