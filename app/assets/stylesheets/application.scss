@@ -56,17 +56,20 @@ a span {
 }
 
 .left-margin {
-  margin-left: 5px;
+  overflow: hidden;
+  // margin-left: 5px;
+//   max-width: 100%;
+  width: 100%;
+//   min-width: 100%;
 }
 
 @media only screen and (max-width: 460px) {
   .left-margin {
-    margin-left: 0px;
     text-align: center;
     background-color: #f8f9fa;
-    max-width: 100%;
-    width: 100%;
-    min-width: 100%;
+    // max-width: 100%;
+    // width: 100%;
+    // min-width: 100%;
   }
 }
 
@@ -111,8 +114,7 @@ a span {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  min-width: 400px;
-  width: 100%;
+  min-width: 100%;
   height: 400px;
   object-fit: cover;
   opacity: 0.35;
@@ -125,7 +127,7 @@ a span {
   left: 16px;
   font-size: 55px;
   line-height: 60px;
-  min-width: 400px;
+  max-width: 95%;
   font-family: 'SnellRoundhand', cursive;
 }
 
@@ -301,7 +303,7 @@ a span {
 
 .card-image-not-found {
   padding: 1px;
-  // min-width: 200px;
+  max-width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -333,9 +335,10 @@ a span {
 // Product Card Show
 
 .card-show {
-  // position: relative;
-  padding: 10px;
+  // padding: 10px;
   max-width: 800px;
+  // max-width: 100%;
+  // max-width: max-content;
   height: 600px;
   background-color: white;
   padding: 0% 0% 0% 0%;
@@ -345,13 +348,12 @@ a span {
   border-top: 3px solid #419234;
   text-align: center;
   overflow: hidden;
-  // min-width: none;
 }
 
 .card-image-show {
   padding: 1px;
   border-radius: 5px;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -360,6 +362,9 @@ a span {
   .card-show {
     // width: 70%;
     height: 500px;
+  }
+  .card-image-show {
+    overflow: hidden;
   }
 }
 
@@ -437,6 +442,8 @@ a span {
     flex-basis: 0;
   }
   .login-wide {
+    margin-top: 40px;
+    margin-bottom: 40px;;
     width: 100%;
   }
 }
@@ -484,7 +491,7 @@ a span {
 // Product Forms
 
 .product-form-flex {
-  padding: 2rem;
+  // padding: 2rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap; 
@@ -496,14 +503,26 @@ a span {
   // flex-basis: fit-content;
 }
 
+
 .product-col-2 {
   margin-left: 20px;
   text-align: left;
   order: 2;
   border: 1px;
-//   flex-basis: fit-content;
+  //   flex-basis: fit-content;
 }
 
+@media only screen and (max-width: 460px) {
+  .product-col-1 {
+    overflow: hidden;
+  }
+  .center-button {
+    // align-self: center;
+    // text-align: center;
+    margin-left: -20px;
+
+  }
+}
 
 // Reviews Styles
 
@@ -603,7 +622,7 @@ a span {
 
 .review-card-show {
   padding: 10px;
-  width: 800px;
+  max-width: 800px;
   height: 400px;
   background-color: white;
   padding: 0% 0% 0% 0%;
@@ -611,9 +630,15 @@ a span {
   border-radius: 5px;
   border: 1.5px solid #CBCBCB;
   border-top: 3px solid #65e252;
-  overflow: hidden;
+  overflow: scroll;
 }
 
+@media only screen and (max-width: 460px) {
+  .review-card-show {
+    // width: 70%;
+    height: 500px;
+  }
+}
 
 .review-card-flexbox {
   display: flex;
@@ -646,6 +671,14 @@ a span {
 .review-form-center {
   display: block;
   margin: 0 auto;
+  // max-width: 100%;
+}
+
+@media only screen and (max-width: 460px) {
+  .review-form-center {
+    max-width: 100%;
+    overflow: hidden;
+  }
 }
 
 
@@ -947,12 +980,6 @@ a span {
   margin-right: auto;
 }
 
-@media only screen and (max-width: 460px) {
-  .admin-card-1btn {
-    text-align: center;
-  }
-}
-
 .admin-card-2btn {
   padding: 10px;
   width: 70%;
@@ -969,10 +996,17 @@ a span {
 }
 
 @media only screen and (max-width: 460px) {
+  .admin-card-1btn {
+    text-align: center;
+  }
   .admin-card-2btn {
     text-align: center;
   }
+  .admin-button {
+    width: 100%;
+  }
 }
+
 
 // Search Page
 
