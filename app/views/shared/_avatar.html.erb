@@ -1,7 +1,10 @@
 
-  <% if user.avatar_pic.attached? %>
-    <%= link_to image_tag(user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'), user_path(current_user) %>
+  <% if user.avatar_pic.attached? && current_user.present? %>
+      <%= link_to image_tag(user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'), user_path(current_user) %>
+    <% elsif current_user.present? %>
+      <%= link_to image_tag('generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found'), user_path(current_user) %>
     <% else %>
       <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
   <% end %>
 
+ 
