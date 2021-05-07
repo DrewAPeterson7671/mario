@@ -21,7 +21,7 @@ _This Application is a marketplace for users to rate the products of an exotic f
 * Home page includes scopes showcasing hightest reviewed, most reviewed, and newest products.
 * Highest Rated, Most Reviewed and New products have corner sashes.
 * Search bar with links to search results.
-* The website is responsively designed to function on mobile viewports.
+* The website is responsively designed to function on mobile viewports. Looks decent on iPhone 5.
 
 _See the deployed app on Heroku: https://marios-specialty-foods.herokuapp.com/_
 

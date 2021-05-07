@@ -153,6 +153,13 @@ a span {
   }
 }
 
+@media (max-height: 665px) and (orientation: landscape) {
+  .header-top-left {
+    font-size: 50px;
+    top: 90px;
+  }
+}
+
 .authentication-text {
   display: inline-block;
 }
@@ -170,14 +177,11 @@ a span {
 }
 
 @media only screen and (max-width: 415px) {
-  // .authentication-text {
-  //   font-size: 14px;
-  // }
+  .authentication-position {
+    top: -45px;
+  }
   .auth-email {
     display: none;
-  }
-  .avatar-tiny {
-
   }
 }
 
@@ -193,9 +197,8 @@ a span {
 
 @media only screen and (max-width: 415px) {
   .avatar-tiny {
-    width: 40px;
+    width: 35px;
     height: 35px;
-    padding-right: 10px;
   }
 }
 
@@ -277,6 +280,21 @@ a span {
 @media only screen and (max-width: 460px) {
   .card {
     max-width: 340px;
+    justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .card {
+    min-width: 90%;
+    justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 359px) {
+  .card {
+    width: 65%;
+    min-width: 80%;
     justify-self: center;
   }
 }
@@ -945,6 +963,17 @@ a span {
     padding-bottom: 10px;
     padding-left: 80px;
     padding-right: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px
+  }
+}
+
+@media only screen and (max-width: 359px) {
+  .btn-success {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
     margin-top: 10px;
     margin-bottom: 10px
   }
