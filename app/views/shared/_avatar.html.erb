@@ -1,6 +1,7 @@
 
   <% if user.avatar_pic.attached? %>
-    <%= image_tag user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'  %>
+    <%= link_to image_tag(user.avatar_pic, class:"avatar-tiny", alt: 'User Avatar'), user_path(current_user) %>
     <% else %>
       <%= image_tag 'generc_profile_pic.webp', class:"avatar-tiny", alt: 'Avatar Not Found ' %>
   <% end %>
+
