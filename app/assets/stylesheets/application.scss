@@ -165,13 +165,19 @@ a span {
 
 @media only screen and (max-width: 990px) {
   .authentication-position {
-    top: -40px;
+    top: -45px;
   }
 }
 
-@media only screen and (max-width: 374px) {
-  .authentication-text {
-    font-size: smaller ;
+@media only screen and (max-width: 415px) {
+  // .authentication-text {
+  //   font-size: 14px;
+  // }
+  .auth-email {
+    display: none;
+  }
+  .avatar-tiny {
+
   }
 }
 
@@ -183,6 +189,14 @@ a span {
   padding: 1px;
   border-radius: 5px;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 415px) {
+  .avatar-tiny {
+    width: 40px;
+    height: 35px;
+    padding-right: 10px;
+  }
 }
 
 .avatar {
@@ -411,11 +425,6 @@ a span {
     text-align: center;
     flex-basis: 0;
   }
-  .login-wide {
-    margin-top: 40px;
-    margin-bottom: 40px;;
-    width: 100%;
-  }
 }
 
 // User login
@@ -484,7 +493,7 @@ a span {
   }
   .center-button {
     margin-left: -20px;
-
+    text-align: center;
   }
 }
 
@@ -586,7 +595,7 @@ a span {
 .review-card-show {
   padding: 10px;
   max-width: 800px;
-  height: 400px;
+  height: 500px;
   background-color: white;
   padding: 0% 0% 0% 0%;
   padding-bottom: 1px;
@@ -916,6 +925,31 @@ a span {
   border-radius: 50%;
 }
 
+// button media changes
+
+@media (max-width: 812px) and (orientation: landscape) {
+  .btn-success {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  // .btn-outline-success {
+  //   padding: 5px;
+  // }
+}
+
+@media only screen and (max-width: 460px) {
+  .btn-success {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px
+  }
+}
+
 // Admin Cards
 
 .admin-card-1btn {
@@ -951,12 +985,15 @@ a span {
 @media only screen and (max-width: 460px) {
   .admin-card-1btn {
     text-align: center;
+    width: 85%;
+    height: 120px;
   }
+
   .admin-card-2btn {
     text-align: center;
-  }
-  .admin-button {
-    width: 100%;
+    width: 85%;
+    height: 200px;
+
   }
 }
 
