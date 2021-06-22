@@ -1177,12 +1177,16 @@ a span {
 
 // Footer & Footer Link Page Styles
 
-.footer {
+.footer-background {
+  background-color: #f8f9fa;
+}
+
+.footer-flex {
   margin-top: 10px;
   height: 100px;
   min-width: 60vh;
   max-width: 100%;
-  background-color: #f8f9fa;
+
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -1191,35 +1195,39 @@ a span {
   & > h4 {
     margin-left: 20px;
     margin-right: 20px;
+    word-wrap: wrap;
   }
 
-  & > p {
-    align-self: flex-end;
-    word-wrap: wrap;
-    background-color: #f8f9fa;
-    padding-bottom: 10px;
-  }  
+  // & > p {
+  //   align-self: flex-end;
+  //   word-wrap: wrap;
+  //   background-color: #f8f9fa;
+  //   padding-bottom: 10px;
+  // }  
 }
 
 @media only screen and (max-width: 460px) {
-  .footer {
+  .footer-flex{
     min-width: 100%;
     max-width: 100%;
     width: 100%;
-    word-wrap: wrap;
+    // word-wrap: wrap;
     text-align: center;
   }
 }
 
 
-.footer-flex-end {
-  page-break-after: always;
-} 
+// .footer-flex-end {
+//   // break-after: page;
+//   align-self: flex-end;
+// } 
 
 .footer-legal {
   margin-top: -20px;
   text-align: center;
   font-size: .8rem;
+  word-wrap: wrap;
+  padding-bottom: 10px;
 }
 
 .footer-spacer {
