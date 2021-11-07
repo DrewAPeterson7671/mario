@@ -53,7 +53,7 @@ _Please contact me directly via email at drew.a.peterson@hotmail.com with any bu
 
 ## Technologies Used
 
-_Ruby 2.5.1, Rails 5.2.4, Postgres SQL, Heroku, AWS S3, Rails Active Storage, SCSS_
+_Ruby 2.6.5, Rails 5.2.4, Postgres SQL, Heroku, AWS S3, Rails Active Storage, SCSS_
 
 ### License
 
