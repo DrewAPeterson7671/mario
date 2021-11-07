@@ -1197,13 +1197,6 @@ a span {
     margin-right: 20px;
     word-wrap: wrap;
   }
-
-  // & > p {
-  //   align-self: flex-end;
-  //   word-wrap: wrap;
-  //   background-color: #f8f9fa;
-  //   padding-bottom: 10px;
-  // }  
 }
 
 @media only screen and (max-width: 460px) {
@@ -1211,16 +1204,9 @@ a span {
     min-width: 100%;
     max-width: 100%;
     width: 100%;
-    // word-wrap: wrap;
     text-align: center;
   }
 }
-
-
-// .footer-flex-end {
-//   // break-after: page;
-//   align-self: flex-end;
-// } 
 
 .footer-legal {
   margin-top: -20px;
